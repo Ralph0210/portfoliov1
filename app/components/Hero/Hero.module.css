@@ -1,0 +1,47 @@
+.a{
+    height: calc(23.8vw/4*6);
+    width: 23.8vw;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.d{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 38.1vw;
+    gap: 1.5rem;
+}
+
+.c {
+    position: relative;
+    min-height: calc(100vh - 7rem);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 2.5rem;
+    z-index: 2;
+    /* background-color: var(--background-color); */
+}
+
+.d li {
+  list-style: none;
+  font-size: 1.6rem;
+}
+
+
+
+.inView{
+    color: var(--background-color);
+    fill: var(--background-color);
+    transition: 0.8s ease-in-out;
+}
+
+.heroArrow{
+    padding-left: 63.5vw;
+}
