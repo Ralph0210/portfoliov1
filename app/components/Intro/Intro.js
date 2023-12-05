@@ -212,7 +212,7 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
 
       <div ref={changeThemeRef3} className={styles.aboutMeContainer}>
         <p className={`${styles.hello} ${lora.className}`}>
-          Hello there, I'm Ralph.
+          Hello there, I&apos;m Ralph.
         </p>
         <div ref={textRef} className="aboutMeText">
           {aboutMeText.split(" ").map((char, index) => (
