@@ -37,7 +37,7 @@ const abilityCard = [
     title: "UI/UX Design",
     description:
       "From visually stunning websites to user-centric interfaces, I create solutions that leave a lasting impact.",
-    services: ["User Interface Design", "User Experience Design", "Wireframing & Prototyping", "Interaction Design", "Web Design"],
+    services: ["User Interface Design", "User Experience Design", "Wireframing & Prototyping", "Interaction Design"],
   },
   {
     title: "Web Development",
@@ -134,25 +134,6 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
 
     return () => ctx.revert();
   }, []);
-
-  // useLayoutEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     gsap.to(abilityDeckRef.current, {
-  //       x: '-25px',
-  //       scrollTrigger: {
-  //         trigger: abilityDeckRef.current,
-  //         start: "top 70%",
-  //         end: "top 40%",
-  //         // pin: true,
-  //         // pinSpacing: true,
-  //         // markers:true,
-  //         scrub: 4,
-  //       },
-  //     });
-  //   });
-
-  //   return () => ctx.revert();
-  // }, []);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {

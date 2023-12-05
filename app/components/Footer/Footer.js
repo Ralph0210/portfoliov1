@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useInView } from "framer-motion";
 
-const email = "ralphchang@utexas.edu";
+const email = "info@ralphchang.com";
 const number = "+1 512 466 9511";
 
 const Footer = ({ isInView4 }) => {
@@ -106,7 +106,7 @@ const Footer = ({ isInView4 }) => {
         </div>
         <div className={styles.socials}>
           <span>SOCIALS</span>
-          <div style={{ display: "flex", gap: "1rem", flexDirection: "row" }}>
+          <div className={styles.socialsContainer}>
             <Link
               href="https://www.linkedin.com/in/ralph-chang-5a49811a3/"
               target="_blank"
