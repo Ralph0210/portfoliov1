@@ -111,6 +111,8 @@ export default function Home() {
         ThemeDark={ThemeDark}
         changeThemeRef={changeThemeRef}
         changeThemeRef3={changeThemeRef3}
+        isInView={isInView}
+        isInView2={isInView2}
       />
       <Work changeThemeRef2={changeThemeRef2} footerStick={footerStick} />
       <Footer isInView4={isInView4} />

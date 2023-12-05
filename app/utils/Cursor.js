@@ -5,6 +5,7 @@ import styles from './Cursor.module.css'
 import stylesIntro from "../components/Intro/Intro.module.css";
 import styles2 from "../components/Work/Work.module.css";
 import stylesNav from "../components/Navbar/Navbar.module.css";
+import stylesHero from '../components/Hero/Hero.module.css'
 import stylesFooter from "../components/Footer/Footer.module.css";
 import { Icon } from "@iconify/react";
 
@@ -18,6 +19,8 @@ const Cursor = ({ sideNavOpened }) => {
   const [isHoveredArrow, setIsHoveredArrow] = useState(false);
   const [isHoveredContactsCard, setIsHoveredContactsCard] = useState(false);
   const [isCopied, setIsCopied] = useState(false)
+  const [isHoveredcta, setIsHoveredcta] = useState(false)
+  const [isHoveredSideNavButton, setIsHoveredSideNavButton] = useState(false)
   const [cursortext, setCursorText] = useState();
   let scale = 1;
 
@@ -25,11 +28,13 @@ const Cursor = ({ sideNavOpened }) => {
     const cursor = document.querySelector(".custom-cursor");
     const cards = document.querySelectorAll(`.${stylesIntro.abilityCard}`);
     const aboutMeCard = document.querySelector(`.${stylesIntro.aboutMeCard}`);
+    const cta = document.querySelector(`.${stylesHero.bounds}`);
     const works = document.querySelectorAll(`.${styles2.workCard}`);
     const buttons = document.querySelectorAll(`.${styles2.bounds}`);
     const navButtons = document.querySelectorAll(`.${stylesNav.bounds}`);
     const footerButtons = document.querySelectorAll(`.${stylesFooter.bounds}`);
     const footerContactsCard = document.querySelectorAll(`.${stylesFooter.contactsCard}`)
+    const sideNavButtons = document.querySelectorAll('.sideNavBounds')
     const cursorText = document.querySelector(".cursor-text");
 
     const cursorSize = 20;
@@ -41,7 +46,9 @@ const Cursor = ({ sideNavOpened }) => {
       if (
         (isHoveredButton && e.target.classList.contains(styles2.bounds)) ||
         (isHoveredNavButton && e.target.classList.contains(stylesNav.bounds)) ||
-        (isHoveredArrow && e.target.classList.contains(stylesFooter.bounds))
+        (isHoveredArrow && e.target.classList.contains(stylesFooter.bounds)) ||
+        (isHoveredcta && e.target.classList.contains(stylesHero.bounds)) ||
+        (isHoveredSideNavButton && e.target.classList.contains('sideNavBounds'))
       ) {
         const button = e.target;
 
@@ -186,6 +193,22 @@ const Cursor = ({ sideNavOpened }) => {
         setIsHoveredAboutMeCard(false);
     }
 
+    const onMouseEntercta = (e) => {
+        setIsHoveredcta(true);
+    }
+
+    const onMouseLeavecta = (e) => {
+        setIsHoveredcta(false);
+    }
+
+    const onMouseEnterSideNavButton = (e) => {
+        setIsHoveredSideNavButton(true);
+    }
+
+    const onMouseLeaveSideNavButton = (e) => {
+        setIsHoveredSideNavButton(false);
+    }
+
     const onClick = () => {
       gsap.to(cursor, {
         scale: scale * 0.8,
@@ -236,6 +259,15 @@ const Cursor = ({ sideNavOpened }) => {
       aboutMeCard.addEventListener("mouseleave", onMouseLeaveAboutMeCard);
     }
 
+    if(cta){
+        cta.addEventListener("mouseenter", onMouseEntercta);
+        cta.addEventListener("mouseleave", onMouseLeavecta);
+    }
+
+    sideNavButtons.forEach((button) => {
+      button.addEventListener("mouseenter", onMouseEnterSideNavButton);
+      button.addEventListener("mouseleave", onMouseLeaveSideNavButton)})
+
     document.addEventListener("mousemove", onMouseMove);
 
     return () => {
@@ -267,12 +299,19 @@ const Cursor = ({ sideNavOpened }) => {
         button.removeEventListener("mouseenter", onMouseEnterContactsCard);
       button.removeEventListener("mouseleave", onMouseLeaveContactsCard);
     })
-  
+    sideNavButtons.forEach((button) => {
+      button.removeEventListener("mouseenter", onMouseEnterSideNavButton);
+      button.removeEventListener("mouseleave", onMouseLeaveSideNavButton)})
     if(aboutMeCard){
         aboutMeCard.removeEventListener("mouseenter", onMouseEnterAboutMeCard);
         aboutMeCard.removeEventListener("mouseleave", onMouseLeaveAboutMeCard);}
-    };
-  }, [sideNavOpened, isHoveredButton,isHoveredAboutMeCard, isHoveredNavButton, isHoveredCard, isHoveredWork, isHoveredArrow, isHoveredContactsCard, isCopied]);
+    }
+
+    if(cta){
+        cta.removeEventListener("mouseenter", onMouseEntercta);
+        cta.removeEventListener("mouseleave", onMouseLeavecta);
+    }
+  }, [sideNavOpened, isHoveredButton,isHoveredAboutMeCard, isHoveredNavButton, isHoveredCard, isHoveredWork, isHoveredArrow, isHoveredContactsCard, isCopied, isHoveredcta, isHoveredSideNavButton]);
 
   return (
     <div id="custom-cursor" className="custom-cursor">

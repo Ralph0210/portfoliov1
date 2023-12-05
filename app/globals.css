@@ -5,13 +5,16 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  --primary-color: #C15002;
-  --secondary-color: #E5A980;
-  --background-color: #fff;
+  --primary-color: #EC643C;
+  --background-color: #F9F5EC;
+  --text-color: #0A260D;
+  --text-color-dark: #010E02;
+  --text-color-bright: #F5EFE1;
   --underline-color: #000;
   --background-color-invert:#1C1D20;
-  --unimportantText-color:rgba(255, 255, 255, 0.75);
-  --border-alpha: rgba(255, 255, 255, 0.2);
+  --unimportantText-color:rgba(249, 245, 236, 0.75);
+  --border-alpha: rgba(249, 245, 236, 0.5);
+  --border-alpha-invert: rgba(10, 38, 13, 0.5);
 
   --Bebas-Neue: Bebas Neue;
 
@@ -24,14 +27,18 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --unimportantText-color:rgba(0, 0, 0, 0.75);
-    --background-color: #1E1E1E;
+    --background-color: #0A260D;
+    --text-color: #F9F5EC;
     --underline-color: #fff;
     --background-color-invert:#fff;
+    --text-color-bright: #0A260D;
+    --text-color-dark: #F9F5EC;
     /* Update background color for dark theme */
     --background-start-rgb: 30, 30, 30; /* Dark background color (start) */
     --background-end-rgb: 30, 30, 30; /* Dark background color (end) */
     --foreground-rgb: 255, 255, 255; /* Dark text color */
     --border-alpha: rgba(0, 0, 0, 0.2);
+    --border-alpha-invert: rgba(249, 245, 236, 0.5);
   }
 }
 
@@ -51,16 +58,20 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  color: var(--text-color);
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
-    /* overflow-x: hidden; */
-    /* position: relative; */
-    /* overflow: hidden; */
+    rgb(var(--background-start-rgb)); */
+  background-color: var(--background-color);
+  transition: all 0.8s ease-in-out;
+}
+
+.dark-mode-for-light{
+  color: var(--text-color-bright);
+  background-color: var(--text-color);
 }
 
 body .no-scroll {
@@ -82,6 +93,7 @@ body .no-scroll {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: var(--text-color-bright); */
   background-color: white;
 }
 
@@ -103,8 +115,18 @@ button{
   cursor: none;
 }
 
-@media (prefers-color-scheme: dark) {
+h1{
+  font-size: 4.8rem;
+  font-weight: 400;
+}
+
+p{
+  font-size: 2rem;
+  line-height: 150%;
+}
+
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */

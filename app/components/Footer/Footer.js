@@ -50,7 +50,7 @@ const Footer = ({isInView4}) => {
       <div className={styles.footerBottom}>
         <div>
           <span>VERSION</span>
-          <p>2023 © Edition v1</p>
+          <p>2023 © Edition</p>
         </div>
         <div>
           <span>RALPH&apos;S TIME</span>

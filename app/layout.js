@@ -1,9 +1,11 @@
-import { Inter } from 'next/font/google'
+import { Inter, Rubik, Lora } from 'next/font/google'
 import './globals.css'
 import localFont from 'next/font/local'
 import Cursor from './utils/Cursor'
 
 const inter = Inter({ subsets: ['latin'] })
+const rubik = Rubik({ subsets: ['latin'] })
+const lora = Lora({ subsets: ['latin'] })
 const microsoftSansSerif = localFont({ src: './micross.ttf' })
 
 export const metadata = {
@@ -14,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={microsoftSansSerif.className}>{children}</body>
+      <body className={rubik.className}>{children}</body>
     </html>
   )
 }

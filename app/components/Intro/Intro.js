@@ -9,6 +9,8 @@ import Work from "../Work/Work";
 import "./Intro.css";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import { Lora } from "next/font/google";
+const lora = Lora({ subsets: ['latin'] })
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,9 +53,9 @@ const abilityCard = [
   },
 ];
 
-const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3 }) => {
+const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2 }) => {
   const aboutMeText =
-    "I am passionate about using technology for meaningful change. I create engaging, delightful, user-centric experiences that empower organizations committed to social responsibility and sustainability.";
+    "I’m a freelance designer & developer from Taiwan. I create digital solutions that empower organizations committed to social responsibility and sustainability.";
   const [isFlipped, setIsFlipped] = useState([false, false, false, false]);
   const textRef = useRef();
   const helloRef = useRef();
@@ -96,43 +98,61 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3 }) => {
 
   //scroll animation
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.to([galleryTopRef.current, changeThemeRef.current], {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: galleryRef.current,
-          start: "bottom 80%",
-          end: "bottom top",
-          pin: true,
-          pinSpacing: false,
-          // markers:true,
-          scrub: 4,
-        },
-      });
-    });
+  // useLayoutEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     gsap.to([galleryTopRef.current, changeThemeRef.current], {
+  //       opacity: 0,
+  //       scrollTrigger: {
+  //         trigger: galleryRef.current,
+  //         start: "bottom 80%",
+  //         end: "bottom top",
+  //         pin: true,
+  //         pinSpacing: false,
+  //         // markers:true,
+  //         scrub: 4,
+  //       },
+  //     });
+  //   });
 
-    return () => ctx.revert();
-  }, []);
-
+  //   return () => ctx.revert();
+  // }, []);
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       gsap.to(abilityDeckRef.current, {
-        x: "-3%",
+        x: '-25px',
         scrollTrigger: {
-          trigger: changeThemeRef3.current,
-          start: "top top",
-          end: "bottom 30%",
+          trigger: changeThemeRef.current,
+          start: "top 5%",
+          end: "bottom center",
           pin: true,
           pinSpacing: true,
           // markers:true,
-          scrub: 4,
+          scrub: 6,
         },
       });
     });
 
     return () => ctx.revert();
   }, []);
+
+  // useLayoutEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     gsap.to(abilityDeckRef.current, {
+  //       x: '-25px',
+  //       scrollTrigger: {
+  //         trigger: abilityDeckRef.current,
+  //         start: "top 70%",
+  //         end: "top 40%",
+  //         // pin: true,
+  //         // pinSpacing: true,
+  //         // markers:true,
+  //         scrub: 4,
+  //       },
+  //     });
+  //   });
+
+  //   return () => ctx.revert();
+  // }, []);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -142,8 +162,8 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3 }) => {
         duration: 0.1,
         scrollTrigger: {
           trigger: textRef.current,
-          start: "top center",
-          end: "top 20%",
+          start: "top 80%",
+          end: "top center",
           // markers:true,
           scrub: 4,
           toggleActions: "complete complete complete complete",
@@ -160,8 +180,8 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3 }) => {
         opacity: 1,
         scrollTrigger: {
           trigger: helloRef.current,
-          start: "top center",
-          end: "top 20%",
+          start: "top 80%",
+          end: "top center",
           // markers:true,
           scrub: 4,
           toggleActions: "complete complete complete complete",
@@ -172,72 +192,27 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3 }) => {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Select the HTML element
+  const bodyElement = document.querySelector('body');
+  // Set the color scheme based on user preference
+  if (prefersDarkMode) {
+    if (isInView || isInView2) {bodyElement.classList.add('dark-mode-for-light') }else{ bodyElement.classList.remove('dark-mode-for-light');}
+  } else {
+    if (isInView || isInView2){
+    bodyElement.classList.add('dark-mode-for-light')}
+    else{bodyElement.classList.remove('dark-mode-for-light');}
+  }
+  }, [isInView, isInView2])
+
   return (
-    <div className={styles.introContainer}>
-      <div ref={galleryRef} className={styles.gallery}>
-        <div
-          ref={galleryTopRef}
-          className={styles.galleryTop}
-          style={{ transform: translateX }}
-        >
-          {galleryTop.map((item, index) => {
-            return (
-              <div
-                key={`galleryTop-${index}`}
-                className={styles.galleryItem}
-                style={{ backgroundColor: item.backgroundColor }}
-              >
-                <Image
-                  src={item.imageURL}
-                  alt="gallery"
-                  width={345}
-                  height={246}
-                  className={styles.galleryImage}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div
-          className={styles.themeChangeCircle}
-          style={ThemeDark ? { width: "100%", height: "300rem", opacity: 1, borderRadius:0 } : {opacity:0}}
-        ></div>
-        <div
-          className={styles.themeChangeCircle2}
-          style={ThemeDark ? { width: "100%", height: "300rem", opacity: 1, borderRadius:0 } : {opacity:0}}
-        ></div>
-        <div
-          className={styles.themeChangeCircle3}
-          style={ThemeDark ? { width: "100%", height: "300rem", opacity: 1, borderRadius:0 } : {opacity:0}}
-        ></div>
-        <div
-          ref={changeThemeRef}
-          className={styles.galleryBottom}
-          style={{ transform: translateMinusX }}
-        >
-          {galleryBottom.map((item, index) => {
-            return (
-              <div
-                key={`galleryBottom-${index}`}
-                className={styles.galleryItem}
-                style={{ backgroundColor: item.backgroundColor }}
-              >
-                <Image
-                  src={item.imageURL}
-                  alt="gallery"
-                  width={345}
-                  height={246}
-                  className={styles.galleryImage}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </div>
+    <div ref={changeThemeRef} className={styles.introContainer}>
 
       <div ref={changeThemeRef3} className={styles.aboutMeContainer}>
-        <p className={styles.hello}>
-          HELLO THERE
+        <p className={`${styles.hello} ${lora.className}`}>
+          Hello there, I'm Ralph.
         </p>
         <div ref={textRef} className="aboutMeText">
           {aboutMeText.split(" ").map((char, index) => (

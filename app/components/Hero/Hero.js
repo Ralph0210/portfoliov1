@@ -6,6 +6,10 @@ import styles from "./Hero.module.css";
 import { Icon } from "@iconify/react";
 import SplitType from "split-type";
 import gsap from "gsap";
+import { Lora } from "next/font/google";
+import Link from "next/link";
+
+const lora = Lora({ subsets: ['latin'] })
 
 const Hero = ({ ThemeDark }) => {
   // const heroImages = [hero, hero1, hero2, hero3, hero4, hero5, hero6];
@@ -66,7 +70,7 @@ const Hero = ({ ThemeDark }) => {
   }, []);
 
   // Calculate the translateY based on the scroll position
-  const translateY = `translateY(${scrollPosition / 4 + 40}px)`;
+  const translateY = `translateY(${scrollPosition / 4}px)`;
 
   return (
     <>
@@ -78,7 +82,7 @@ const Hero = ({ ThemeDark }) => {
               draggable={false}
               src={hero}
               alt="hero"
-              style={{ height: "auto", width: "100%", transform: translateY }}
+              style={{ height: "auto", width: "100%", transform: translateY, backgroundBlendMode:"multiply"}}
               className={styles.b}
             />
           </div>
@@ -86,16 +90,22 @@ const Hero = ({ ThemeDark }) => {
             <li ref={myNameRef} id="myName">
               Ralph Chang
             </li>
-            <li>Designer & Developer</li>
+            {/* <li>Designer & Developer</li> */}
           </ul>
         </div>
-        <div className={styles.heroArrow}>
+        {/* <div className={styles.heroArrow}>
           <Icon
             className={ThemeDark ? styles.inView : ""}
             icon="ph:arrow-up-light"
             style={{ fontSize: "2.4rem", transform: "rotate(210deg)" }}
             aria-label="Scroll down"
           />
+        </div> */}
+        <div className={styles.heroTextContainer}>
+          <h1 className={` ${lora.className} ${styles.h1}`}>Crafting digital solutions for positive impact</h1>
+          <p>I explore the intersection of societal challenges and technology to create purposeful, user-centric experiences that make positive difference.</p>
+          <p>Because we deserve innovations that are ethical, sustainable, and rooted in kindness.</p>
+          <Link href='/contact'>Work with me<div className={styles.bounds}></div></Link>
         </div>
       </div>
     </>
