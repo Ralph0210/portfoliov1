@@ -7,7 +7,7 @@
 .introContainer{
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     /* padding-top: 10vh; */
     /* overflow-x: hidden; */
 }
@@ -124,8 +124,10 @@ color: var(--background-color);
 }
 
 .abilityCard{
-    width: 35rem;
-    height: 35rem;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    max-height: 35rem;
     border-radius: 5rem;
     border: 2px solid var(--background-color);
     display: flex;
@@ -141,8 +143,10 @@ color: var(--background-color);
 }
 
 .aboutMeCard{
-    width: 35rem;
-    height: 35rem;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    max-height: 35rem;
     border-radius: 5rem;
     border: 2px solid var(--background-color);
     display: flex;
@@ -202,8 +206,8 @@ transition: 0.5s ease-in-out;
 }
 
 .abilityCard:hover{
-    margin-top: -4rem;
-    height: 39rem;
+    margin-top: -5vh;
+    height: calc(5vh + 100%);
 
     .abilityDescription{
         opacity: 1;
@@ -211,8 +215,8 @@ transition: 0.5s ease-in-out;
 }
 
 .aboutMeCard:hover{
-    margin-top: -4rem;
-    height: 39rem;
+    margin-top: -5vh;
+    height: calc(5vh + 100%);
 
     .abilityDescription{
         opacity: 1;

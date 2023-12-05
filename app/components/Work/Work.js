@@ -103,7 +103,7 @@ const Work = ({ changeThemeRef2, footerStick }) => {
   };
   return (
     <div ref={changeThemeRef2} className={styles.workContainer}>
-      <p className={styles.selectedWork}>Selected Work</p>
+      <p ref={footerStick} className={styles.selectedWork}>Selected Work</p>
       <div className={styles.workGallery}>
         <div className={styles.workGalleryTop}>
           <LargeWorkCard
@@ -150,7 +150,7 @@ const Work = ({ changeThemeRef2, footerStick }) => {
           />
         </div>
       </div>
-      <Link ref={footerStick} href="/work" className={`${styles.moreWork} ${styles.button}`}>
+      <Link href="/work" className={`${styles.moreWork} ${styles.button}`}>
         <span>More work</span> <div className={styles.bounds}></div>
       </Link>
     </div>
