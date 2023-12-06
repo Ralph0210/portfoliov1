@@ -261,6 +261,11 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
         <p ref={helloRef} className={styles.place}>
           Currently Living in Austin, TX
         </p>
+        <p className={styles.touchScreenTip2}><Icon
+              icon="ph:arrow-up-light"
+              style={{ fontSize: "2rem", transform: "rotate(210deg)" }}
+              aria-label="Scroll down"
+            />Tap the cards to see what&apos;s behind</p>
 
 
         <div ref={abilityDeckRef} className={styles.abilityDeckContainer}>
