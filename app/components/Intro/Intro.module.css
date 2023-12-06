@@ -92,7 +92,7 @@ color: var(--background-color);
 }
 
 .place{
-    font-size: clamp(1.4rem,1.5vw, 2rem);
+    font-size: clamp(1.6rem,1.5vw, 2rem);
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -202,7 +202,7 @@ color: var(--background-color);
 
 .abilityDescription{
     color: var(--unimportantText-color);
-    font-size: clamp(1.4rem,1.5vw, 2rem);
+    font-size: clamp(1.6rem,1.5vw, 2rem);
 font-style: normal;
 font-weight: 400;
 line-height: normal;

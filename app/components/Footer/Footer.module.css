@@ -80,7 +80,7 @@
     padding: 3rem 5.25rem;
     border-radius: 5rem;
     /* font-size: 2rem; */
-    font-size: clamp(1.4rem,1.5vw, 2rem);
+    font-size: clamp(1.6rem,1.5vw, 2rem);
 }
 
 .footerLeft{
@@ -105,7 +105,7 @@
 
 .footerBottom span{
     color: var(--border-alpha);
-    font-size: clamp(1rem,1.5vw, 2rem);
+    font-size: clamp(1rem,1.2vw, 2rem);
     padding: 0.7rem 1.5rem;
 }
 
@@ -251,26 +251,6 @@
     .socialsContainer{
         /* flex-direction: column; */
         gap: 0rem;
-    }
-
-    .footerBottom p{
-        color: var(--background-color);
-        font-size: 1.4rem;
-        position: relative;
-        padding: 0.7rem 1.5rem;
-    }
-    
-    .footerBottom a{
-        color: var(--background-color);
-        font-size: 1.4rem;
-        position: relative;
-        padding: 0.7rem 1.5rem;
-    }
-
-    .footerBottom span{
-        color: var(--border-alpha);
-        font-size: 1.4rem;
-        padding: 0.7rem 1.5rem;
     }
 
     .footerBottom{

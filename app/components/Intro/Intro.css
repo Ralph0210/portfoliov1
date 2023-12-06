@@ -19,4 +19,8 @@ font-weight: 400;
     .aboutMeText{
         padding-right:0%;
     }
+    span.char{
+        font-size: 2rem;
+        padding-right: 6px;
+    }
 }
