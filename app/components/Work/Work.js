@@ -102,21 +102,21 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef }) => {
     setHoveredCard(null);
   };
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.to(changeThemeRef2.current, {
-        y: 0,
-        scrollTrigger: {
-          trigger: abilityDeckRef.current,
-          start: "top 80%",
-          end: "top 40%",
-          scrub: 4,
-        },
-      });
-    });
+  // useLayoutEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     gsap.to(changeThemeRef2.current, {
+  //       y: 0,
+  //       scrollTrigger: {
+  //         trigger: abilityDeckRef.current,
+  //         start: "top 80%",
+  //         end: "top 40%",
+  //         scrub: 4,
+  //       },
+  //     });
+  //   });
 
-    return () => ctx.revert();
-  },[])
+  //   return () => ctx.revert();
+  // },[])
   return (
     <div ref={changeThemeRef2} className={styles.workContainer} style={{zIndex:"5"}}>
       <p ref={footerStick} className={styles.selectedWork}>Selected Work</p>
