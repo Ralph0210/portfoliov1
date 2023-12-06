@@ -116,10 +116,7 @@ export default function Home() {
         abilityDeckRef={abilityDeckRef}
       />
       <Work changeThemeRef2={changeThemeRef2} footerStick={footerStick} abilityDeckRef={abilityDeckRef} isInView4={isInView4}/>
-      {/* <Footer isInView4={isInView4} /> */}
-      <div style={{zIndex:"0"}}>
       <Footer isInView4={isInView4} />
-      </div>
 
     </main>
   );
