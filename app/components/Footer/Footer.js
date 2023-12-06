@@ -57,18 +57,20 @@ const Footer = ({ isInView4 }) => {
         onMouseEnter={() => setIsctaHovered(true)}
         onMouseLeave={() => setIsctaHovered(false)}
       >
+        <div className={styles.iconContainer}>
         <Image
           src={meIcon}
           alt="me"
-          width={96}
-          height={96}
-          style={{ zIndex: 10 }}
+          sizes="(max-width: 430px)50px"
+          fill
+          style={{ objectFit: "cover"}}
         />
+        </div>
         <p
           className={styles.cta}
           style={isctaHovered ? { marginRight: "5rem" } : {}}
         >
-          Let&apos;s work together
+          Let&apos;s work <br className={styles.br}/>together
         </p>
         <Link href="/contact" className={styles.arrowContainer}>
           <Icon
