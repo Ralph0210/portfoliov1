@@ -7,7 +7,7 @@
 
   --primary-color: #EC643C;
   --background-color: #F9F5EC;
-  --text-color: #0A260D;
+  --text-color: #344C36;
   --text-color-dark: #010E02;
   --text-color-bright: #F5EFE1;
   --underline-color: #000;
@@ -27,7 +27,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --unimportantText-color:rgba(0, 0, 0, 0.75);
-    --background-color: #0A260D;
+    --background-color: #344C36;
     --text-color: #F9F5EC;
     --underline-color: #fff;
     --background-color-invert:#fff;
