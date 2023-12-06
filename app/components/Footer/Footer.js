@@ -82,6 +82,7 @@ const Footer = ({ isInView4 }) => {
         </Link>
       </div>
       <p className={styles.sayHi}>Or just say Hi!</p>
+
       <div className={styles.contacts}>
         <button
           className={styles.contactsCard}
@@ -98,6 +99,7 @@ const Footer = ({ isInView4 }) => {
       </div>
       <div className={styles.divider}></div>
       <div className={styles.footerBottom}>
+        <div className={styles.footerLeft}>
         <div>
           <span>VERSION</span>
           <p>2023 © Edition</p>
@@ -105,6 +107,7 @@ const Footer = ({ isInView4 }) => {
         <div>
           <span>RALPH&apos;S TIME</span>
           <p>{time}</p>
+        </div>
         </div>
         <div className={styles.socials}>
           <span>SOCIALS</span>

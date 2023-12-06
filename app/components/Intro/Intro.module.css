@@ -381,8 +381,8 @@ margin-top: auto;
     }
     .abilityDeckContainer{
         display: flex;
-        flex-direction: column;
-        height: 90vh;
+        overflow-x: auto;
+        transform: translateX(20);
     }
     .abilityCard{
         flex: 1;

@@ -1,10 +1,13 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState, useRef } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import SideNav from "../SideNav/SideNav";
 import { Icon } from "@iconify/react";
+import { useInView } from "framer-motion";
 
 function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
+  const navbarRef = useRef(null);
+  const navbarInView = useInView(navbarRef)
 
   useLayoutEffect(() => {
     // Add or remove the 'no-scroll' class based on sideNavOpened state
@@ -37,7 +40,7 @@ function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
             <div className={styles.bounds}></div>
           </Link>
         </div>
-        <div className={styles.navContainer}>
+        <div className={styles.navContainer} ref={navbarRef}>
           <nav>
             <ul>
               <li>
@@ -67,7 +70,7 @@ function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
         onClick={() => setSideNavOpened(!sideNavOpened)}
         className={styles.sideNavContainer}
         style={
-          ThemeDark ? { transform: "scale(1)" } : { transform: "scale(0)" }
+          navbarInView ? { transform: "scale(0)" } : { transform: "scale(1)" }
         }
       >
         {sideNavOpened ? (

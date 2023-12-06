@@ -122,20 +122,73 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
 
   //   return () => ctx.revert();
   // }, []);
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.to(abilityDeckRef.current, {
-        x: 0,
-        scrollTrigger: {
-          trigger: abilityDeckRef.current,
-          start: "top bottom",
-          end: "bottom 90%",
-          scrub: 6,
-        },
-      });
-    });
+  // useLayoutEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     gsap.to(abilityDeckRef.current, {
+  //       x: 0,
+  //       scrollTrigger: {
+  //         trigger: abilityDeckRef.current,
+  //         start: "top bottom",
+  //         end: "bottom 90%",
+  //         scrub: 6,
+  //       },
+  //     });
+  //   });
 
-    return () => ctx.revert();
+  //   return () => ctx.revert();
+  // }, []);
+
+  // useLayoutEffect(() => {
+  //   // Check if the window width is greater than or equal to 430
+  //   if (window.innerWidth >= 430) {
+  //     // Initialize GSAP animation
+  //     let ctx = gsap.context(() => {
+  //       gsap.to(abilityDeckRef.current, {
+  //         x: 0,
+  //         scrollTrigger: {
+  //           trigger: abilityDeckRef.current,
+  //           start: 'top bottom',
+  //           end: 'bottom 90%',
+  //           scrub: 6,
+  //         },
+  //       });
+  //     });
+
+  //     // Clean up the animation on component unmount
+  //     return () => ctx.revert();
+  //   }
+  // }, []);
+
+  useLayoutEffect(() => {
+    const updateWidth = () => {
+      if(window.innerWidth > 430 ){
+        gsap.to(abilityDeckRef.current, {
+          x: 0,
+          scrollTrigger: {
+            trigger: abilityDeckRef.current,
+            start: 'top bottom',
+            end: 'bottom 90%',
+            scrub: 6,
+          },
+        });
+      }
+    };
+
+    const ctx = gsap.context(() => {
+      updateWidth(); // Initial setup
+
+      // Update width on window resize
+      const resizeHandler = () => {
+        updateWidth();
+      };
+
+      window.addEventListener('resize', resizeHandler);
+
+      return () => {
+        window.removeEventListener('resize', resizeHandler);
+        ctx.revert();
+      };
+    });
   }, []);
 
   useLayoutEffect(() => {
