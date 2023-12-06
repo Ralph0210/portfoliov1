@@ -6,6 +6,7 @@ import scf from "../../../public/gallery/scf.png";
 import pl from "../../../public/gallery/pl.png";
 import gsap from "gsap";
 import Link from "next/link";
+import Footer from "../Footer/Footer";
 
 const LargeWorkCard = ({
   title,
@@ -91,7 +92,7 @@ const SmallWorkCard = ({
   );
 };
 
-const Work = ({ changeThemeRef2, footerStick, abilityDeckRef }) => {
+const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const handleMouseEnter = (cardIndex) => {
@@ -171,6 +172,9 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef }) => {
       <Link href="/work" className={`${styles.moreWork} ${styles.button}`}>
         <span>More work</span> <div className={styles.bounds}></div>
       </Link>
+      {/* <div style={{zIndex:"0"}}>
+      <Footer isInView4={isInView4} />
+      </div> */}
     </div>
   );
 };

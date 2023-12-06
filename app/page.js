@@ -36,26 +36,26 @@ export default function Home() {
   const footerStick = useRef(null);
   const isInView4 = useInView(footerStick);
 
-  // useEffect(() => {
-  //   const lenis = new Lenis({duration: 1.5, wheelMultiplier:1.1})
+  useEffect(() => {
+    const lenis = new Lenis({duration: 1.5, wheelMultiplier:1.1})
 
-  //   lenis.on('scroll', e => {
-  //     // console.log(e)
-  //   })
+    lenis.on('scroll', e => {
+      // console.log(e)
+    })
 
-  //   function raf(time) {
-  //     lenis.raf(time)
-  //     requestAnimationFrame(raf)
-  //   }
-    
-  //   requestAnimationFrame(raf)
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
 
-  //   sideNavOpened ? lenis.stop() : lenis.start()
+    requestAnimationFrame(raf)
 
-  //   return () => {
-  //     lenis.destroy()
-  //   }
-  // },[sideNavOpened])
+    sideNavOpened ? lenis.stop() : lenis.start()
+
+    return () => {
+      lenis.destroy()
+    }
+  },[sideNavOpened])
 
   // useEffect(() => {
   //   let scroll
@@ -115,8 +115,11 @@ export default function Home() {
         isInView2={isInView2}
         abilityDeckRef={abilityDeckRef}
       />
-      <Work changeThemeRef2={changeThemeRef2} footerStick={footerStick} abilityDeckRef={abilityDeckRef}/>
+      <Work changeThemeRef2={changeThemeRef2} footerStick={footerStick} abilityDeckRef={abilityDeckRef} isInView4={isInView4}/>
+      {/* <Footer isInView4={isInView4} /> */}
+      <div style={{zIndex:"0"}}>
       <Footer isInView4={isInView4} />
+      </div>
 
     </main>
   );
