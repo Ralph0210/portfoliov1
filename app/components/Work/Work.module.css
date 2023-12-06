@@ -90,7 +90,7 @@
 }
 
 .moreWork {
-  display: none;
+  /* display: none; */
   font-size: 2rem;
   /* padding: 3rem 8rem; */
   width: 26rem;
