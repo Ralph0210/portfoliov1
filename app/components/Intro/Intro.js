@@ -55,8 +55,7 @@ const abilityCard = [
     title: "More About Me",
     description:
       "Check out my about page and see what tools I use.",
-    services: [<Link href='/about'>go
-  </Link>],
+    services: ["toAbout"],
   },
 ];
 
