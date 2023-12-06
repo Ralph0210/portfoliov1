@@ -50,7 +50,8 @@ const Footer = ({ isInView4 }) => {
     // <div >
     <div
       className={styles.footerContainer} ref={footerRef}
-      style={footerStick ? { position: "sticky", bottom: "0", zIndex:"0" } : {position: "static",}}
+      // style={footerStick ? { position: "sticky", bottom: "0", zIndex:"0" } : {}}
+      style={{position:"sticky", bottom:"0"}}
     >
       <div
         className={styles.footercta}
