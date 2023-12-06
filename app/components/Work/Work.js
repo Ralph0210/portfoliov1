@@ -118,7 +118,7 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef }) => {
     return () => ctx.revert();
   },[])
   return (
-    <div ref={changeThemeRef2} className={styles.workContainer}>
+    <div ref={changeThemeRef2} className={styles.workContainer} style={{zIndex:"5"}}>
       <p ref={footerStick} className={styles.selectedWork}>Selected Work</p>
       <div className={styles.workGallery}>
         <div className={styles.workGalleryTop}>
