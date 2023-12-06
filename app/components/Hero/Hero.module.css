@@ -71,7 +71,7 @@
 
 .heroTextContainer a{
     margin-top: 2rem;
-    font-size: 2rem;
+    font-size: clamp(1.4rem,1.5vw, 2rem);
     padding: 3rem 6.5rem;
     position: relative;
     width: fit-content;
@@ -99,4 +99,35 @@
   
   .bounds:hover {
     transform: scale(3);
+  }
+
+  @media (max-width: 1024px){
+    .a{
+        height: calc(30vw/4*6);
+        width: 30vw;
+    }
+  }
+  
+  @media (max-width: 768px){
+    .heroTextContainer a{
+        margin-top: 2rem;
+        padding: 2rem 3.5rem;
+    }
+  }
+  
+  @media (max-width: 430px){
+    .c {
+        flex-direction: column;
+    }
+    .heroTextContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .heroTextContainer > p {
+        width: 75%;
+    }
+    .a{
+        height: calc(75vw/4*6);
+        width: 75vw;
+    }
   }

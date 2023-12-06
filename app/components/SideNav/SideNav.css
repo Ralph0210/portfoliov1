@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10rem 10rem;
+    padding: 20% 15%;
 }
 
 .sideNav_navigationContainer span{
@@ -66,7 +66,7 @@
 }
 
 .sideNav_navigationContainer li span{
-    font-size: 4.8rem;
+    font-size: clamp(2.4rem, 4vw, 4.8rem);
     margin-bottom: 3rem;
     color: var(--text-color);
     position: relative;
@@ -89,7 +89,7 @@
 }
 
 .sideNavSocials a{
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 2rem, 2rem);
     position: relative;
     padding: 1rem 1.5rem;
     border-radius: 5rem;
@@ -115,4 +115,32 @@
 
 .sideNavBounds:hover{
     transform: scale(3);
+}
+
+@media (max-width: 1024px){
+
+}
+
+@media (max-width: 768px){
+    
+}
+
+@media (max-width: 430px){
+    .sideNavSocials a{
+        font-size: 1.4rem;
+        position: relative;
+        padding: 1rem 1rem;
+        border-radius: 5rem;
+        margin-left: 1.5rem;
+        /* border: 1px solid red; */
+    }
+    .sideNav_navigationContainer{
+        width: 100%;
+        height: 100%;
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 40% 15% 20% 15%;
+    }
 }

@@ -9,26 +9,65 @@ const SideNav = ({ sideNavOpened, setSideNavOpened }) => {
   const overlay = useRef();
   const inner = useRef(null);
 
+  // useLayoutEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     tl.current = gsap
+  //       .timeline({ paused: true })
+  //       .to(el.current, { width: "100%", duration: 0.1 })
+  //       .to(inner.current, {
+  //         duration: 0.3,
+  //         width: "40%",
+  //       })
+  //       .to(
+  //         overlay.current,
+  //         {
+  //           opacity: 0.4,
+  //           duration: 0.5,
+  //           ease: "power1.out",
+  //         },
+  //         "<"
+  //       );
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
+
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
+    const updateWidth = () => {
+      const newWidth = window.innerWidth <= 768 ? '60%' : '40%';
+
       tl.current = gsap
         .timeline({ paused: true })
-        .to(el.current, { width: "100%", duration: 0.1 })
+        .to(el.current, { width: '100%', duration: 0.1 })
         .to(inner.current, {
           duration: 0.3,
-          width: "40%",
+          width: newWidth,
         })
         .to(
           overlay.current,
           {
             opacity: 0.4,
             duration: 0.5,
-            ease: "power1.out",
+            ease: 'power1.out',
           },
-          "<"
+          '<'
         );
+    };
+
+    const ctx = gsap.context(() => {
+      updateWidth(); // Initial setup
+
+      // Update width on window resize
+      const resizeHandler = () => {
+        updateWidth();
+      };
+
+      window.addEventListener('resize', resizeHandler);
+
+      return () => {
+        window.removeEventListener('resize', resizeHandler);
+        ctx.revert();
+      };
     });
-    return () => ctx.revert();
   }, []);
 
   useEffect(() => {

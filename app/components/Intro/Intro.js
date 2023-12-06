@@ -53,7 +53,7 @@ const abilityCard = [
   },
 ];
 
-const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2 }) => {
+const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2, abilityDeckRef }) => {
   const aboutMeText =
     "I’m a freelance designer & developer from Taiwan. I create digital solutions that empower organizations committed to social responsibility and sustainability.";
   const [isFlipped, setIsFlipped] = useState([false, false, false, false]);
@@ -73,7 +73,7 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
   const galleryTopRef = useRef();
   const galleryBottomRef = useRef();
   // const aboutMeTextRef = useRef()
-  const abilityDeckRef = useRef();
+  
   // State to track the scroll position
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -119,14 +119,11 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       gsap.to(abilityDeckRef.current, {
-        x: '-25px',
+        x: 0,
         scrollTrigger: {
-          trigger: changeThemeRef.current,
-          start: "top 5%",
-          end: "bottom center",
-          pin: true,
-          pinSpacing: true,
-          // markers:true,
+          trigger: abilityDeckRef.current,
+          start: "top bottom",
+          end: "bottom 90%",
           scrub: 6,
         },
       });

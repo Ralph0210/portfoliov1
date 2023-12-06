@@ -116,12 +116,13 @@ button{
 }
 
 h1{
-  font-size: 4.8rem;
+  /* font-size: 4.8rem; */
+  font-size: clamp(3.2rem,4vw, 4.8rem);
   font-weight: 400;
 }
 
 p{
-  font-size: 2rem;
+  font-size: clamp(1.4rem,1.5vw, 2rem);
   line-height: 150%;
 }
 
@@ -130,3 +131,14 @@ p{
     color-scheme: dark;
   }
 } */
+
+@media (hover: none) {
+  .custom-cursor{
+    display: none;
+  }
+  
+  .cursor-text{
+    display: none;
+  }
+}
+

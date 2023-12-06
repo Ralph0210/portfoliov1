@@ -22,7 +22,7 @@ import Lenis from '@studio-freight/lenis'
 
 export default function Home() {
   const [sideNavOpened, setSideNavOpened] = useState(false);
-
+  const abilityDeckRef = useRef();
  const scroll = useRef()
   const arrowRef = useRef();
   const changeThemeRef = useRef(null);
@@ -113,8 +113,9 @@ export default function Home() {
         changeThemeRef3={changeThemeRef3}
         isInView={isInView}
         isInView2={isInView2}
+        abilityDeckRef={abilityDeckRef}
       />
-      <Work changeThemeRef2={changeThemeRef2} footerStick={footerStick} />
+      <Work changeThemeRef2={changeThemeRef2} footerStick={footerStick} abilityDeckRef={abilityDeckRef}/>
       <Footer isInView4={isInView4} />
 
     </main>

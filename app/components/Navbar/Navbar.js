@@ -67,14 +67,25 @@ function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
         onClick={() => setSideNavOpened(!sideNavOpened)}
         className={styles.sideNavContainer}
         style={
-          ThemeDark ? { transform:"scale(1)"} : {transform:"scale(0)"}
+          ThemeDark ? { transform: "scale(1)" } : { transform: "scale(0)" }
         }
-      >{sideNavOpened ? <Icon  icon="iconamoon:arrow-left-2-light" rotate={2} className={styles.menu} />
-    :<Icon icon="ci:menu-duo-lg" className={styles.menu} />}
+      >
+        {sideNavOpened ? (
+          <Icon
+            icon="iconamoon:arrow-left-2-light"
+            rotate={2}
+            className={styles.menu}
+          />
+        ) : (
+          <Icon icon="ci:menu-duo-lg" className={styles.menu} />
+        )}
         <div className={styles.bounds}></div>
       </div>
 
-      <SideNav sideNavOpened={sideNavOpened} setSideNavOpened={setSideNavOpened} />
+      <SideNav
+        sideNavOpened={sideNavOpened}
+        setSideNavOpened={setSideNavOpened}
+      />
     </>
   );
 }

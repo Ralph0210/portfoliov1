@@ -1,6 +1,6 @@
 .footerContainer{
     width: 100%;
-    min-height: 90dvh;
+    min-height: 80dvh;
     background-color: var(--text-color);
     bottom: 0;
     z-index: 0;
@@ -13,13 +13,13 @@
 
 .footercta{
     display: flex;
-    margin: 20rem 12rem 0 12rem;
+    margin: 10rem 3rem 0 3rem;
     gap: 1.5rem;
     align-items: center;
 }
 
 .cta{
-    font-size: 9.6rem;
+    font-size: clamp(3.6rem, 6vw, 9.6rem);
     color: var(--text-color-bright);
     margin-right: 2rem;
     flex-wrap: nowrap;
@@ -59,9 +59,9 @@
   }
 
 .sayHi{
-    font-size: 3.2rem;
+    font-size: clamp(2.4rem, 3vw, 3.6rem);
     color: var(--unimportantText-color);
-    padding-left: 23.2rem;
+    padding-left: 14rem;
     margin-top: -8.5rem;
 }
 

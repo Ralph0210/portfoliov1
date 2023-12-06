@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import styles from "./Work.module.css";
 import Image from "next/image";
 import scf from "../../../public/gallery/scf.png";
 import pl from "../../../public/gallery/pl.png";
-import { useScroll } from "framer-motion";
+import gsap from "gsap";
 import Link from "next/link";
 
 const LargeWorkCard = ({
@@ -91,7 +91,7 @@ const SmallWorkCard = ({
   );
 };
 
-const Work = ({ changeThemeRef2, footerStick }) => {
+const Work = ({ changeThemeRef2, footerStick, abilityDeckRef }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const handleMouseEnter = (cardIndex) => {
@@ -101,6 +101,22 @@ const Work = ({ changeThemeRef2, footerStick }) => {
   const handleMouseLeave = () => {
     setHoveredCard(null);
   };
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.to(changeThemeRef2.current, {
+        y: 0,
+        scrollTrigger: {
+          trigger: abilityDeckRef.current,
+          start: "top 80%",
+          end: "top 40%",
+          scrub: 4,
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  },[])
   return (
     <div ref={changeThemeRef2} className={styles.workContainer}>
       <p ref={footerStick} className={styles.selectedWork}>Selected Work</p>
