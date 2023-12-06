@@ -51,6 +51,13 @@ const abilityCard = [
       "I bring authenticity and purpose to every brand. Let's collaborate to tell your unique brand story.",
     services: ["Brand Strategy", "SEO / Google Ads"],
   },
+  {
+    title: "More About Me",
+    description:
+      "Check out my about page and see what tools I use.",
+    services: [<Link href='/about'>go
+  </Link>],
+  },
 ];
 
 const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2, abilityDeckRef }) => {
@@ -158,7 +165,7 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
         opacity: 1,
         scrollTrigger: {
           trigger: helloRef.current,
-          start: "top 80%",
+          start: "top bottom",
           end: "top center",
           // markers:true,
           scrub: 4,
@@ -203,6 +210,7 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
           Currently Living in Austin, TX
         </p>
 
+            
         <div ref={abilityDeckRef} className={styles.abilityDeckContainer}>
           <div className={styles.heroArrow}>
             <Icon
@@ -212,6 +220,11 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
               aria-label="Scroll down"
             />
           </div>
+          <p className={styles.touchScreenTip}><Icon
+              icon="ph:arrow-up-light"
+              style={{ fontSize: "2rem", transform: "rotate(210deg)" }}
+              aria-label="Scroll down"
+            />Tap the cards to see what&apos;s behind</p>
           {abilityCard.map((item, index) => {
             return (
               <div
@@ -229,9 +242,12 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
                     </p>
                   </div>
                   <div className={styles.abilityCardBack}>
-                    <p className={styles.abilityService}>
+                    {item.title === "More About Me" ? (<p className={styles.abilityService}>
+                      Go to my about page
+                    </p>): (<p className={styles.abilityService}>
                       I can help you with...
-                    </p>
+                    </p>)}
+                    
                     <div className={styles.servicesContainer}>
                       {item.services.map((service, index) => (
                         <div key={index} style={{ paddingBottom: "10px" }}>
@@ -245,10 +261,10 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
               </div>
             );
           })}
-          <Link href='/about' className={`${styles.aboutMeCard} ${styles.go}`}>
+          {/* <Link href='/about' className={`${styles.aboutMeCard} ${styles.go}`}>
             <p className={styles.abilityTitle}>More About Me</p>
             <p className={styles.abilityDescription}>Check out my about page and see what tools I use.</p>
-          </Link>
+          </Link> */}
         </div>
       </div>
       {/* <Work /> */}
