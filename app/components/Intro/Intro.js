@@ -262,7 +262,7 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
           Currently Living in Austin, TX
         </p>
 
-            
+
         <div ref={abilityDeckRef} className={styles.abilityDeckContainer}>
           <div className={styles.heroArrow}>
             <Icon
@@ -299,7 +299,7 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
                     </p>): (<p className={styles.abilityService}>
                       I can help you with...
                     </p>)}
-                    
+
                     <div className={styles.servicesContainer}>
                       {item.services.map((service, index) => (
                         <div key={index} style={{ paddingBottom: "10px" }}>
