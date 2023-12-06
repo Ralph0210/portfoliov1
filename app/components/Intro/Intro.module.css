@@ -416,6 +416,6 @@ margin-top: auto;
     }
     .abilityCard:hover{
         margin-top: 0;
-        height: 35rem;
+        height: 80vw;
     }
 }
