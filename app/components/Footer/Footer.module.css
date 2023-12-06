@@ -1,6 +1,6 @@
 .footerContainer{
     width: 100%;
-    min-height: 80dvh;
+    min-height: 100vh;
     background-color: var(--text-color);
     bottom: 0;
     z-index: 0;
