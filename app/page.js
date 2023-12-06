@@ -36,26 +36,26 @@ export default function Home() {
   const footerStick = useRef(null);
   const isInView4 = useInView(footerStick);
 
-  useEffect(() => {
-    const lenis = new Lenis({duration: 1.5, wheelMultiplier:1.1})
+  // useEffect(() => {
+  //   const lenis = new Lenis({duration: 1.5, wheelMultiplier:1.1})
 
-    lenis.on('scroll', e => {
-      // console.log(e)
-    })
+  //   lenis.on('scroll', e => {
+  //     // console.log(e)
+  //   })
 
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+  //   function raf(time) {
+  //     lenis.raf(time)
+  //     requestAnimationFrame(raf)
+  //   }
     
-    requestAnimationFrame(raf)
+  //   requestAnimationFrame(raf)
 
-    sideNavOpened ? lenis.stop() : lenis.start()
+  //   sideNavOpened ? lenis.stop() : lenis.start()
 
-    return () => {
-      lenis.destroy()
-    }
-  },[sideNavOpened])
+  //   return () => {
+  //     lenis.destroy()
+  //   }
+  // },[sideNavOpened])
 
   // useEffect(() => {
   //   let scroll
