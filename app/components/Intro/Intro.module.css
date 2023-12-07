@@ -83,6 +83,7 @@
 
 .hello{
     font-size: clamp(2.4rem, 2.5vw, 3.8rem);
+    /* font-size: clamp(1.6rem,1.5vw, 2rem); */
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -156,7 +157,7 @@ color: var(--background-color);
     flex-direction: column;
     padding: 3rem;
     /* justify-content: space-between; */
-    transition: margin-top 0.5s ease-in-out, height 0.5s ease-in-out,transform 0.8s;
+    transition: margin-top 0.5s ease-in-out, height 0.5s ease-in-out;
     margin-top: 0;
 }
 
@@ -414,5 +415,15 @@ margin-top: auto;
     .abilityCard:hover{
         margin-top: 0;
         height: 80vw;
+    }
+    .place{
+        font-size: clamp(1.6rem,1.5vw, 2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 5rem;
+    color: var(--background-color);
+    /* text-align: center; */
+    opacity: 0;
     }
 }

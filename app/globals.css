@@ -11,7 +11,7 @@
   --text-color-dark: #010E02;
   --text-color-bright: #F5EFE1;
   --underline-color: #000;
-  --background-color-invert:#1C1D20;
+  --background-color-invert:#344C36;
   --unimportantText-color:rgba(249, 245, 236, 0.75);
   --border-alpha: rgba(249, 245, 236, 0.5);
   --border-alpha-invert: rgba(10, 38, 13, 0.5);
@@ -26,12 +26,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --unimportantText-color:rgba(0, 0, 0, 0.75);
+    --unimportantText-color:rgba(52, 76, 54, 0.75);
     --background-color: #344C36;
     --text-color: #F9F5EC;
     --underline-color: #fff;
-    --background-color-invert:#fff;
-    --text-color-bright: #0A260D;
+    --background-color-invert:#F9F5EC;
+    --text-color-bright: #344C36;
     --text-color-dark: #F9F5EC;
     /* Update background color for dark theme */
     --background-start-rgb: 30, 30, 30; /* Dark background color (start) */

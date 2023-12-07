@@ -7,6 +7,7 @@ import styles2 from "../components/Work/Work.module.css";
 import stylesNav from "../components/Navbar/Navbar.module.css";
 import stylesHero from '../components/Hero/Hero.module.css'
 import stylesFooter from "../components/Footer/Footer.module.css";
+import stylesFooterBottom from '../components/FooterBottom/FooterBottom.module.css'
 import { Icon } from "@iconify/react";
 
 const Cursor = ({ sideNavOpened }) => {
@@ -21,6 +22,7 @@ const Cursor = ({ sideNavOpened }) => {
   const [isCopied, setIsCopied] = useState(false)
   const [isHoveredcta, setIsHoveredcta] = useState(false)
   const [isHoveredSideNavButton, setIsHoveredSideNavButton] = useState(false)
+  const [isHoveredFooterButton, setIsHoveredFooterButton] = useState(false)
   const [cursortext, setCursorText] = useState();
   let scale = 1;
 
@@ -34,6 +36,7 @@ const Cursor = ({ sideNavOpened }) => {
     const navButtons = document.querySelectorAll(`.${stylesNav.bounds}`);
     const footerButtons = document.querySelectorAll(`.${stylesFooter.bounds}`);
     const footerContactsCard = document.querySelectorAll(`.${stylesFooter.contactsCard}`)
+    const footerBottomButtons = document.querySelectorAll(`.${stylesFooterBottom.bounds}`)
     const sideNavButtons = document.querySelectorAll('.sideNavBounds')
     const cursorText = document.querySelector(".cursor-text");
 
@@ -48,6 +51,7 @@ const Cursor = ({ sideNavOpened }) => {
         (isHoveredNavButton && e.target.classList.contains(stylesNav.bounds)) ||
         (isHoveredArrow && e.target.classList.contains(stylesFooter.bounds)) ||
         (isHoveredcta && e.target.classList.contains(stylesHero.bounds)) ||
+        (isHoveredFooterButton && e.target.classList.contains(stylesFooterBottom.bounds)) ||
         (isHoveredSideNavButton && e.target.classList.contains('sideNavBounds'))
       ) {
         const button = e.target;
@@ -209,6 +213,14 @@ const Cursor = ({ sideNavOpened }) => {
         setIsHoveredSideNavButton(false);
     }
 
+    const onMouseEnterFooterButton = (e) => {
+        setIsHoveredFooterButton(true);
+    }
+
+    const onMouseLeaveFooterButton = (e) => {
+        setIsHoveredFooterButton(false);
+    }
+
     const onClick = () => {
       gsap.to(cursor, {
         scale: scale * 0.8,
@@ -252,6 +264,11 @@ const Cursor = ({ sideNavOpened }) => {
     footerContactsCard.forEach((button) => {
         button.addEventListener("mouseenter", onMouseEnterContactsCard);
       button.addEventListener("mouseleave", onMouseLeaveContactsCard);
+    })
+
+    footerBottomButtons.forEach((button) => {
+        button.addEventListener("mouseenter", onMouseEnterFooterButton);
+      button.addEventListener("mouseleave", onMouseLeaveFooterButton);
     })
 
     if(aboutMeCard){
@@ -302,6 +319,12 @@ const Cursor = ({ sideNavOpened }) => {
     sideNavButtons.forEach((button) => {
       button.removeEventListener("mouseenter", onMouseEnterSideNavButton);
       button.removeEventListener("mouseleave", onMouseLeaveSideNavButton)})
+
+      footerBottomButtons.forEach((button) => {
+        button.removeEventListener("mouseenter", onMouseEnterFooterButton);
+      button.removeEventListener("mouseleave", onMouseLeaveFooterButton);
+    })
+
     if(aboutMeCard){
         aboutMeCard.removeEventListener("mouseenter", onMouseEnterAboutMeCard);
         aboutMeCard.removeEventListener("mouseleave", onMouseLeaveAboutMeCard);}
@@ -311,7 +334,7 @@ const Cursor = ({ sideNavOpened }) => {
         cta.removeEventListener("mouseenter", onMouseEntercta);
         cta.removeEventListener("mouseleave", onMouseLeavecta);
     }
-  }, [sideNavOpened, isHoveredButton,isHoveredAboutMeCard, isHoveredNavButton, isHoveredCard, isHoveredWork, isHoveredArrow, isHoveredContactsCard, isCopied, isHoveredcta, isHoveredSideNavButton]);
+  }, [sideNavOpened, isHoveredButton,isHoveredAboutMeCard, isHoveredNavButton, isHoveredCard, isHoveredWork, isHoveredArrow, isHoveredContactsCard, isCopied, isHoveredcta, isHoveredSideNavButton, isHoveredFooterButton]);
 
   return (
     <div id="custom-cursor" className="custom-cursor">

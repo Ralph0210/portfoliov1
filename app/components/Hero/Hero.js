@@ -6,9 +6,9 @@ import styles from "./Hero.module.css";
 import { Icon } from "@iconify/react";
 import SplitType from "split-type";
 import gsap from "gsap";
-import { Lora } from "next/font/google";
 import Link from "next/link";
 
+import { Lora } from "next/font/google";
 const lora = Lora({ subsets: ['latin'] })
 
 const Hero = ({ ThemeDark }) => {

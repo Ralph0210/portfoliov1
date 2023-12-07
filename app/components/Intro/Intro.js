@@ -36,32 +36,32 @@ const abilityCard = [
   {
     title: "UI/UX Design",
     description:
-      "From visually stunning websites to user-centric interfaces, I create solutions that leave a lasting impact.",
+      "I create visually appealing interfaces with a focus on user-centric experiences that address real-world challenges.",
     services: ["User Interface Design", "User Experience Design", "Wireframing & Prototyping", "Interaction Design"],
   },
   {
-    title: "Web Development",
+    title: "Website Development",
     description:
-      "I can help turn your vision into a captivating and efficient digital reality.",
+      "I develop engaging digital presence that help amplify your mission",
     services: ["Front-End Development", "Full-Stack Development", "API Development"],
   },
   {
     title: "Branding",
     description:
-      "I bring authenticity and purpose to every brand. Let's collaborate to tell your unique brand story.",
+      "I strive to create brands that embody ethical values and resonate with diverse audiences.",
     services: ["Brand Strategy", "SEO / Google Ads"],
   },
   {
     title: "More About Me",
     description:
-      "Check out my about page and see what tools I use.",
+      "More about me and the tools I use",
     services: ["toAbout"],
   },
 ];
 
 const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2, abilityDeckRef }) => {
   const aboutMeText =
-    "I’m a freelance designer & developer from Taiwan. I create digital solutions that empower organizations committed to social responsibility and sustainability.";
+    "I’m a freelance designer & developer from Taiwan. My background in sociology and computer science gives me a unique set of skills and perspectives for creative solutions.";
   const [isFlipped, setIsFlipped] = useState([false, false, false, false]);
   const textRef = useRef();
   const helloRef = useRef();
@@ -242,6 +242,11 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
     bodyElement.classList.add('dark-mode-for-light')}
     else{bodyElement.classList.remove('dark-mode-for-light');}
   }
+
+  return () => {
+    const bodyElement = document.querySelector('body');
+    bodyElement.classList.remove('dark-mode-for-light');
+  };
   }, [isInView, isInView2])
 
   return (
@@ -253,7 +258,7 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
         </p>
         <div ref={textRef} className="aboutMeText">
           {aboutMeText.split(" ").map((char, index) => (
-            <span className="char" key={index}>
+            <span className='char' key={index}>
               {char}
             </span>
           ))}

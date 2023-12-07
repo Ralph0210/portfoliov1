@@ -5,12 +5,33 @@ import meIcon from "../../../public/heroIcon.png";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useInView } from "framer-motion";
+import { Lora } from "next/font/google";
+import FooterBottom from "../FooterBottom/FooterBottom";
+const lora = Lora({ subsets: ['latin'] })
 
 const email = "info@ralphchang.com";
 const number = "+1 512 466 9511";
 
 const Footer = ({ isInView4 }) => {
   const [time, setTime] = useState();
+    useEffect(() => {
+        const updateTime = () => {
+          const formattedTime = new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+          setTime(formattedTime);
+        };
+    
+        // Update the time initially
+        updateTime();
+    
+        // Update the time every minute (if desired)
+        const intervalId = setInterval(updateTime, 60000); // Update every 60 seconds
+    
+        // Cleanup the interval when the component unmounts
+        return () => clearInterval(intervalId);
+      }, []);
   const [isctaHovered, setIsctaHovered] = useState(false);
   const [footerStick, setFooterStick] = useState(false)
   
@@ -28,24 +49,7 @@ const Footer = ({ isInView4 }) => {
     }
   }, [isInView4, isInView])
 
-  useEffect(() => {
-    const updateTime = () => {
-      const formattedTime = new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-      setTime(formattedTime);
-    };
 
-    // Update the time initially
-    updateTime();
-
-    // Update the time every minute (if desired)
-    const intervalId = setInterval(updateTime, 60000); // Update every 60 seconds
-
-    // Cleanup the interval when the component unmounts
-    return () => clearInterval(intervalId);
-  }, []);
   return (
     // <div >
     <div
@@ -67,7 +71,7 @@ const Footer = ({ isInView4 }) => {
         />
         </div>
         <p
-          className={styles.cta}
+          className={`${lora.className} ${styles.cta}`}
           style={isctaHovered ? { marginRight: "5rem" } : {}}
         >
           Let&apos;s work <br className={styles.br}/>together
@@ -98,6 +102,7 @@ const Footer = ({ isInView4 }) => {
         </button>
       </div>
       <div className={styles.divider}></div>
+      {/* <FooterBottom /> */}
       <div className={styles.footerBottom}>
         <div className={styles.footerLeft}>
         <div>
