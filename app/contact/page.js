@@ -58,8 +58,8 @@ const page = () => {
           </div>
           <Formik
             initialValues={{
-              email: "",
               name: "",
+              email: "",
               org: "",
               service: "",
               message: "",

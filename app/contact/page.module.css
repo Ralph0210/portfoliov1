@@ -139,6 +139,7 @@
 @media (max-width: 430px){
     .contactContainer{
         flex-direction: column-reverse;
+        padding: 0 3rem;
     }
 
     .iconContainer{
@@ -160,10 +161,31 @@
     }
 
     .contactInfoContainer{
-        padding: 5rem 10% 3rem 10%;
+        padding: 5rem 0 3rem 0;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
+    }
+
+    .formContainer{
+        flex: 0.7;
+        /* border: 1px solid blue; */
+        padding: 0 0;
+    }
+
+    .form button{
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        align-self: center;
+        margin-top: 2rem;
+        font-size: clamp(1.4rem,1.5vw, 2rem);
+        padding: 3rem 5.25rem;
+        position: relative;
+        width: fit-content;
+        border-radius: 5rem;
+        color: #F9F5EC;
+        background-color: var(--primary-color);
+        border: none;
     }
 }
