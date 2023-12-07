@@ -31,6 +31,7 @@
 
 .form label{
     font-size: clamp(1.4rem,1.5vw, 2rem);
+    width: 100%;
 }
 
 .divider{
@@ -56,6 +57,7 @@
     outline: none;
     background-color: var(--background-color);
     color: var(--text-color);
+    width: 100%;
 }
 
 .formDiv > div > div{
@@ -123,6 +125,7 @@
 
 .detailsContainer a{
     font-size: clamp(1.2rem,1.2vw, 1.6rem);
+    text-decoration: underline;
 }
 
 .detailsContainer button{
@@ -130,6 +133,7 @@
     border: none;
     background-color: var(--background-color);
     color: var(--text-color);
+    text-decoration: underline;
 }
 
 .titleContainer2{

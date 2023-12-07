@@ -145,7 +145,7 @@ const page = () => {
                     <Field
                   type="text"
                   name="message"
-                  placeholder="Hi Ralph, can you help me with..."
+                  placeholder="Hi Ralph, can you..."
                 />
                 <ErrorMessage name="message" component="div" />
                   </div>

@@ -1,0 +1,116 @@
+.wrapper{
+    width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container{
+    display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+  grid-template-rows: repeat(3, 1fr); /* 3 rows with equal height */
+  gap: 6.5rem;
+  width: 100vw;
+  height: 100vh;
+  /* overflow:auto; */
+  transform: translate(-100px, -200px);
+  position: relative;
+  transition: all ease-in-out;
+}
+
+.container2{
+    display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+  grid-template-rows: repeat(3, 1fr); /* 3 rows with equal height */
+  gap: 6.5rem;
+  width: 100vw;
+  height: 100vh;
+  /* overflow:auto; */
+  /* transform: translate(-100px, -200px); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all ease-in-out;
+  /* background-color: blue; */
+}
+
+.imageContainer2{
+    width: 35.5rem;
+    height: 42.3rem;
+    background-color: transparent;
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+.imageContainer{
+    overflow: hidden;
+    width: 35.5rem;
+    height: 42.3rem;
+    position: relative;
+}
+
+.imageContainer img{
+    filter: saturate(0%);
+    transition: filter 0.5s ease-in-out;
+}
+
+.imageContainer img:hover{
+    filter: saturate(100%);
+}
+
+/* .imageContainer:hover{
+    .imageContainer img{
+        filter: saturate(100%);
+    }
+} */
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15%;
+}
+
+.textContainer h1{
+    margin-bottom: 1rem;
+}
+
+.textContainer span{
+    margin-top: auto;
+    font-size: clamp(1.2rem,1.2vw, 1.6rem);
+}
+
+.link{
+    text-decoration: underline;
+}
+
+@media (max-width: 430px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+        grid-template-rows: repeat(3, 1fr); /* 3 rows with equal height */
+        gap: 0.5rem;
+        width: 100vw;
+        height: 100vh;
+        /* overflow:auto; */
+        transform: translate(-100px, 0px) !important;
+        position: relative;
+        transition: all ease-in-out;
+    }
+
+    .imageContainer{
+        overflow: clip;
+        width: 25rem;
+        height: 25rem;
+        position: relative;
+    }
+
+    .imageContainer img{
+        width: 25rem !important;
+        height: 25rem !important;
+        transform: translate(0, 0) !important;
+    }
+
+    .textContainer span{
+        margin-top: auto;
+        margin-bottom: 2.5rem;
+    }
+}
