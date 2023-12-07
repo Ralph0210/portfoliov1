@@ -52,7 +52,7 @@ const page = () => {
         <div className={styles.formContainer}>
           <div className={styles.titleContainer}>
             <h1 className={` ${styles.title} ${lora.className}`}>
-              Let's start a <br />
+              Let&apos;s start a <br />
               project together
             </h1>
           </div>
@@ -89,7 +89,7 @@ const page = () => {
                 <div className={styles.formDiv}>
                   <span>01</span>
                   <div>
-                    <label htmlFor="name">What's your name?</label>
+                    <label htmlFor="name">What&apos;s your name?</label>
                     <Field type="text" name="name" placeholder="Your Name" />
                     <ErrorMessage name="name" component="div" />
                   </div>
@@ -100,7 +100,7 @@ const page = () => {
                 <div className={styles.formDiv}>
                   <span>02</span>
                   <div>
-                    <label htmlFor="email">What's your Email?</label>
+                    <label htmlFor="email">What&apos;s your Email?</label>
                     <Field type="email" name="email" placeholder="Your Email" />
                     <ErrorMessage name="email" component="div" />
                   </div>
@@ -170,7 +170,7 @@ const page = () => {
           </div>
           <div className={styles.titleContainer2}>
             <h1 className={` ${styles.title} ${lora.className}`}>
-              Let's start a <br />
+              Let&apos;s start a <br />
               project together
             </h1>
           </div>
