@@ -94,7 +94,6 @@ export default function Home() {
 
   return (
     <main
-    data-scroll-container
       // style={sideNavOpened ? { overflow: "hidden", pointerEvents: "none" } : {}}
       className={styles.main}
     >

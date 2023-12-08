@@ -1,5 +1,5 @@
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Cursor from "../utils/Cursor";
 import Navbar from "../components/Navbar/Navbar";
 import styles from "./page.module.css";
@@ -8,11 +8,34 @@ import FooterBottom from "../components/FooterBottom/FooterBottom";
 import Image from "next/image";
 import meIcon from "../../public/heroIcon.png";
 import Link from "next/link";
+import Lenis from '@studio-freight/lenis'
 
 import { Lora } from "next/font/google";
 const lora = Lora({ subsets: ["latin"] });
 
-const page = () => {
+const Page = () => {
+  const [sideNavOpened, setSideNavOpened] = useState(false);
+  useEffect(() => {
+    const lenis = new Lenis({duration: 1.5, wheelMultiplier:1.1})
+  
+    lenis.on('scroll', e => {
+      // console.log(e)
+    })
+  
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+  
+    requestAnimationFrame(raf)
+  
+    sideNavOpened ? lenis.stop() : lenis.start()
+  
+    return () => {
+      lenis.destroy()
+    }
+  },[sideNavOpened])
+
   const sendDataToEmailApi = async (values) => {
     try {
       const response = await fetch('https://formspree.io/f/xeqbyapk', {
@@ -47,7 +70,8 @@ const page = () => {
   return (
     <div>
       <Cursor />
-      <Navbar />
+      <Navbar sideNavOpened={sideNavOpened}
+        setSideNavOpened={setSideNavOpened}/>
       <div className={styles.contactContainer}>
         <div className={styles.formContainer}>
           <div className={styles.titleContainer}>
@@ -206,4 +230,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

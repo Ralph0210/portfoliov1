@@ -178,7 +178,7 @@
 
     .socialsContainer{
         /* flex-direction: column; */
-        gap: 0rem;
+        gap: 1rem;
     }
 
     .footerBottom{
@@ -198,5 +198,29 @@
 
     .socials{
         margin-left: 0;
+    }
+
+    .footerBottom span{
+        color: var(--border-alpha-invert);
+        font-size: clamp(1rem,1.2vw, 1.4rem);
+        padding: 0.7rem 0 1.5rem;
+    }
+    
+    .footerBottom p{
+        color: var(--background-color-invert);
+        font-size: clamp(1.4rem,1.5vw, 2rem);
+        position: relative;
+        padding: 0.7rem 0 1.5rem;
+    }
+    
+    .footerBottom a{
+        color: var(--background-color-invert);
+        font-size: clamp(1.4rem,1.5vw, 2rem);
+        position: relative;
+        padding: 0.7rem 0 1.5rem;
+    }
+
+    .footerLeft{
+        gap: 1rem;
     }
 }

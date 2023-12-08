@@ -62,15 +62,15 @@
 
 .h1{
     max-width: 75%;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .heroTextContainer > p {
-    width: 80%;
+    width: 50%;
 }
 
 .heroTextContainer a{
-    margin-top: 2rem;
+    margin-top: 5rem;
     font-size: clamp(1.4rem,1.5vw, 2rem);
     padding: 3rem 5.25rem;
     position: relative;

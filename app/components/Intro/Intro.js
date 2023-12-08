@@ -43,7 +43,7 @@ const abilityCard = [
     title: "Website Development",
     description:
       "I develop engaging digital presence that help amplify your mission",
-    services: ["Front-End Development", "Full-Stack Development", "API Development"],
+    services: ["Front-End Development", "Full-Stack Development", "Webflow Development"],
   },
   {
     title: "Branding",
@@ -61,7 +61,7 @@ const abilityCard = [
 
 const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2, abilityDeckRef }) => {
   const aboutMeText =
-    "I’m a freelance designer & developer from Taiwan. My background in sociology and computer science gives me a unique set of skills and perspectives for creative solutions.";
+    "I’m a designer & developer from Taiwan. I explore the intersection of human experience and technology to create purposeful, user-centric solutions that make positive differences.";
   const [isFlipped, setIsFlipped] = useState([false, false, false, false]);
   const textRef = useRef();
   const helloRef = useRef();
