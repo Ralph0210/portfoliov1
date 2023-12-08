@@ -442,7 +442,7 @@ const Page = () => {
           <div className={styles.divider}></div>
           <div className={styles.resumeHeader}>
             <a
-              href={resumeURL}
+              href='/resume-Ralph.pdf'
               download="Ralph_Chang_Resume_2023"
               className={` ${lora.className} ${styles.h3}`}
             >

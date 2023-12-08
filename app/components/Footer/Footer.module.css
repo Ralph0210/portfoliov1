@@ -1,6 +1,7 @@
 .footerContainer{
     width: 100%;
-    min-height: 80vh;
+    /* min-height: 80vh; */
+    height: 100%;
     background-color: var(--text-color);
     bottom: 0;
     z-index: 0;
@@ -105,7 +106,7 @@
 
 .footerBottom span{
     color: var(--border-alpha);
-    font-size: clamp(1rem,1.2vw, 2rem);
+    font-size: clamp(1rem,1.2vw, 1.2rem);
     padding: 0.7rem 1.5rem;
 }
 

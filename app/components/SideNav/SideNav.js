@@ -121,7 +121,7 @@ const SideNav = ({ sideNavOpened, setSideNavOpened }) => {
           
           <div className='sideNavSocials'>
           <span>SOCIALS</span>
-          <div style={{display:"flex", gap:"1rem", flexDirection:'row'}}>
+          <div style={{display:"flex", flexDirection:'row'}}>
           <Link href="https://www.linkedin.com/in/ralph-chang-5a49811a3/" target='_blank'>LinkedIn<div className='sideNavBounds'></div></Link>
           <Link href="https://www.instagram.com/ralph_cyh/" target='_blank'>Instagram<div className='sideNavBounds'></div></Link>
           </div>

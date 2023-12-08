@@ -74,7 +74,7 @@ line-height: 150%
     position: relative;
     background-color: var(--background-color);
     height: 100%;
-    z-index: 10;
+    z-index: 5;
     border-radius: 0 0 5rem 5rem;
     /* border: 1px solid blue; */
     padding: 5% 6.5%;
@@ -297,6 +297,7 @@ line-height: 150%
     .chooseContainer{
         flex-direction: column;
         gap: 1rem;
+        align-items: flex-start;
     }
     .topContainer{
         /* margin-top: 5rem; */
@@ -321,5 +322,29 @@ line-height: 150%
         z-index: 5;
         background-color: var(--background-color);
         flex-direction: column;
+    }
+    .divider{
+        width: 100%;
+        height: 1px;
+        background-color: var(--border-alpha-invert-light);
+        margin-top:3rem;
+    }
+    .bottomContainer{
+        position: relative;
+        background-color: var(--background-color);
+        height: 100%;
+        z-index: 5;
+        border-radius: 0 0 5rem 5rem;
+        /* border: 1px solid blue; */
+        padding: 5% 10%;
+        /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */
+    }
+    .abilityContainer{
+        margin: 0 0%;
+        /* border: 1px solid black; */
+        height: 100%;
+    }
+    .resumeHeader a{
+        margin-bottom: 3rem;
     }
 }
