@@ -1,6 +1,7 @@
 import { Inter, Rubik, Lora } from 'next/font/google'
 import './globals.css'
 import localFont from 'next/font/local'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Cursor from './utils/Cursor'
 
 const inter = Inter({ subsets: ['latin'] })

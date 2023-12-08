@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.29",
+    "@vercel/speed-insights": "^1.0.0",
     "formik": "^2.4.5",
     "framer-motion": "^10.16.5",
     "gsap": "^3.12.2",
