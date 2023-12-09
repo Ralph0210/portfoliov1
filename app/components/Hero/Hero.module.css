@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 10%;
+    margin-left: 15%;
     margin-right: 10%;
     gap: 0.5rem;
     background-blend-mode: multiply;
@@ -61,12 +61,12 @@
 }
 
 .h1{
-    max-width: 75%;
+    max-width: 80%;
     padding-bottom: 1rem;
 }
 
 .heroTextContainer > p {
-    width: 50%;
+    width: 70%;
 }
 
 .heroTextContainer a{
@@ -129,5 +129,9 @@
     .a{
         height: calc(75vw/4*6);
         width: 75vw;
+    }
+    .h1{
+        max-width: 75%;
+        padding-bottom: 1rem;
     }
   }

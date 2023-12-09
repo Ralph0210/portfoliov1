@@ -8,6 +8,7 @@ import stylesNav from "../components/Navbar/Navbar.module.css";
 import stylesHero from '../components/Hero/Hero.module.css'
 import stylesFooter from "../components/Footer/Footer.module.css";
 import stylesFooterBottom from '../components/FooterBottom/FooterBottom.module.css'
+import stylesContact from '../contact/page.module.css'
 import { Icon } from "@iconify/react";
 
 const Cursor = ({ sideNavOpened }) => {
@@ -23,6 +24,7 @@ const Cursor = ({ sideNavOpened }) => {
   const [isHoveredcta, setIsHoveredcta] = useState(false)
   const [isHoveredSideNavButton, setIsHoveredSideNavButton] = useState(false)
   const [isHoveredFooterButton, setIsHoveredFooterButton] = useState(false)
+  const [isHoveredContact, setIsHoveredContact] = useState(false)
   const [cursortext, setCursorText] = useState();
   let scale = 1;
 
@@ -37,6 +39,7 @@ const Cursor = ({ sideNavOpened }) => {
     const footerButtons = document.querySelectorAll(`.${stylesFooter.bounds}`);
     const footerContactsCard = document.querySelectorAll(`.${stylesFooter.contactsCard}`)
     const footerBottomButtons = document.querySelectorAll(`.${stylesFooterBottom.bounds}`)
+    const contact = document.querySelectorAll(`.${stylesContact.bounds}`)
     const sideNavButtons = document.querySelectorAll('.sideNavBounds')
     const cursorText = document.querySelector(".cursor-text");
 
@@ -52,6 +55,7 @@ const Cursor = ({ sideNavOpened }) => {
         (isHoveredArrow && e.target.classList.contains(stylesFooter.bounds)) ||
         (isHoveredcta && e.target.classList.contains(stylesHero.bounds)) ||
         (isHoveredFooterButton && e.target.classList.contains(stylesFooterBottom.bounds)) ||
+        (isHoveredContact && e.target.classList.contains(stylesContact.bounds)) ||
         (isHoveredSideNavButton && e.target.classList.contains('sideNavBounds'))
       ) {
         const button = e.target;
@@ -221,6 +225,14 @@ const Cursor = ({ sideNavOpened }) => {
         setIsHoveredFooterButton(false);
     }
 
+    const onMouseEnterContact = (e) => {
+        setIsHoveredContact(true);
+    }
+
+    const onMouseLeaveContact = (e) => {
+        setIsHoveredContact(false);
+    }
+
     const onClick = () => {
       gsap.to(cursor, {
         scale: scale * 0.8,
@@ -269,6 +281,11 @@ const Cursor = ({ sideNavOpened }) => {
     footerBottomButtons.forEach((button) => {
         button.addEventListener("mouseenter", onMouseEnterFooterButton);
       button.addEventListener("mouseleave", onMouseLeaveFooterButton);
+    })
+
+    contact.forEach((button) => {
+        button.addEventListener("mouseenter", onMouseEnterContact);
+      button.addEventListener("mouseleave", onMouseLeaveContact);
     })
 
     if(aboutMeCard){
@@ -325,6 +342,11 @@ const Cursor = ({ sideNavOpened }) => {
       button.removeEventListener("mouseleave", onMouseLeaveFooterButton);
     })
 
+    contact.forEach((button) => {
+        button.removeEventListener("mouseenter", onMouseEnterContact);
+      button.removeEventListener("mouseleave", onMouseLeaveContact);
+    })
+
     if(aboutMeCard){
         aboutMeCard.removeEventListener("mouseenter", onMouseEnterAboutMeCard);
         aboutMeCard.removeEventListener("mouseleave", onMouseLeaveAboutMeCard);}
@@ -334,7 +356,7 @@ const Cursor = ({ sideNavOpened }) => {
         cta.removeEventListener("mouseenter", onMouseEntercta);
         cta.removeEventListener("mouseleave", onMouseLeavecta);
     }
-  }, [sideNavOpened, isHoveredButton,isHoveredAboutMeCard, isHoveredNavButton, isHoveredCard, isHoveredWork, isHoveredArrow, isHoveredContactsCard, isCopied, isHoveredcta, isHoveredSideNavButton, isHoveredFooterButton]);
+  }, [sideNavOpened, isHoveredButton,isHoveredAboutMeCard, isHoveredNavButton, isHoveredCard, isHoveredWork, isHoveredArrow, isHoveredContactsCard, isCopied, isHoveredcta, isHoveredSideNavButton, isHoveredFooterButton, isHoveredContact]);
 
   return (
     <div id="custom-cursor" className="custom-cursor">

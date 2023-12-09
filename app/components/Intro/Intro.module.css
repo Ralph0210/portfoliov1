@@ -142,6 +142,7 @@ color: var(--background-color);
   transform-style: preserve-3d;
   position: relative;
   color: var(--background-color);
+  cursor: none;
 }
 
 .aboutMeCard{

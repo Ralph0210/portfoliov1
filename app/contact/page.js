@@ -67,8 +67,9 @@ const Page = () => {
       setSubmitting(false);
     }
   };
+  
   return (
-    <div>
+    <div style={{overflow:"hidden"}}>
       <Cursor />
       <Navbar sideNavOpened={sideNavOpened}
         setSideNavOpened={setSideNavOpened}/>
@@ -176,7 +177,7 @@ const Page = () => {
                 </div>
 
                 <button type="submit" disabled={isSubmitting}>
-                  Send it!
+                  Send it!<div className={styles.bounds}></div>
                 </button>
               </Form>
             )}
@@ -215,10 +216,10 @@ const Page = () => {
               href="https://www.linkedin.com/in/ralph-chang-5a49811a3/"
               target="_blank"
             >
-              LinkedIn<div className={styles.bounds}></div>
+              LinkedIn
             </Link>
             <Link href="https://www.instagram.com/ralph_cyh/" target="_blank">
-              Instagram<div className={styles.bounds}></div>
+              Instagram
             </Link>
           </div>
         </div>

@@ -1,195 +1,220 @@
-.contactContainer{
-    width: 100%;
-    height: 100%;
-    padding: 0 15% 10% 15%;
-    /* border: 1px solid red; */
-    display: flex;
-    
+.contactContainer {
+  width: 100%;
+  height: 100%;
+  padding: 0 15% 10% 15%;
+  /* border: 1px solid red; */
+  display: flex;
 }
 
-.formContainer{
-    flex: 0.7;
-    /* border: 1px solid blue; */
-    padding: 0 10%;
+.formContainer {
+  flex: 0.7;
+  /* border: 1px solid blue; */
+  padding: 0 10%;
 }
 
-.titleContainer{
-    padding-bottom: 10rem;
-    padding-top: 10rem;
+.titleContainer {
+  padding-bottom: 10rem;
+  padding-top: 10rem;
 }
 
-.contactInfoContainer{
-    flex: 0.3;
-    /* border: 1px solid purple; */
+.contactInfoContainer {
+  flex: 0.3;
+  /* border: 1px solid purple; */
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.form label{
-    font-size: clamp(1.4rem,1.5vw, 2rem);
-    width: 100%;
+.form label {
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  width: 100%;
 }
 
-.divider{
-    height: 1px;
-    width: 100%;
-    background-color: var(  --border-alpha-invert);
-    border-radius: 5rem;
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: var(--border-alpha-invert);
+  border-radius: 5rem;
 }
 
-.formDiv{
-    display: flex;
+.formDiv {
+  display: flex;
 }
 
-.formDiv > div{
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+.formDiv > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.formDiv > div > input{
-    font-size: clamp(1.4rem,1.5vw, 2rem);
-    border: none;
-    outline: none;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    width: 100%;
+.formDiv > div > input {
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  border: none;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 100%;
 }
 
-.formDiv > div > div{
-    color: var(--primary-color);
-    font-size: clamp(1rem,1.2vw, 1.4rem);
+.formDiv > div > div {
+  color: var(--primary-color);
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
 }
 
 .formDiv > div > input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px var(--background-color) inset !important;
-    -webkit-text-fill-color: var(--text-color)
-  }
+  -webkit-box-shadow: 0 0 0 1000px var(--background-color) inset !important;
+  -webkit-text-fill-color: var(--text-color);
+}
 
-.form span{
-    padding-right: 3rem;
+.form span {
+  padding-right: 3rem;
 }
 
 .form input::placeholder {
-    color: var(--border-alpha-invert);
-  }
-
-.form > div{
-    /* margin-left: calc(clamp(1.4rem, 1.5vw, 2rem) + 3.2rem); */
-    font-size: clamp(1.4rem,1.5vw, 2rem);
-    /* color: var(--primary-color); */
+  color: var(--border-alpha-invert);
 }
 
-.form button{
+.form > div {
+  /* margin-left: calc(clamp(1.4rem, 1.5vw, 2rem) + 3.2rem); */
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  /* color: var(--primary-color); */
+}
+
+.form button {
+  margin-top: 5rem;
+  align-self: flex-end;
+  margin-top: 2rem;
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  padding: 3rem 5.25rem;
+  position: relative;
+  width: fit-content;
+  height: auto;
+  border-radius: 5rem;
+  color: #f9f5ec;
+  background-color: var(--primary-color);
+  border: none;
+  position: relative;
+}
+
+.contactInfoContainer {
+  padding-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5rem;
+}
+
+.iconContainer {
+  width: 9.6rem;
+  height: 9.6rem;
+  position: relative;
+  margin-bottom: 5rem;
+}
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.detailsContainer span {
+  font-size: clamp(1rem, 1.2vw, 1.4rem);
+  color: var(--border-alpha-invert);
+}
+
+.detailsContainer a {
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  text-decoration: underline;
+  position: relative;
+}
+
+.detailsContainer button {
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  border: none;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+.titleContainer2 {
+  display: none;
+}
+
+.bounds {
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  pointer-events: all;
+  /* border: 1px solid red; */
+  border-radius: 5rem;
+  z-index: 0;
+}
+
+.bounds:hover {
+  transform: scale(3);
+}
+
+@media (max-width: 430px) {
+  .contactContainer {
+    flex-direction: column-reverse;
+    padding: 0 3rem;
+  }
+
+  .iconContainer {
+    display: none;
+    width: 3.6rem;
+    height: 3.6rem;
+    position: relative;
+    margin-bottom: 5rem;
+  }
+
+  .titleContainer {
+    display: none;
+    padding-bottom: 10rem;
+    padding-top: 10rem;
+  }
+
+  .titleContainer2 {
+    display: block;
+  }
+
+  .contactInfoContainer {
+    padding: 5rem 0 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .formContainer {
+    flex: 0.7;
+    /* border: 1px solid blue; */
+    padding: 0 0;
+  }
+
+  .form button {
     margin-top: 5rem;
-    align-self: flex-end;
+    margin-bottom: 5rem;
+    align-self: center;
     margin-top: 2rem;
-    font-size: clamp(1.4rem,1.5vw, 2rem);
+    font-size: clamp(1.4rem, 1.5vw, 2rem);
     padding: 3rem 5.25rem;
     position: relative;
     width: fit-content;
     border-radius: 5rem;
-    color: #F9F5EC;
+    color: #f9f5ec;
     background-color: var(--primary-color);
     border: none;
-}
-
-.contactInfoContainer{
-    padding-top: 12rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5rem;
-}
-
-.iconContainer{
-    width: 9.6rem;
-    height: 9.6rem;
-    position: relative;
-    margin-bottom: 5rem;
-}
-.detailsContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-}
-
-.detailsContainer span{
-    font-size: clamp(1rem,1.2vw, 1.4rem);
-}
-
-.detailsContainer a{
-    font-size: clamp(1.2rem,1.2vw, 1.6rem);
-    text-decoration: underline;
-}
-
-.detailsContainer button{
-    font-size: clamp(1.2rem,1.2vw, 1.6rem);
-    border: none;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    text-decoration: underline;
-}
-
-.titleContainer2{
-    display: none;
-}
-
-@media (max-width: 430px){
-    .contactContainer{
-        flex-direction: column-reverse;
-        padding: 0 3rem;
-    }
-
-    .iconContainer{
-        display: none;
-        width: 3.6rem;
-        height:3.6rem;
-        position: relative;
-        margin-bottom: 5rem;
-    }
-
-    .titleContainer{
-        display: none;
-        padding-bottom: 10rem;
-        padding-top: 10rem;
-    }
-
-    .titleContainer2{
-        display: block;
-    }
-
-    .contactInfoContainer{
-        padding: 5rem 0 3rem 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2rem;
-    }
-
-    .formContainer{
-        flex: 0.7;
-        /* border: 1px solid blue; */
-        padding: 0 0;
-    }
-
-    .form button{
-        margin-top: 5rem;
-        margin-bottom: 5rem;
-        align-self: center;
-        margin-top: 2rem;
-        font-size: clamp(1.4rem,1.5vw, 2rem);
-        padding: 3rem 5.25rem;
-        position: relative;
-        width: fit-content;
-        border-radius: 5rem;
-        color: #F9F5EC;
-        background-color: var(--primary-color);
-        border: none;
-    }
+    padding: 2rem 3.5rem;
+  }
 }

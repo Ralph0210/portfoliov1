@@ -130,6 +130,7 @@
   /* border: 1px solid red; */
   border-radius: 5rem;
   z-index: 0;
+  cursor: pointer;
 }
 
 .bounds:hover {

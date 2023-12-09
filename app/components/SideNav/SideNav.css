@@ -143,4 +143,9 @@
         justify-content: space-between;
         padding: 40% 15% 20% 15%;
     }
+    .sideNav_navigationContainer li{
+        font-size: 4.8rem;
+        list-style: none;
+        margin-bottom: 0rem;
+    }
 }

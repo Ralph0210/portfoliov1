@@ -6,7 +6,6 @@ import Footer from "../components/Footer/Footer";
 import Lenis from "@studio-freight/lenis";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Link from "next/link";
 import hero from "../../public/heroImages/hero.webp";
 import { useInView } from "framer-motion";
 import { Icon } from "@iconify/react";
