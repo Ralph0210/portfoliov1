@@ -103,6 +103,7 @@ line-height: 150%
     padding: 1rem 1.75rem;
     border: 1px solid var(--text-color);
     border-radius: 5rem;
+    cursor: pointer;
 }
 
 .abilityContainer{

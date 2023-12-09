@@ -91,29 +91,29 @@ const Page = () => {
       level: "BASIC",
       box: 1,
       descriptionResponsible:
-        "I understand and can perform I understand and can perform",
-      description: "not responsible",
+        "I can perform the task with minimal guidance.",
+      description: "I've done it a couple of times, so I can tell people I do it all the time.",
     },
     {
       level: "INTERMEDIATE",
       box: 2,
       descriptionResponsible:
-        "I understand and can perform I understand and can perform",
-      description: "I understand and can perform I understand and can perform",
+        "I can adapt the skill to different situations and solve related problems.",
+      description: "I'm prEtty sUrE I knOw whAt I Am dOIng.",
     },
     {
       level: "ADVANCED",
       box: 3,
       descriptionResponsible:
-        "I understand and can perform I understand and can perform",
-      description: "I understand and can perform I understand and can perform",
+        "I can teach others the skill and provide expert advice.",
+      description: "My friends would tell others about it.",
     },
     {
       level: "EXPERT",
       box: 4,
       descriptionResponsible:
-        "I understand and can perform I understand and can perform",
-      description: "I understand and can perform I understand and can perform",
+        "I am able to innovate and develop new approaches within this skill",
+      description: "I have the proficiency equivalent to a professional.",
     },
   ];
 
@@ -131,15 +131,15 @@ const Page = () => {
     {
       category: "BACK-END",
       tech: [
-        { name: "Node JS", level: 3 },
-        { name: "Express JS", level: 2 },
+        { name: "Node JS", level: 2 },
+        { name: "Express JS", level: 1 },
         { name: "Flask", level: 2 },
       ],
     },
     {
       category: "DATABASE",
       tech: [
-        { name: "SQL", level: 3 },
+        { name: "SQL", level: 2 },
         { name: "MySQL", level: 2 },
       ],
     },
@@ -161,30 +161,32 @@ const Page = () => {
         { name: "Classical Guitar", level: 4 },
         { name: "Drums", level: 3 },
         { name: "Marimba", level: 3 },
-        { name: "VOCAL", level: 0 },
         { name: "Piano", level: 2 },
       ],
     },
     {
       category: "SPORTS",
       tech: [
-        { name: "Node JS", level: 3 },
-        { name: "Express JS", level: 2 },
-        { name: "Flask", level: 2 },
+        { name: "Cycling", level: 3 },
+        { name: "Scuba Diving", level: 2 },
+        { name: "Surfing", level: 1 },
+        { name: "Free Diving", level: 1 },
       ],
     },
     {
-      category: "INTERPERSONAL",
+      category: "CULINARY",
       tech: [
-        { name: "SQL", level: 3 },
-        { name: "MySQL", level: 2 },
+        { name: "Asian Food", level: 3 },
+        { name: "Italian Food", level: 2 },
+        { name: "American Food", level: 1 },
       ],
     },
     {
-      category: "HEHE",
+      category: "RANDOM",
       tech: [
-        { name: "Webflow", level: 3 },
-        { name: "Google Analytics", level: 2 },
+        { name: "Driving", level: 3 },
+        { name: "Writing", level: 2 },
+        { name: "Fashion", level: 2 },
       ],
     },
   ];
@@ -201,7 +203,7 @@ const Page = () => {
       category: "UI",
       tech: [
         { name: "Interaction Design", level: 2 },
-        { name: "Responsive Design", level: 2 },
+        { name: "Responsive Design", level: 3 },
         { name: "Wireframing & Prototyping", level: 3 },
       ],
     },
@@ -215,8 +217,44 @@ const Page = () => {
     {
       category: "VISUAL",
       tech: [
-        { name: "Design System", level: 3 },
+        { name: "Design System", level: 2 },
         { name: "Graphic Design (color, typography, layout)", level: 2 },
+      ],
+    },
+  ];
+
+  const interPersonalSkills = [
+    {
+      category: "COMMUNICATION",
+      tech: [
+        { name: "Active Listening", level: 3 },
+        { name: "Verbal Communication", level: 2 },
+        { name: "Empathy", level: 3 },
+        { name: "Giving and receiving feedback", level: 2 },
+      ],
+    },
+    {
+      category: "TEAMWORK",
+      tech: [
+        { name: "Leadership", level: 2 },
+        { name: "Collaboration", level: 3 },
+        { name: "Problem-solving", level: 3 },
+      ],
+    },
+    {
+      category: "RELATIONSHIP",
+      tech: [
+        { name: "Networking", level: 2 },
+        { name: "IntErpersOnaL nEws", level: 3 },
+      ],
+    },
+    {
+      category: "PERSONAL",
+      tech: [
+        { name: "Self-awareness", level: 3 },
+        { name: "Emotional Intelligence", level: 3 },
+        { name: "Time Management", level: 2 },
+        { name: "Resilience", level: 3 },
       ],
     },
   ];
@@ -283,12 +321,10 @@ const Page = () => {
           <p>
             With my background in sociology and computer science, I bring
             critical social analysis with strong technical skills to every
-            project. I thrive on collaborating with inspiring and talented
-            teams, and my humor comes free of charge.
+            project. I thrive on collaborating with talented and inspiring teams and always look for new opportunities to learn.
           </p>
           <p>
-            When I am not staring at my monitor, questioning my life choices yet
-            again, you can find me cycling up the endless hill, jamming jazzy
+            When I am not channeling my inner responisble adult (whose work ethic by the way, is like grandpa&apos;s denture, reliable), you can find me cycling up the endless hill, jamming jazzy
             R&B songs with friends, or watching Friends for the 7749th time.
           </p>
         </div>
@@ -325,7 +361,7 @@ const Page = () => {
                     }
               }
             >
-              Just Ralph
+              Everyday Ralph
             </span>
           </div>
         </div>
@@ -351,7 +387,7 @@ const Page = () => {
           </div>
           <div className={styles.divider}></div>
           <h3 className={` ${lora.className} ${styles.h3}`}>
-            {character ? "My Tech Stack" : "Random"}
+            {character ? "My Tech Stack" : "Interpersonal Skills"}
           </h3>
 
           {character ? (
@@ -373,7 +409,7 @@ const Page = () => {
             </div>
           ) : (
             <div className={styles.techContainer}>
-              {skills.map((tech, index) => (
+              {interPersonalSkills.map((tech, index) => (
                 <div key={index} className={styles.techStackContainer}>
                   <span>{tech.category}</span>
                   <div className={styles.techStackInnerContainer}>
@@ -394,7 +430,7 @@ const Page = () => {
             <>
               <div className={styles.divider}></div>
               <h3 className={` ${lora.className} ${styles.h3}`}>
-                {character ? "My Design Skills" : "Random"}
+                My Design Skills
               </h3>
               <div className={styles.techContainer}>
                 {designSkills.map((tech, index) => (
@@ -417,10 +453,10 @@ const Page = () => {
             <>
               <div className={styles.divider}></div>
               <h3 className={` ${lora.className} ${styles.h3}`}>
-                {character ? "My Design Skills" : "Random"}
+              Avocation
               </h3>
               <div className={styles.techContainer}>
-                {designSkills.map((tech, index) => (
+                {skills.map((tech, index) => (
                   <div key={index} className={styles.techStackContainer}>
                     <span>{tech.category}</span>
                     <div className={styles.techStackInnerContainer}>
