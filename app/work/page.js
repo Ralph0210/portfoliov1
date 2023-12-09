@@ -1,18 +1,57 @@
 'use client'
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import Cursor from '../utils/Cursor'
 import Footer from '../components/Footer/Footer'
+import { useInView } from 'framer-motion'
+import styles from './page.module.css'
+import Lenis from "@studio-freight/lenis";
 
-const page = () => {
+import LargeWorkCard from '../components/LargeWorkCard/LargeWorkCard'
+import SmallWorkCard from '../components/SmallWorkCard/SmallWorkCard'
+
+import scf from '../../public/gallery/scf.png'
+
+const Page = () => {
+  const isInViewRef = useRef(null)
+  const isInView4 = useInView(isInViewRef)
+  const [sideNavOpened, setSideNavOpened] = useState(false);
+
+
+  useEffect(() => {
+    const lenis = new Lenis({ duration: 1.5, wheelMultiplier: 1.1 });
+
+    lenis.on("scroll", (e) => {
+      // console.log(e)
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    sideNavOpened ? lenis.stop() : lenis.start();
+
+    return () => {
+      lenis.destroy();
+    };
+  }, [sideNavOpened]);
+
   return (
-    <div>
+    <div style={{overflow: "clip"}}>
       <Cursor />
-      <Navbar />
-      <div style={{height:"100vh", backgroundColor:"white", zIndex:5, position:'relative', borderRadius:"5rem"}}></div>
-      <Footer isInView4={true}/>
+      <Navbar
+        sideNavOpened={sideNavOpened}
+        setSideNavOpened={setSideNavOpened}
+      />
+      <div className={styles.workPageContainer}>
+        <p ref={isInViewRef}>hehe</p>
+      </div>
+      <Footer isInView4={isInView4}/>
     </div>
   )
 }
 
-export default page
+export default Page

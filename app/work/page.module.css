@@ -1,0 +1,8 @@
+.workPageContainer{
+    height: 200vh;
+    width: 100%;
+    border-radius: 5rem;
+    background-color: var(--background-color);
+    z-index: 5;
+    position: relative;
+}

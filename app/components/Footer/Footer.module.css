@@ -111,14 +111,14 @@
 }
 
 .footerBottom p{
-    color: var(--background-color);
+    color: var(--text-color-bright);
     font-size: clamp(1.4rem,1.5vw, 2rem);
     position: relative;
     padding: 0.7rem 1.5rem;
 }
 
 .footerBottom a{
-    color: var(--background-color);
+    color: var(--text-color-bright);
     font-size: clamp(1.4rem,1.5vw, 2rem);
     position: relative;
     padding: 0.7rem 1.5rem;

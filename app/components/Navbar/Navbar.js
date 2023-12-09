@@ -70,7 +70,7 @@ function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
         onClick={() => setSideNavOpened(!sideNavOpened)}
         className={styles.sideNavContainer}
         style={
-          navbarInView ? { transform: "scale(0)" } : { transform: "scale(1)" }
+          navbarInView ? { transform: "scale(0)" } : { transform: "scale(1)"}
         }
       >
         {sideNavOpened ? (

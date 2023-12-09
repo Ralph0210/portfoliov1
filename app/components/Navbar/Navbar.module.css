@@ -170,7 +170,7 @@
   padding: 1rem;
   width: auto;
   height: auto;
-  transition: all 0.8s ease;
+  transition: transform 0.8s ease;
 }
 
 .menu{
