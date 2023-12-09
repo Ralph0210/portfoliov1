@@ -307,10 +307,10 @@ const Page = () => {
 
           <div>
             <div>
-              <h1 className={lora.className}>CREATIVE</h1>
+              <h1 className={lora.className}>DESIGNER</h1>
             </div>
             <div>
-              <h1 className={lora.className}>DEVELOPER</h1>
+              <h1 className={lora.className}>& DEVELOPER</h1>
             </div>
           </div>
 
