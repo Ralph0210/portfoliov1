@@ -1,0 +1,26 @@
+.previewContainer{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color);
+    position: relative;
+    z-index: 5;
+    padding: 5% 5%;
+}
+
+.previewContainer span{
+    font-size: 1.4rem;
+    color: var(--border-alpha-invert);
+}
+
+.vidContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.vid{
+    overflow: hidden;
+}

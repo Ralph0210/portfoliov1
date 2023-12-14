@@ -1,0 +1,16 @@
+.moreWorkContainer{
+    background-color: var(--text-color);
+    color: var(--background-color);
+    height: 90vh;
+    margin-top: -10vh;
+    position: sticky;
+    bottom: 0;
+    padding-top: 20vh;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.workContainer{
+    margin-top: 3rem;
+    display: flex;
+}

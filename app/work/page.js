@@ -11,6 +11,7 @@ import LargeWorkCard from '../components/LargeWorkCard/LargeWorkCard'
 import SmallWorkCard from '../components/SmallWorkCard/SmallWorkCard'
 
 import scf from '../../public/gallery/scf.png'
+import Link from 'next/link'
 
 const Page = () => {
   const isInViewRef = useRef(null)
@@ -48,6 +49,9 @@ const Page = () => {
       />
       <div className={styles.workPageContainer}>
         <p ref={isInViewRef}>hehe</p>
+        <Link href='/work/planet-longhorn-2023' style={{fontSize:"3rem"}}>
+          pl
+        </Link>
       </div>
       <Footer isInView4={isInView4}/>
     </div>

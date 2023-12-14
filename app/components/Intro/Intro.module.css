@@ -10,6 +10,11 @@
     height: 100%;
     /* padding-top: 10vh; */
     /* overflow-x: hidden; */
+    /* background-size: 24px 24px;
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-color: var(--background-color-invert); */
 }
 
 .galleryTop,
