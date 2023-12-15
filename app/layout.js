@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Suspense } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, easeInOut } from "framer-motion";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -25,7 +25,7 @@ const Preloader = ({ text }) => {
       initial={{ y: "100vh" }}
       animate={{ y: 0, borderRadius: 0 }}
       exit={{ y: "-100vh", borderRadius: "5rem" }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.8, ease: easeInOut}}
     >
       <p>{text}</p>
     </motion.div>
