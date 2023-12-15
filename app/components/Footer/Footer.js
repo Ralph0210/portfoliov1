@@ -72,7 +72,7 @@ const Footer = ({ isInView4 }) => {
         </div>
         <p
           className={`${lora.className} ${styles.cta}`}
-          style={isctaHovered ? { marginRight: "5rem" } : {}}
+          // style={isctaHovered ? { marginRight: "5rem" } : {}}
         >
           Let&apos;s work <br className={styles.br}/>together
         </p>
@@ -81,8 +81,10 @@ const Footer = ({ isInView4 }) => {
             className={styles.arrow}
             icon="ph:arrow-up-light"
             aria-label="Scroll down"
+            style={isctaHovered ? { transform: "translateX(50px) rotate(90deg)" } : {}}
           />
-          <div className={styles.bounds}></div>
+          <div className={styles.bounds}
+          style={isctaHovered ? { transform: "translateX(50px) scale(3)" } : {}}></div>
         </Link>
       </div>
       <p className={styles.sayHi}>Or just say Hi!</p>

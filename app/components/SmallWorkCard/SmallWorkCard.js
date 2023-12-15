@@ -10,13 +10,14 @@ const SmallWorkCard = ({
     isHovered,
     onMouseEnter,
     onMouseLeave,
-    hoveredAtAll
+    hoveredAtAll,
+    link
   }) => {
     return (
       <div onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       style={{ opacity: hoveredAtAll !== null ? (isHovered ? 1 : 0.4) : 1, transition: "opacity 0.3s ease-in-out", height:"min-content" }} >
-                      <Link href={`/work/${title.toLowerCase().replaceAll(" ", "-")}-2023`} className={styles.link}>
+                      <Link href={{pathname: link}} className={styles.link}>
         <div
           className={`${styles.smallImageContainer} ${styles.workCard}`}
         >

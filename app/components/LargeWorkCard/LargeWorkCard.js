@@ -10,13 +10,15 @@ const LargeWorkCard = ({
     isHovered,
     onMouseEnter,
     onMouseLeave,
-    hoveredAtAll
+    hoveredAtAll,
+    position,
+    link,
   }) => {
     return (
       <div onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       style={{ opacity: hoveredAtAll !== null ? (isHovered ? 1 : 0.4) : 1, transition: "opacity 0.3s ease-in-out", height:"auto" }} >
-        <Link href={`/work/${title.toLowerCase().replaceAll(" ", "-")}-2023`} className={styles.link}>
+        <Link href={{pathname: link}} className={styles.link}>
         <div
           className={`${styles.largeImageContainer} ${styles.workCard}`}
         >
@@ -25,7 +27,7 @@ const LargeWorkCard = ({
             src={imageSrc}
             alt={title}
             fill
-            style={{ objectFit: "cover", objectPosition: "left" }}
+            style={{ objectFit: "cover", objectPosition: position }}
           />
         </div>
         </Link>

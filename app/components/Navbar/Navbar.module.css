@@ -173,14 +173,15 @@
   padding: 1rem;
   width: auto;
   height: auto;
-  transition: transform 0.8s ease;
+  /* transition: transform 0.8s ease; */
+  /* transform: scale(0); */
 }
 
 .menu{
   font-size: 3rem;
   position: relative;
   color: black;
-  transition: all 0.5s ;
+  /* transition: all 0.5s ; */
 }
 
 @media (max-width: 1024px){

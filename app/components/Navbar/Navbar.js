@@ -3,7 +3,7 @@ import styles from "./Navbar.module.css";
 import Link from "next/link";
 import SideNav from "../SideNav/SideNav";
 import { Icon } from "@iconify/react";
-import { useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 
 function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
   const navbarRef = useRef(null);
@@ -66,12 +66,18 @@ function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
         </div>
       </div>
 
-      <div
+
+<AnimatePresence>
+{!navbarInView && <motion.div
         onClick={() => setSideNavOpened(!sideNavOpened)}
         className={styles.sideNavContainer}
-        style={
-          navbarInView ? { transform: "scale(0)" } : { transform: "scale(1)"}
-        }
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0 }}
+        transition={{ease: "linear", duration:0.3}}
+        // style={
+        //   navbarInView ? { transform: "scale(0)" } : { transform: "scale(1)", zIndex:9999}
+        // }
       >
         {sideNavOpened ? (
           <Icon
@@ -83,7 +89,11 @@ function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
           <Icon icon="ci:menu-duo-lg" className={styles.menu} />
         )}
         <div className={styles.bounds}></div>
-      </div>
+      </motion.div>}
+
+
+</AnimatePresence>
+      
 
       <SideNav
         sideNavOpened={sideNavOpened}

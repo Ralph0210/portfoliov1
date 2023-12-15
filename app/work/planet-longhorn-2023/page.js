@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, forwardRef } from "react";
 import styles from "./page.module.css";
 import Cursor from "@/app/utils/Cursor";
 import Navbar from "@/app/components/Navbar/Navbar";
@@ -20,12 +20,14 @@ import brandingDark from "../../../public/pl/branding-dark.png";
 import wireframe from "../../../public/pl/wireframe.png";
 import wireframeDark from "../../../public/pl/wireframe-dark.png";
 import home from "../../../public/pl/home.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Page = () => {
   const [darkMode, setDarkMode] = useState(false);
   const isInViewRef = useRef(null);
   const isInView4 = useInView(isInViewRef);
   const [sideNavOpened, setSideNavOpened] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.5, wheelMultiplier: 1.1 });
@@ -69,6 +71,12 @@ const Page = () => {
 
     // Cleanup listener on component unmount
     // return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   }, []);
 
   //hero
@@ -146,9 +154,7 @@ const Page = () => {
     },
     {
       name: "Deployment",
-      tech: [
-        "Vercel",
-      ],
+      tech: ["Vercel"],
     },
   ];
 
@@ -170,13 +176,26 @@ const Page = () => {
 
   //more projects
   const more = [
-    {image: pl, title: "Planet Longhorn", link: "/work/planet-longhorn-2023"},
-    {image: pl, title: "Planet Longhorn", link: "/work/planet-longhorn-2023"},
-  ]
+    { image: pl, title: "Planet Longhorn", link: "/work/planet-longhorn-2023" },
+    { image: pl, title: "Planet Longhorn", link: "/work/planet-longhorn-2023" },
+  ];
 
   return (
     <div className={styles.plContainer}>
       <Cursor />
+      {/* <AnimatePresence mode="wait">
+        {isLoading ? (
+          <motion.div
+            className={styles.loading}
+            initial={{ y: 0, opacity: 1 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100vh", opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            loading
+          </motion.div>
+        ) : null}
+      </AnimatePresence> */}
       <Navbar
         sideNavOpened={sideNavOpened}
         setSideNavOpened={setSideNavOpened}
@@ -188,10 +207,10 @@ const Page = () => {
         <Analyze prop={analyze} />
         <Preview prop={preview} />
         <WebDesign prop={webDesign} />
-        <WebDev prop={webDev}/>
-        <Conclusion prop={con}/>
+        <WebDev prop={webDev} />
+        <Conclusion prop={con} />
       </div>
-      <MoreWork prop={more}/>
+      <MoreWork prop={more} />
       <Footer isInView4={true} />
     </div>
   );
