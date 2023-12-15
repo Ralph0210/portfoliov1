@@ -124,7 +124,7 @@ const Page = () => {
   //web design
   const webDesign = {
     tag: "WEBSITE DESIGN",
-    title: "Engaging exploration and storytelling",
+    title: "Engaging exploration and storytelling.",
     description:
       "The website emphasizes international community inclusivity at every turn, using words and quotes as a foundation, supported by subtle interactions along the way to make the experience feel sincere and tangible.",
     image: home,
@@ -154,7 +154,19 @@ const Page = () => {
 
   //conclusion
   const con = {
-  }
+    challenges: ["to hard:"],
+    solutions: ["to easy:"],
+    impact:
+      "Florist can design floral arrangement easily and present their design to customers to ensure their bouquets are well-received without costly and time-consuming re-dos.",
+    nextStep:
+      "The UI/UX design of Flori involves continuous iteration based on user feedback and testing, learning advanced features of Figma like autolayout, and incorporating more accessibility features.",
+    learned: [
+      "Accessibility is crucial. Focus on contrast, font size, and user feedback to make the app usable and enjoyable for a broad audience.",
+      "User research is essential to comprehend the needs and issues of the target audience. A deep understanding of the problem through user research is required for product success.",
+      "Iteration is key to creating a successful product. Don't be afraid to make changes based on user feedback, and be willing to experiment with different design ideas until you find the one that works best.",
+      "Incorporate features that make sense for my users, such as the ability to favorite flowers or categorize design needs. Make sure that these features are easy to use and add value to the user experience.",
+    ],
+  };
 
   //more projects
   const more = [
@@ -177,7 +189,7 @@ const Page = () => {
         <Preview prop={preview} />
         <WebDesign prop={webDesign} />
         <WebDev prop={webDev}/>
-        <Conclusion />
+        <Conclusion prop={con}/>
       </div>
       <MoreWork prop={more}/>
       <Footer isInView4={true} />

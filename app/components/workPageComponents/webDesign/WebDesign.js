@@ -3,7 +3,14 @@ import styles from "./WebDesign.module.css";
 import Image from "next/image";
 import home from "../../../../public/pl/home.png";
 
-const ContentComponent = ({ tag, title, description, img, bgColor }) => {
+const ContentComponent = ({
+  tag,
+  title,
+  description,
+  img,
+  bgColor,
+  mobileContainer,
+}) => {
   return (
     <div className={styles.processContainer}>
       <div className={styles.textContainer}>
@@ -12,7 +19,10 @@ const ContentComponent = ({ tag, title, description, img, bgColor }) => {
         <p>{description}</p>
       </div>
       <div className={styles.rightContainer}>
-        <div className={styles.imageContainer} style={{backgroundColor:bgColor}}>
+        <div
+          className={styles.imageContainer}
+          style={{ backgroundColor: bgColor }}
+        >
           <Image
             src={img}
             alt="branding"
@@ -21,14 +31,18 @@ const ContentComponent = ({ tag, title, description, img, bgColor }) => {
             style={{ objectPosition: "right", borderRadius: "5rem" }}
           />
         </div>
-        <div className={styles.mobileContainer}>
-          <div className={styles.mobileFrame}></div>
-          <div className={styles.mobileFrame}></div>
-        </div>
-        <div className={styles.mobileContainer}>
-          <div className={styles.mobileFrame}></div>
-          <div className={styles.mobileFrame}></div>
-        </div>
+        {mobileContainer ? (
+          <>
+            <div className={styles.mobileContainer}>
+              <div className={styles.mobileFrame}></div>
+              <div className={styles.mobileFrame}></div>
+            </div>
+            <div className={styles.mobileContainer}>
+              <div className={styles.mobileFrame}></div>
+              <div className={styles.mobileFrame}></div>
+            </div>
+          </>
+        ) : null}
       </div>
     </div>
   );
@@ -43,6 +57,7 @@ const WebDesign = ({ prop }) => {
         description={prop.description}
         img={prop.image}
         bgColor={prop.bgColor}
+        mobileContainer={prop.mobileContainer}
       />
     </div>
   );

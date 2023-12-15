@@ -26,6 +26,7 @@ const Hero = ({heroData}) => {
           className={styles.image}
           fill
           placeholder="blur"
+          priority
         />
       </div>
       <div className={styles.overviewContainer}>
@@ -46,7 +47,7 @@ const Hero = ({heroData}) => {
             ))}
           </div>
           <div className={styles.duration}>
-            <h2 className={styles.h2}>Duration</h2>
+            <h2 className={styles.h2}>Completed</h2>
             <p>{heroData.duration}</p>
           </div>
         </div>

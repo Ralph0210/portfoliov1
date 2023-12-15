@@ -4,28 +4,43 @@ import branding from "../../../../public/pl/branding.png";
 import wireframe from "../../../../public/pl/wireframe.png";
 import Image from "next/image";
 
-const ContentComponent = ({ tag, title, description, img }) => {
+const ContentComponent = ({ tag, title, description, img, noText, noImg }) => {
   return (
     <div className={styles.processContainer}>
-      <div className={styles.textContainer}>
-        <span>{tag}</span>
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </div>
-      <div className={styles.imageContainer}>
-        <Image src={img} alt="branding" width={712} className={styles.image} style={{objectPosition:"right"}}/>
-      </div>
+      {noText ? null : (
+        <div className={styles.textContainer}>
+          <span>{tag}</span>
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </div>
+      )}
+
+      {noImg ? null : <div className={styles.imageContainer} style={noText?{flex:1, justifyContent:"center", alignContent:"center"}:{}}>
+        <Image
+          src={img}
+          alt="branding"
+          width={noText? 1200 : 712}
+          className={styles.image}
+          style={noText? {marginLeft:0}:{ objectPosition: "right" }}
+        />
+      </div>}
     </div>
   );
 };
 
-const Analyze = ({prop}) => {
+const Analyze = ({ prop }) => {
   return (
     <div className={styles.analyzeContainer}>
-
       {prop.map((item, index) => (
-        <ContentComponent key={index} tag={item.tag} title={item.title} description={item.description}
-          img={item.themeDark ? item.imageDark : item.imageLight}/>
+        <ContentComponent
+          key={index}
+          tag={item.tag}
+          title={item.title}
+          description={item.description}
+          img={item.themeDark ? item.imageDark : item.imageLight}
+          noText={item.noText}
+          noImg={item.noImg}
+        />
       ))}
 
       {/* <ContentComponent tag={"PROCESS"} title={"Creating brand identity"} description={

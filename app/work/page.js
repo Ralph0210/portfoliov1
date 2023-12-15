@@ -52,6 +52,15 @@ const Page = () => {
         <Link href='/work/planet-longhorn-2023' style={{fontSize:"3rem"}}>
           pl
         </Link>
+        <Link href='/work/sehath-2023' style={{fontSize:"3rem"}}>
+          sehath
+        </Link>
+        <Link href='/work/flori-2022' style={{fontSize:"3rem"}}>
+          flori
+        </Link>
+        <Link href='/work/greater-2023' style={{fontSize:"3rem"}}>
+          greater
+        </Link>
       </div>
       <Footer isInView4={isInView4}/>
     </div>

@@ -1,22 +1,39 @@
-import React from 'react'
-import styles from './Conclusion.module.css'
+import React from "react";
+import styles from "./Conclusion.module.css";
 
-const Conclusion = () => {
+const Conclusion = ({prop}) => {
   return (
     <div className={styles.conContainer}>
-        <div className={styles.leftContainer}>
-            <div className={styles.left}>
-                <span>CHALLENGES AND SOLUTIONS</span>
-            </div>
-            <div className={styles.left}>
-                <span>IMPACT</span>
-            </div>
+      <div className={styles.leftContainer}>
+        <div className={styles.left}>
+          <span>CHALLENGES AND SOLUTIONS</span>
+          <ul>
+          {prop.challenges.map((item, index) => (
+            <li key={index}>{item} {prop.solutions[index]}</li>
+          ))}
+          </ul>
         </div>
-        <div className={styles.rightContainer}>
+        <div className={styles.bottomContainer}>
+          <div className={styles.bottom}>
+            <span>IMPACT</span>
+            <p>{prop.impact}</p>
+          </div>
+          <div className={styles.bottom}>
+            <span>NEXT STEP</span>
+            <p>{prop.nextStep}</p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.rightContainer}>
         <span>WHAT I LEARNED</span>
-        </div>
+        <ul>
+          {prop.learned.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Conclusion
+export default Conclusion;
