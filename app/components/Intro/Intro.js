@@ -262,13 +262,13 @@ const Intro = ({
     // Set the color scheme based on user preference
     if (prefersDarkMode) {
       if (isInView || isInView2) {
-        bodyElement.classList.add("dark-mode-for-light");
-        footer.classList.add("light-mode-for-dark");
-        work.classList.add("light-mode-for-dark");
+        bodyElement.classList.add("light-mode-for-dark");
+        footer.classList.add("dark-mode-for-light");
+        work.classList.add("dark-mode-for-light");
       } else {
-        bodyElement.classList.remove("dark-mode-for-light");
-        footer.classList.remove("light-mode-for-dark");
-        work.classList.remove("light-mode-for-dark");
+        bodyElement.classList.remove("light-mode-for-dark");
+        footer.classList.remove("dark-mode-for-light");
+        work.classList.remove("dark-mode-for-light");
       }
     } else {
       if (isInView || isInView2) {
@@ -285,7 +285,11 @@ const Intro = ({
     return () => {
       const bodyElement = document.querySelector("body");
       bodyElement.classList.remove("dark-mode-for-light");
+      bodyElement.classList.remove("light-mode-for-dark");
       footer.classList.remove("light-mode-for-dark");
+      footer.classList.remove("dark-mode-for-light");
+      work.classList.remove("light-mode-for-dark");
+      work.classList.remove("dark-mode-for-light");
     };
   }, [isInView, isInView2]);
 
