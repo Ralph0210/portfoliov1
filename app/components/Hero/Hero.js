@@ -74,7 +74,7 @@ const Hero = ({ ThemeDark }) => {
 
   return (
     <>
-      <div className={styles.c}>
+      <div id="hero" className={styles.c}>
         <div className={styles.d}>
           <div className={styles.a}>
             <Image

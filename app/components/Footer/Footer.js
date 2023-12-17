@@ -53,6 +53,7 @@ const Footer = ({ isInView4 }) => {
   return (
     // <div >
     <div
+    id="footer"
       className={styles.footerContainer} ref={footerRef}
       style={footerStick ? {position:"-webkit-sticky", position: "sticky", bottom: "0", zIndex:"0" } : {}}
     >

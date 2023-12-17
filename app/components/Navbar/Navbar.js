@@ -25,7 +25,7 @@ function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
 
   return (
     <>
-      <div className={styles.navbarContainer}>
+      <div id="nav" className={styles.navbarContainer}>
         <div className={styles.homeLinkContainer}>
           <Link href="/">
             <p className={styles.copyright}>©</p>

@@ -6,7 +6,7 @@
 }
 
 span.char{
-    color: var(--background-color);
+    color: var(--text-color);
     opacity: 0.25;
     padding-right: 12px;
     font-size: clamp(2.4rem, 2.5vw, 3.8rem);

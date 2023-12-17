@@ -1,5 +1,11 @@
 "use client";
-import React, { useState, useEffect, useRef, useLayoutEffect, forwardRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useLayoutEffect,
+  forwardRef,
+} from "react";
 import styles from "./Intro.module.css";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
@@ -10,18 +16,18 @@ import "./Intro.css";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { Lora } from "next/font/google";
-const lora = Lora({ subsets: ['latin'] })
+const lora = Lora({ subsets: ["latin"] });
 
 gsap.registerPlugin(ScrollTrigger);
 
 const galleryTop = [
-  { backgroundColor: "#C0B4AC", imageURL: "/gallery/pl.png"},
+  { backgroundColor: "#C0B4AC", imageURL: "/gallery/pl.png" },
   {
     backgroundColor: "#AEB6B5",
     imageURL: "/gallery/sehath.png",
   },
-  { backgroundColor: "#A6AEB5", imageURL: "/gallery/scf.png"},
-  { backgroundColor: "#C0B4AC", imageURL: "/gallery/project_main_page.png"},
+  { backgroundColor: "#A6AEB5", imageURL: "/gallery/scf.png" },
+  { backgroundColor: "#C0B4AC", imageURL: "/gallery/project_main_page.png" },
 ];
 
 const galleryBottom = [
@@ -29,7 +35,7 @@ const galleryBottom = [
   { backgroundColor: "#C0B4AC", imageURL: "/gallery/sehath.png" },
   { backgroundColor: "#C0B4AC", imageURL: "/gallery/scf.png" },
   { backgroundColor: "#C0B4AC", imageURL: "/gallery/project_main_page.png" },
-  { backgroundColor: "#C0B4AC", imageURL: "/gallery/greater.png" }
+  { backgroundColor: "#C0B4AC", imageURL: "/gallery/greater.png" },
 ];
 
 const abilityCard = [
@@ -37,13 +43,22 @@ const abilityCard = [
     title: "UI/UX Design",
     description:
       "I create visually appealing interfaces with a focus on user-centric experiences that address real-world challenges.",
-    services: ["User Interface Design", "User Experience Design", "Wireframing & Prototyping", "Interaction Design"],
+    services: [
+      "User Interface Design",
+      "User Experience Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+    ],
   },
   {
     title: "Website Development",
     description:
       "I develop engaging digital presence that help amplify your mission",
-    services: ["Front-End Development", "Full-Stack Development", "Webflow Development"],
+    services: [
+      "Front-End Development",
+      "Full-Stack Development",
+      "Webflow Development",
+    ],
   },
   {
     title: "Branding",
@@ -53,13 +68,19 @@ const abilityCard = [
   },
   {
     title: "More About Me",
-    description:
-      "More about me and the tools I use",
+    description: "More about me and the tools I use",
     services: ["toAbout"],
   },
 ];
 
-const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2, abilityDeckRef }) => {
+const Intro = ({
+  ThemeDark,
+  changeThemeRef,
+  changeThemeRef3,
+  isInView,
+  isInView2,
+  abilityDeckRef,
+}) => {
   const aboutMeText =
     "I’m a designer & developer from Taiwan. I explore the intersection of human experience and technology to create purposeful, user-centric solutions that make positive differences.";
   const [isFlipped, setIsFlipped] = useState([false, false, false, false]);
@@ -79,7 +100,7 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
   const galleryTopRef = useRef();
   const galleryBottomRef = useRef();
   // const aboutMeTextRef = useRef()
-  
+
   // State to track the scroll position
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -161,13 +182,13 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
 
   useLayoutEffect(() => {
     const updateWidth = () => {
-      if(window.innerWidth > 430 ){
+      if (window.innerWidth > 430) {
         gsap.to(abilityDeckRef.current, {
           x: 0,
           scrollTrigger: {
             trigger: abilityDeckRef.current,
-            start: 'top bottom',
-            end: 'bottom 90%',
+            start: "top bottom",
+            end: "bottom 90%",
             scrub: 6,
           },
         });
@@ -182,10 +203,10 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
         updateWidth();
       };
 
-      window.addEventListener('resize', resizeHandler);
+      window.addEventListener("resize", resizeHandler);
 
       return () => {
-        window.removeEventListener('resize', resizeHandler);
+        window.removeEventListener("resize", resizeHandler);
         ctx.revert();
       };
     });
@@ -230,35 +251,53 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
   }, []);
 
   useEffect(() => {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
 
-  // Select the HTML element
-  const bodyElement = document.querySelector('body');
-  // Set the color scheme based on user preference
-  if (prefersDarkMode) {
-    if (isInView || isInView2) {bodyElement.classList.add('dark-mode-for-light') }else{ bodyElement.classList.remove('dark-mode-for-light');}
-  } else {
-    if (isInView || isInView2){
-    bodyElement.classList.add('dark-mode-for-light')}
-    else{bodyElement.classList.remove('dark-mode-for-light');}
-  }
+    // Select the HTML element
+    const bodyElement = document.querySelector("body");
+    const footer = document.getElementById("footer");
+    const work = document.getElementById("work");
+    // Set the color scheme based on user preference
+    if (prefersDarkMode) {
+      if (isInView || isInView2) {
+        bodyElement.classList.add("dark-mode-for-light");
+        footer.classList.add("light-mode-for-dark");
+        work.classList.add("light-mode-for-dark");
+      } else {
+        bodyElement.classList.remove("dark-mode-for-light");
+        footer.classList.remove("light-mode-for-dark");
+        work.classList.remove("light-mode-for-dark");
+      }
+    } else {
+      if (isInView || isInView2) {
+        bodyElement.classList.add("dark-mode-for-light");
+        footer.classList.add("light-mode-for-dark");
+        work.classList.add("light-mode-for-dark");
+      } else {
+        bodyElement.classList.remove("dark-mode-for-light");
+        footer.classList.remove("light-mode-for-dark");
+        work.classList.remove("light-mode-for-dark");
+      }
+    }
 
-  return () => {
-    const bodyElement = document.querySelector('body');
-    bodyElement.classList.remove('dark-mode-for-light');
-  };
-  }, [isInView, isInView2])
+    return () => {
+      const bodyElement = document.querySelector("body");
+      bodyElement.classList.remove("dark-mode-for-light");
+      footer.classList.remove("light-mode-for-dark");
+    };
+  }, [isInView, isInView2]);
 
   return (
-    <div ref={changeThemeRef} className={styles.introContainer}>
-
+    <div id="intro" ref={changeThemeRef} className={styles.introContainer}>
       <div ref={changeThemeRef3} className={styles.aboutMeContainer}>
         <p className={`${styles.hello} ${lora.className}`}>
           Hello there, I&apos;m Ralph.
         </p>
         <div ref={textRef} className="aboutMeText">
           {aboutMeText.split(" ").map((char, index) => (
-            <span className='char' key={index}>
+            <span className="char" key={index}>
               {char}
             </span>
           ))}
@@ -266,12 +305,14 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
         <p ref={helloRef} className={styles.place}>
           Currently Living in Austin, TX
         </p>
-        <p className={styles.touchScreenTip2}><Icon
-              icon="ph:arrow-up-light"
-              style={{ fontSize: "2rem", transform: "rotate(210deg)" }}
-              aria-label="Scroll down"
-            />Tap the cards to see what&apos;s behind</p>
-
+        <p className={styles.touchScreenTip2}>
+          <Icon
+            icon="ph:arrow-up-light"
+            style={{ fontSize: "2rem", transform: "rotate(210deg)" }}
+            aria-label="Scroll down"
+          />
+          Tap the cards to see what&apos;s behind
+        </p>
 
         <div ref={abilityDeckRef} className={styles.abilityDeckContainer}>
           <div className={styles.heroArrow}>
@@ -282,11 +323,14 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
               aria-label="Scroll down"
             />
           </div>
-          <p className={styles.touchScreenTip}><Icon
+          <p className={styles.touchScreenTip}>
+            <Icon
               icon="ph:arrow-up-light"
               style={{ fontSize: "2rem", transform: "rotate(210deg)" }}
               aria-label="Scroll down"
-            />Tap the cards to see what&apos;s behind</p>
+            />
+            Tap the cards to see what&apos;s behind
+          </p>
           {abilityCard.map((item, index) => {
             return (
               <div
@@ -304,11 +348,15 @@ const Intro = ({ ThemeDark, changeThemeRef, changeThemeRef3, isInView, isInView2
                     </p>
                   </div>
                   <div className={styles.abilityCardBack}>
-                    {item.title === "More About Me" ? (<p className={styles.abilityService}>
-                      Go to my about page
-                    </p>): (<p className={styles.abilityService}>
-                      I can help you with...
-                    </p>)}
+                    {item.title === "More About Me" ? (
+                      <p className={styles.abilityService}>
+                        Go to my about page
+                      </p>
+                    ) : (
+                      <p className={styles.abilityService}>
+                        I can help you with...
+                      </p>
+                    )}
 
                     <div className={styles.servicesContainer}>
                       {item.services.map((service, index) => (

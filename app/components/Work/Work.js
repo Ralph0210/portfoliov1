@@ -43,7 +43,7 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
 
 
   return (
-    <div ref={changeThemeRef2} className={styles.workContainer} style={{zIndex:"2", position:"relative"}}>
+    <div id="work" ref={changeThemeRef2} className={styles.workContainer} style={{zIndex:"2", position:"relative"}}>
       <p ref={footerStick} className={styles.selectedWork}>Selected Work</p>
       <div className={styles.workGallery}>
         <div className={styles.workGalleryTop}>

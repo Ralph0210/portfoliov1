@@ -75,8 +75,38 @@ body {
 }
 
 .dark-mode-for-light{
-  color: var(--text-color-bright);
-  background-color: var(--text-color);
+  --unimportantText-color:rgba(52, 76, 54, 0.75);
+    --background-color: #344C36;
+    --text-color: #F9F5EC;
+    --underline-color: #fff;
+    --background-color-invert:#F9F5EC;
+    --text-color-bright: #344C36;
+    --text-color-dark: #F9F5EC;
+    /* Update background color for dark theme */
+    --background-start-rgb: 30, 30, 30; /* Dark background color (start) */
+    --background-end-rgb: 30, 30, 30; /* Dark background color (end) */
+    --foreground-rgb: 255, 255, 255; /* Dark text color */
+    --border-alpha: rgba(0, 0, 0, 0.2);
+    --border-alpha-invert: rgba(249, 245, 236, 0.5);
+    --border-alpha-invert-light: rgba(249, 245, 236, 0.25);
+    --highlight-color:rgba(235, 255, 0, 0.25);
+    --grid-color:rgba(10, 38, 13, 0.1);
+}
+
+.light-mode-for-dark{
+  --primary-color: #EC643C;
+  --background-color: #F9F5EC;
+  --text-color: #344C36;
+  --text-color-dark: #010E02;
+  --text-color-bright: #F5EFE1;
+  --underline-color: #000;
+  --background-color-invert:#344C36;
+  --unimportantText-color:rgba(249, 245, 236, 0.75);
+  --border-alpha: rgba(249, 245, 236, 0.5);
+  --grid-color: rgba(249, 245, 236, 0.1);
+  --border-alpha-invert: rgba(10, 38, 13, 0.5);
+  --border-alpha-invert-light: rgba(10, 38, 13, 0.25);
+  --highlight-color:rgba(235, 255, 0, 0.25);
 }
 
 .custom-cursor{
@@ -150,8 +180,10 @@ span{
 .preloader{
   width: 100%;
   height: 100vh;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  /* top: 0; */
   cursor: wait;
   background-color: var(--text-color);
   color: var(--background-color);

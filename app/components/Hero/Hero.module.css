@@ -1,5 +1,4 @@
 .a{
-    background-color: var(--background-color);
     height: calc(23.8vw/4*6);
     width: 23.8vw;
     overflow: hidden;
@@ -37,6 +36,7 @@
 .d li {
   list-style: none;
   font-size: clamp(1.4rem,1.5vw, 2rem);
+  color: var(--text-color);
 }
 
 

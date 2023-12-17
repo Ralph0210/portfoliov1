@@ -87,9 +87,6 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      {/* <Suspense fallback={null}>
-        <NavigationEvents />
-      </Suspense> */}
       <body className={rubik.className} key={pathname}>
         <AnimatePresence>
           <NavigationEvents />
