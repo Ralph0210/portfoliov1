@@ -71,7 +71,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   background-color: var(--background-color);
-  transition: all 0.8s ease-in-out;
+  transition: all 0.5s ease-in;
 }
 
 .dark-mode-for-light{
@@ -155,7 +155,7 @@ span{
   cursor: wait;
   background-color: var(--text-color);
   color: var(--background-color);
-  z-index: 99999;
+  z-index: 9999;
   border-radius: 5rem 5rem 0 0 ;
   display: flex;
   justify-content: center;

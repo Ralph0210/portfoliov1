@@ -3,9 +3,6 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "./page.module.css";
 import Navbar from "./components/Navbar/Navbar";
 import Image from "next/image";
-import { Icon } from "@iconify/react";
-import { gsap } from "gsap";
-import { Parallax } from "react-parallax";
 import Hero from "./components/Hero/Hero";
 import Intro from "./components/Intro/Intro";
 import Work from "./components/Work/Work";
@@ -13,12 +10,7 @@ import Footer from "./components/Footer/Footer";
 import { useInView } from "framer-motion";
 import Cursor from "./utils/Cursor";
 import Lenis from '@studio-freight/lenis'
-// import LocomotiveScroll from 'locomotive-scroll';
 
-// const scroll = new LocomotiveScroll({
-//   el: document.querySelector('[data-scroll-container]'),
-//   smooth: true
-// });
 
 export default function Home() {
   const [sideNavOpened, setSideNavOpened] = useState(false);
@@ -57,18 +49,6 @@ export default function Home() {
     }
   },[sideNavOpened])
 
-  // useEffect(() => {
-  //   let scroll
-  //   import("locomotive-scroll").then((locomotiveModule) => {
-  //     scroll = new locomotiveModule.default();
-  //   });
-
-  //  // cleanup phase
-  //   return () => {
-  //     if (scroll) scroll.destroy();
-  //   };
-  // });
-
   useEffect(() => {
     if (isInView || isInView2 || isInView3 === true) {
       setThemeDark(true);
@@ -77,20 +57,6 @@ export default function Home() {
     }
   }, [isInView, isInView2, isInView3]);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const LocomotiveScroll = (await import("locomotive-scroll")).default;
-  //     scroll.current = new LocomotiveScroll();
-  //   })();
-
-  //   return () => {
-  //     if (scroll.current) scroll.current.destroy();
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   sideNavOpened ? scroll.current.stop() : null
-  // }, [sideNavOpened]);
 
   return (
     <main

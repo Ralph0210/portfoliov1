@@ -22,12 +22,17 @@ const Preloader = ({ text }) => {
     <motion.div
       key={text}
       className="preloader"
+      initial={{ top: "100vh" }}
+      animate={{ top: 0, borderRadius: 0 }}
+      exit={{ top: "-100vh", borderRadius: "5rem" }}
+      transition={{ duration: 0.5, ease: easeInOut}}
+    >
+      <motion.p
       initial={{ y: "100vh" }}
       animate={{ y: 0, borderRadius: 0 }}
       exit={{ y: "-100vh", borderRadius: "5rem" }}
       transition={{ duration: 0.8, ease: easeInOut}}
-    >
-      <p>{text}</p>
+      >{text}</motion.p>
     </motion.div>
   );
 };
@@ -35,6 +40,7 @@ const Preloader = ({ text }) => {
 const NavigationEvents = () => {
   const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(false);
+  const [isLanding, setIsLanding] = useState(true)
 
   useEffect(() => {
     const url = pathname;
@@ -46,7 +52,7 @@ const NavigationEvents = () => {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Adjust delay as needed
+    }, 1300); // Adjust delay as needed
 
     return () => clearTimeout(timer);
   }, [pathname]);
@@ -74,7 +80,7 @@ export default function RootLayout({ children }) {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // Adjust delay as needed
+    }, 1000); // Adjust delay as needed
 
     return () => clearTimeout(timer);
   }, [pathname]);
@@ -86,7 +92,7 @@ export default function RootLayout({ children }) {
       </Suspense> */}
       <body className={rubik.className} key={pathname}>
         <AnimatePresence>
-          {isLoading && <Preloader text={pathname} />}
+          <NavigationEvents />
         </AnimatePresence>
         {/* {children} */}
           {!isLoading && children}
