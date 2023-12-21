@@ -27,7 +27,7 @@ const ContentComponent = ({
           <Image
             src={img}
             alt="branding"
-            width={712}
+            width={800}
             className={styles.image}
             style={{ objectPosition: "right", borderRadius: "5rem" }}
           />
@@ -49,7 +49,7 @@ const ContentComponent = ({
   );
 };
 
-const WebDesign = ({ prop }) => {
+const WebDesignText = ({ prop }) => {
   return (
     <div className={styles.webdesignContainer}>
       <ContentComponent
@@ -64,4 +64,4 @@ const WebDesign = ({ prop }) => {
   );
 };
 
-export default WebDesign;
+export default WebDesignText;

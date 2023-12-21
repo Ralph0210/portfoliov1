@@ -37,6 +37,9 @@ const Hero = ({heroData}) => {
           <p>
             {heroData.overview}
           </p>
+          <p>
+            {heroData.overview2}
+          </p>
           {heroData.liveSite ? <Link href={heroData.siteLink} target="_blank">VIEW LIVE SITE</Link> : null}
         </div>
         <div className={styles.roleContainer}>
@@ -47,7 +50,7 @@ const Hero = ({heroData}) => {
             ))}
           </div>
           <div className={styles.duration}>
-            <h2 className={styles.h2}>Completed</h2>
+            <h2 className={styles.h2}>{heroData.ongoing? "Duration" : "Completed"}</h2>
             <p>{heroData.duration}</p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 .navbarContainer {
   max-width: 100%;
   padding: 1rem 3rem;
-  font-size: clamp(1.4rem,1.5vw, 2rem);
+  font-size: clamp(1.4rem,1.5vw, 1.6rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,6 +23,8 @@
 .copyright {
   margin: 0px;
   transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  font-size: clamp(1.4rem,1.5vw, 1.6rem);
+  color: var(--text-color);
 }
 
 .name {
@@ -41,8 +43,9 @@
 
 .name p {
   position: relative;
-
+  font-size: clamp(1.4rem,1.5vw, 1.6rem);
   transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  color: var(--text-color);
 }
 
 .name p:nth-of-type(2){
@@ -52,7 +55,7 @@
 .name p:nth-of-type(3){
     position: absolute;
 
-    left: 135px;
+    left: 108px;
 
     padding-left: 0.3em;
 }
@@ -117,6 +120,8 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: max-content;
+  font-size: clamp(1.4rem,1.5vw, 1.6rem);
+  color: var(--text-color);
 }
 
 .bounds {

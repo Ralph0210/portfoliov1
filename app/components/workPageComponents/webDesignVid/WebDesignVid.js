@@ -49,7 +49,7 @@ const ContentComponent = ({
   );
 };
 
-const WebDesign = ({ prop }) => {
+const WebDesignVid = ({ prop }) => {
   return (
     <div className={styles.webdesignContainer}>
       <ContentComponent
@@ -64,4 +64,4 @@ const WebDesign = ({ prop }) => {
   );
 };
 
-export default WebDesign;
+export default WebDesignVid;

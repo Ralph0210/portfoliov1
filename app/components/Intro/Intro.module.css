@@ -259,7 +259,7 @@ margin-top: auto;
 
 .services{
     font-size: 2rem;
-    color: var(--unimportantText-color);
+    color: var(--text-color);
     margin-bottom: 3px;
 }
 
@@ -270,7 +270,7 @@ margin-top: auto;
 .divider{
     width: 90%;
     height: 1px;
-    background-color: var(--unimportantText-color);
+    background-color: var(--text-color);
 }
 
 .touchScreenTip{

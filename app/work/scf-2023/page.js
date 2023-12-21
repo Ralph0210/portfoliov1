@@ -11,10 +11,20 @@ import Hero from "@/app/components/workPageComponents/Hero/Hero";
 import Analyze from "@/app/components/workPageComponents/Analyze/Analyze";
 import Preview from "@/app/components/workPageComponents/preview/Preview";
 import WebDesign from "@/app/components/workPageComponents/webDesign/WebDesign";
+import WebDesignText from "@/app/components/workPageComponents/webDesignText/WebDesignText";
 import WebDev from "@/app/components/workPageComponents/webDev/WebDev";
 import Conclusion from "@/app/components/workPageComponents/Conclusion/Conclusion";
 import MoreWork from "@/app/components/workPageComponents/moreWork/MoreWork";
 import scf from "../../../public/scf/scf.png";
+import problem from "../../../public/scf/problem.png";
+import painPoints from "../../../public/scf/painPoints.png";
+import personas from "../../../public/scf/personas.png";
+import lowfi from "../../../public/scf/lowfi.png";
+import usabilityImg from "../../../public/scf/usability.png";
+import refined from "../../../public/scf/refined.png";
+import mockupsImg from "../../../public/scf/mockups.png";
+
+
 import branding from "../../../public/flori/overview.png";
 import research from "../../../public/flori/research.png";
 import alisa from "../../../public/flori/alisa.png";
@@ -23,8 +33,6 @@ import journey from "../../../public/flori/journey.png";
 import paperImg from "../../../public/flori/paper.png";
 import digitalImg from "../../../public/flori/digital.png";
 import lowfiImg from "../../../public/flori/lowfi.png";
-import usabilityImg from "../../../public/flori/usabilityImg.png";
-import mockupsImg from "../../../public/flori/mockups.png";
 import hifiImg from "../../../public/flori/hifi.png";
 import accessibilityImg from "../../../public/flori/accessibility.png";
 
@@ -80,129 +88,115 @@ const Page = () => {
 
   //hero
   const hero = {
-    org: "The University of Texas at Austin",
-    titleFirst: "Floral design app",
+    org: "Personal Project",
+    titleFirst: "Democratizing Financial knowledge.",
     titleSecond: "",
-    tags: ["UI/UX DESIGN", "USER RESEARCH", "USABILITY STUDY"],
+    tags: ["UI/UX DESIGN", "WEB DESIGN", "USER RESEARCH", "USABILITY STUDY", "FULL-STACK DEVELOPMENT"],
     image: scf,
     overview:
-      "Flori is a UX case study for Google UX Design Certificate. It’s a floral arrangement app designed to help users create beautiful and customized flower arrangements for any occasion.",
-    liveSite: false,
-    siteLink: null,
-    role: ["UI/UX Designer"],
-    duration: "Fall 2022",
+      "This project embarks on a mission to transform the Survey of Consumer Finance (SCF) – a valuable set of financial data collected every 3 years by the Federal Reserve – into an accessible and engaging experience for everyone.",
+    overview2:"Traditionally, the SCF's vastness – encompassing an average of 250 variables and more than 20k rows of data in each year’s extracted dataset – can be daunting to navigate, even for seasoned researchers. This web application aims to bridge this gap, unlocking the power of the SCF for a wider audience.",
+    liveSite: true,
+    siteLink: "./",
+    role: ["Designer", "Developer"],
+    duration: "Fall 2023 - Present",
+    ongoing: true
   };
 
-  const bgColor = "#FAC9CB";
+  const bgColor = "#85AED4";
 
   //analyze
   const analyze = [
     {
-      tag: "OVERVIEW",
-      title: "The problem and the goal.",
-      description: "",
+      tag: "PROBLEM",
+      title: "Understanding the gap of existing tools.",
+      description: "Currently, two SCF data exploration platforms exist: the Statistical Data Application (SDA) and the interactive chartbook. SDA boasts advanced analysis tools like correlation and regression, yet untrained users find it daunting. Conversely, the chartbook offers simple data visualization but lacks depth for rigorous exploration. Downloading the raw data for personal analysis is an option, but deciphering the variables requires constant codebook reference.",
       // "As the biggest international/exchange student organization on the campus of the University of Texas at Austin, Planet Longhorn’s brand needed to resonate with a diverse student body, reflecting a vibrant, inclusive, and dynamic community.",
-      imageLight: branding,
-      imageDark: branding,
+      imageLight: problem,
+      imageDark: problem,
       themeDark: darkMode,
       noText: false,
     },
     {
       tag: "USER RESEARCH",
-      title: "Understanding the user.",
+      title: "Understanding user needs.",
       description:
-        "In my user research on florists, I found issues such as uncertainty about flower and foliage combinations, time and cost involved in trial and error, difficulty in client communication, and disorganization in order tracking. To solve these, I aim to create an app providing bouquet tips, improving client communication, and managing orders and inventory. The app will also have features for users with disabilities.",
-      imageLight: research,
-      imageDark: research,
+        "To understand the needs of users unfamiliar with SCF, I presented the interviewees with a scenario where they needed to find the average household income by education level using SCF data, simulating basic data exploration. Additionally, I conducted secondary research through competitor analysis and industry articles to gain a broader understanding of user expectations and existing challenges.",
+      imageLight: painPoints,
+      imageDark: painPoints,
       themeDark: darkMode,
       noText: false,
     },
     {
-      tag: "PERSONA",
-      title: "Problem statement.",
+      tag: "PERSONAS",
+      title: "Guide to a Better SCF Experience.",
       description:
-        "Alisa Brooke is a trendy florist who needs a new way to make sure her bouquet design will be well-received by her customers because she doesn’t have the time and resources to redo her bouquet.",
-      imageLight: alisa,
-      imageDark: alisa,
-      themeDark: darkMode,
-      noText: false,
-    },
-    {
-      tag: "PERSONA",
-      title: "Problem statement.",
-      description:
-        "Julia Jiang is a trendy florist who needs a faster way to design her bouquet and publish them because she wants to showcase her work to the world faster.",
-      imageLight: julia,
-      imageDark: julia,
-      themeDark: darkMode,
-      noText: false,
-    },
-    {
-      tag: "USER JOURNEY MAP",
-      title: "A fast and easy way to see the floral design.",
-      description:
-        "Thanks to user research, I can segment a florist’s job into small actions and find place for improvement opportunities.",
-      imageLight: journey,
-      imageDark: journey,
+        "By stepping into the shoes of these personas, I was able to empathize with user pain points and identify key opportunities for improvement. Robert's frustrations pointed towards streamlining workflows and enhancing data accessibility. Priya's struggles underscored the need for intuitive navigation and simplified visualizations.",
+      imageLight: personas,
+      imageDark: personas,
       themeDark: darkMode,
       noText: false,
     },
   ];
 
   //web design
-  const paper = {
-    tag: "WIREFRAME",
-    title: "Paper wireframes.",
+  const process = {
+    tag: "PROCESS",
+    title: "Prioritizing feature.",
     description:
-      "Paper wireframes aim to enhance the user experience and solve any pain points. These wireframes took inspiration from image editing and note apps to develop a user-friendly interface that exceeds expectations.",
+      "Driven by the wealth of information within the SCF dataset and a deep understanding of user challenges, we've prioritized the development of intuitive data exploration and analysis tools.",
     image: paperImg,
     bgColor: bgColor,
     mobileContainer: false,
   };
 
-  const digital = {
-    tag: "WIREFRAME",
-    title: "Digital wireframes.",
-    description:
-      "The first wireframe allows users to access recent projects at the top, find suggested color combinations for inspiration in the middle, and view a card layout of flowers at the bottom. The second wireframe is the design panel for bouquet.",
-    image: digitalImg,
-    bgColor: bgColor,
-    mobileContainer: false,
-  };
-
-  const lowfi = {
+  const lofi = {
     tag: "PROTOTYPE",
     title: "Low-fidelity prototype.",
     description:
-      "Here's a low-fidelity prototype that includes a home page where users can create or edit files, search for content, and add flowers to a selected project. When the user exits a file, a confirmation box will appear to let them know that their progress has been saved.",
-    image: lowfiImg,
+      "This low-fidelity prototype showcases a user flow that guides users from pinpointing their interests to tailored data exploration(the data exploration page dynamically highlights variables related to user-chosen interests), and analytic tools.",
+    image: lowfi,
     bgColor: bgColor,
     mobileContainer: false,
+    imageText: true
   };
 
   const usability = {
     tag: "USABILITY",
-    title: "Usability study findings.",
+    title: "Usability study and findings.",
     description: "",
     image: usabilityImg,
     bgColor: bgColor,
     mobileContainer: false,
   };
 
+  const iterations = {
+    tag: "ITERATIONS",
+    title: "Refining the design.",
+    description:"Fueled by insights from usability testing and inspired by innovative approaches to data visualization from https://nfp73.ch/de, I redesigned the way users explore variables within the SCF dataset. Instead of traditional lists, I’ve introduced an interactive map of variables, offering a more intuitive and engaging experience. I also simplified the interface of the analysis page, allowing user to perform desired tasks easily.",
+    image: refined,
+    bgColor: bgColor,
+    mobileContainer: false,
+  };
+
   const mockups = {
     tag: "MOCKUPS",
-    title: "Refining the design.",
-    description:
-      "The refined design will have a list of scrollable buttons at the bottom, categorizing the user's floral design needs. This leaves more canvas space for design and creation. Usability test results show that users don't often add flowers to a project. They need a simpler way to add flowers during the design process. To address this, I've added a feature for users to favorite flowers. On the design page, under the 'focal' and 'foliage' buttons, users can view their favorite flowers. This makes it simpler for them to add preferred flowers to their designs.",
+    title: "Product mockups.",
+    description:"",
     image: mockupsImg,
     bgColor: bgColor,
     mobileContainer: true,
   };
 
-  const hifi = {
-    tag: "PROTOTYPE",
-    title: "High-fidelity prototype.",
-    description: "",
+  const preview = {
+    vidId: "eYtFt34CLms",
+    bgColor: bgColor,
+  };
+
+  const navbar = {
+    tag: "INTERACTION",
+    title: "Navbar.",
+    description: "The navbar features a rounded shape that highlights the current page. This shape follows the user's cursor as it moves across the navbar. When the cursor leaves the navbar, the shape returns to its position on the current page.",
     image: hifiImg,
     bgColor: bgColor,
     mobileContainer: false,
@@ -259,12 +253,14 @@ const Page = () => {
         <Hero heroData={hero} />
         <div className={styles.background}></div>
         <Analyze prop={analyze} />
-        <WebDesign prop={paper} />
-        <WebDesign prop={digital} />
-        <WebDesign prop={lowfi} />
+        <WebDesign prop={process} />
+        <WebDesignText prop={lofi} />
         <WebDesign prop={usability} />
+        <WebDesignText prop={iterations} />
         <WebDesign prop={mockups} />
-        <WebDesign prop={hifi} />
+        <Preview prop={preview} />
+        <div className={styles.background}></div>
+        <WebDesign prop={navbar} />
         <WebDesign prop={accessibility} />
         <Conclusion prop={con}/>
       </div>
