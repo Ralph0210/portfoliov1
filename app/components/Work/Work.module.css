@@ -147,6 +147,18 @@
   /* transform: translateX(-50%); */
 }
 
+.moreWork span{
+  font-size: 2rem;
+  position: relative;
+}
+
+.moreWork span p{
+  font-size: 1.2rem;
+  position: absolute;
+  right: -8px;
+  top: -5px;
+}
+
 @keyframes letterroll {
   50% {
     transform: translate(-50%, -75%);

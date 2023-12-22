@@ -20,6 +20,8 @@ import brandingDark from "../../../public/sehath/branding-dark.png";
 import wireframe from "../../../public/pl/wireframe.png";
 import wireframeDark from "../../../public/pl/wireframe-dark.png";
 import home from "../../../public/sehath/home.png";
+import pl from "../../../public/pl/pl.png";
+import greater from "../../../public/greater/greater.png";
 
 const Page = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -89,6 +91,8 @@ const Page = () => {
     siteLink: "https://sehath.vercel.app/",
     role: ["Website Designer", "Website Developer"],
     duration: "Fall 2023",
+    designLink:"https://www.figma.com/file/DnA2qgca2PKQSYwQUsVL8S/Sehath?type=design&node-id=218%3A2484&mode=design&t=RyYb5mnNNTl5modx-1",
+    codeLink:"https://github.com/Ralph0210/sehath"
   };
 
   const bgColor = "#F2D5C2";
@@ -161,9 +165,21 @@ const Page = () => {
 
   //more projects
   const more = [
-    {image: heroImg, title: "Planet Longhorn", link: "/work/planet-longhorn-2023"},
-    {image: heroImg, title: "Planet Longhorn", link: "/work/planet-longhorn-2023"},
-  ]
+    {
+      image: pl,
+      title: "Planet Longhron",
+      link: "/work/planet-longhron-2023",
+      tags:["WEB DESIGN", "WEB DEVELOPMENT"],
+      description:"Design and develop an informative and community-representative online presence for Planet Longhorn."
+    },
+    {
+      image: greater,
+      title: "Greater",
+      link: "/work/greater-2023",
+      tags:["WEB DESIGN", "WEB DEVELOPMENT"],
+      description:"Design an app that connects users with LGBTQIA+ friendly spots in Austin, Texas."
+    },
+  ];
 
   return (
     <div className={styles.plContainer}>

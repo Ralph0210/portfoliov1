@@ -17,7 +17,8 @@ const LargeWorkCard = ({
     return (
       <div onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      style={{ opacity: hoveredAtAll !== null ? (isHovered ? 1 : 0.4) : 1, transition: "opacity 0.3s ease-in-out", height:"auto" }} >
+      // style={{ opacity: hoveredAtAll !== null ? (isHovered ? 1 : 0.4) : 1, transition: "opacity 0.3s ease-in-out", height:"auto" }}
+       >
         <Link href={{pathname: link}} className={styles.link}>
         <div
           className={`${styles.largeImageContainer} ${styles.workCard}`}

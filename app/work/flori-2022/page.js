@@ -27,6 +27,8 @@ import usabilityImg from "../../../public/flori/usabilityImg.png";
 import mockupsImg from "../../../public/flori/mockups.png";
 import hifiImg from "../../../public/flori/hifi.png";
 import accessibilityImg from "../../../public/flori/accessibility.png";
+import greater from "../../../public/greater/greater.png";
+import sehath from "../../../public/sehath/sehath.png";
 
 const Page = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -91,6 +93,7 @@ const Page = () => {
     siteLink: null,
     role: ["UI/UX Designer"],
     duration: "Fall 2022",
+    designLink:"https://www.figma.com/file/9kRfTrg7EioKfS2vD9Yrxk/flori?type=design&node-id=0%3A1&mode=design&t=dAZl7xoHwuJyhTz1-1"
   };
 
   const bgColor = "#FAC9CB";
@@ -236,14 +239,18 @@ const Page = () => {
   //more projects
   const more = [
     {
-      image: flori,
-      title: "Planet Longhorn",
-      link: "/work/planet-longhorn-2023",
+      image: greater,
+      title: "Greater",
+      link: "/work/greater-2023",
+      tags:["UIUX DESIGN"],
+      description:"Design an app that connects users with LGBTQIA+ friendly spots in Austin, Texas."
     },
     {
-      image: flori,
-      title: "Planet Longhorn",
-      link: "/work/planet-longhorn-2023",
+      image: sehath,
+      title: "UT Sehath",
+      link: "/work/sehath-2023",
+      tags:["WEB DESIGN", "WEB DEVELOPMENT"],
+      description:"Design and develop an informative fundraising platform to showcase UT Sehath's commitment to global healthcare."
     },
   ];
 

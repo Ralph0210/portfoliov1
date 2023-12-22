@@ -5,13 +5,13 @@ import Cursor from "@/app/utils/Cursor";
 import Navbar from "@/app/components/Navbar/Navbar";
 import Footer from "@/app/components/Footer/Footer";
 import { useInView } from "framer-motion";
-import Link from "next/link";
 import Lenis from "@studio-freight/lenis";
 import Hero from "@/app/components/workPageComponents/Hero/Hero";
 import Analyze from "@/app/components/workPageComponents/Analyze/Analyze";
 import Preview from "@/app/components/workPageComponents/preview/Preview";
 import WebDesign from "@/app/components/workPageComponents/webDesign/WebDesign";
 import WebDesignText from "@/app/components/workPageComponents/webDesignText/WebDesignText";
+import WebDesignVid from "@/app/components/workPageComponents/webDesignVid/WebDesignVid";
 import WebDev from "@/app/components/workPageComponents/webDev/WebDev";
 import Conclusion from "@/app/components/workPageComponents/Conclusion/Conclusion";
 import MoreWork from "@/app/components/workPageComponents/moreWork/MoreWork";
@@ -23,18 +23,8 @@ import lowfi from "../../../public/scf/lowfi.png";
 import usabilityImg from "../../../public/scf/usability.png";
 import refined from "../../../public/scf/refined.png";
 import mockupsImg from "../../../public/scf/mockups.png";
-
-
-import branding from "../../../public/flori/overview.png";
-import research from "../../../public/flori/research.png";
-import alisa from "../../../public/flori/alisa.png";
-import julia from "../../../public/flori/julia.png";
-import journey from "../../../public/flori/journey.png";
-import paperImg from "../../../public/flori/paper.png";
-import digitalImg from "../../../public/flori/digital.png";
-import lowfiImg from "../../../public/flori/lowfi.png";
-import hifiImg from "../../../public/flori/hifi.png";
-import accessibilityImg from "../../../public/flori/accessibility.png";
+import pl from "../../../public/pl/pl.png";
+import flori from "../../../public/flori/flori.png";
 
 const Page = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -100,7 +90,9 @@ const Page = () => {
     siteLink: "./",
     role: ["Designer", "Developer"],
     duration: "Fall 2023 - Present",
-    ongoing: true
+    ongoing: true,
+    designLink:"https://www.figma.com/file/ZzMlxWMmTlf6gEwwhyaKui/SCF-project?type=design&node-id=68%3A2039&mode=design&t=4Kh5yUoi8bgPF2G9-1",
+    codeLink:"https://github.com/Ralph0210/scf_client"
   };
 
   const bgColor = "#85AED4";
@@ -142,17 +134,18 @@ const Page = () => {
   //web design
   const process = {
     tag: "PROCESS",
-    title: "Prioritizing feature.",
+    title: "Prioritizing feature",
     description:
-      "Driven by the wealth of information within the SCF dataset and a deep understanding of user challenges, we've prioritized the development of intuitive data exploration and analysis tools.",
-    image: paperImg,
+      "Driven by the wealth of information within the SCF dataset and a deep understanding of user challenges, I've prioritized the development of intuitive data exploration and analysis tools.",
+    image: "",
     bgColor: bgColor,
     mobileContainer: false,
+    noImg: true
   };
 
   const lofi = {
     tag: "PROTOTYPE",
-    title: "Low-fidelity prototype.",
+    title: "Low-fidelity prototype",
     description:
       "This low-fidelity prototype showcases a user flow that guides users from pinpointing their interests to tailored data exploration(the data exploration page dynamically highlights variables related to user-chosen interests), and analytic tools.",
     image: lowfi,
@@ -163,7 +156,7 @@ const Page = () => {
 
   const usability = {
     tag: "USABILITY",
-    title: "Usability study and findings.",
+    title: "Usability study and findings",
     description: "",
     image: usabilityImg,
     bgColor: bgColor,
@@ -172,7 +165,7 @@ const Page = () => {
 
   const iterations = {
     tag: "ITERATIONS",
-    title: "Refining the design.",
+    title: "Refining the design",
     description:"Fueled by insights from usability testing and inspired by innovative approaches to data visualization from https://nfp73.ch/de, I redesigned the way users explore variables within the SCF dataset. Instead of traditional lists, I’ve introduced an interactive map of variables, offering a more intuitive and engaging experience. I also simplified the interface of the analysis page, allowing user to perform desired tasks easily.",
     image: refined,
     bgColor: bgColor,
@@ -181,11 +174,11 @@ const Page = () => {
 
   const mockups = {
     tag: "MOCKUPS",
-    title: "Product mockups.",
+    title: "Product mockups",
     description:"",
     image: mockupsImg,
     bgColor: bgColor,
-    mobileContainer: true,
+    mobileContainer: false,
   };
 
   const preview = {
@@ -193,23 +186,99 @@ const Page = () => {
     bgColor: bgColor,
   };
 
+    //web dev
+    const webDev = [
+      {
+        name: "Front-end",
+        tech: [
+          "HTML",
+          "module CSS",
+          "JavaScript",
+          "React",
+          "Framer Motion",
+        ],
+      },
+      {
+        name: "Back-end",
+        tech: [
+          "Node.js",
+          "Express.js",
+          "MySQL",
+          "Sequelize",
+        ],
+      },
+      {
+        name: "Deployment",
+        tech: ["Azure"],
+      },
+    ];
+
   const navbar = {
     tag: "INTERACTION",
-    title: "Navbar.",
+    title: "Navbar",
     description: "The navbar features a rounded shape that highlights the current page. This shape follows the user's cursor as it moves across the navbar. When the cursor leaves the navbar, the shape returns to its position on the current page.",
-    image: hifiImg,
+    image: "/scf/navbar.mov",
     bgColor: bgColor,
     mobileContainer: false,
   };
 
-  const accessibility = {
-    tag: "ACCESSIBILITY",
-    title: "Accessibility considerations.",
-    description: "",
-    image: accessibilityImg,
+  const vMap = {
+    tag: "FEATURE",
+    title: "Variable map",
+    description: "The variable map, created with d3.js, is designed to represent SCF data in the form of a radial tree for visual clarity. When a user hovers over a node, the variable's descriptive details are displayed. Furthermore, clicking on a node reveals the names of its immediate child nodes. This interaction is intended to simplify the process of searching for specific variables within the data set.",
+    image: "/scf/vmap.mov",
     bgColor: bgColor,
     mobileContainer: false,
   };
+
+  const ui = {
+    tag: "UI",
+    title: "Analytic tool",
+    description: "This user-friendly interface allows users to visualize and analyze topics of their interest. Users have the option to choose up to two distribution variables. Additionally, they can independently select how each distribution method is displayed. For instance, if the chosen distribution method is age, users can specify which age groups they want to see. They also have the capability to select the data's unit and the range of years it covers. Finally, users can export their visualizations. The entire user interface is integrated with the backend, triggering queries based on the user's selected data visualization methods.",
+    image: "/scf/ui.mov",
+    bgColor: bgColor,
+    mobileContainer: false,
+  };
+
+  const iteration = {
+    tag: "ITERATION",
+    title: "GPT helper beta",
+    description: "OpenAI's recently launched Assistant API has enabled me to create an interactive assistant that can answer queries about the SCF dataset, including specific questions such as “What is the average income among people who are younger than 35 years old?” Currently, this assistant is in a training phase, so its responses might occasionally be inaccurate or unpredictable.",
+    image: "/scf/helper.mov",
+    bgColor: bgColor,
+    mobileContainer: false,
+  };
+
+  const mysql = {
+    tag: "BACKEND",
+    title: "MySQL",
+    description: "Since the SCF lacks an API, I need to create a custom RESTful API. This will enable users to make queries through the frontend UI. I've chosen NodeJs for its compatibility with MySQL, which will serve as the database for this project. In MySQL, the SCF data will be organized by year, mirroring its original structure.",
+    image: "",
+    bgColor: bgColor,
+    mobileContainer: false,
+    noImg: true
+  };
+
+  const api = {
+    tag: "BACKEND",
+    title: "RESTful-API",
+    description: "Express.js, known for its minimalist and adaptable design, complements Node.js effectively. For this reason, I've selected Express.js as the framework to develop my API. Furthermore, by integrating Sequelize, a powerful ORM, I can write queries for the MySQL database more efficiently and with greater ease.",
+    image: "",
+    bgColor: bgColor,
+    mobileContainer: false,
+    noImg: true
+  };
+
+  const azure = {
+    tag: "BACKEND",
+    title: "Microsoft Azure",
+    description: "I chose to deploy my web application on Azure by the fact that NodeJS is developed by Microsoft and Azure was providing free credits. The transition of my local MySQL database to Azure's MySQL flexible server was a smooth process. Additionally, deploying the web application on Azure proved to be a straightforward task.",
+    image: "",
+    bgColor: bgColor,
+    mobileContainer: false,
+    noImg: true
+  };
+
 
   //conclusion
   const con = {
@@ -230,14 +299,18 @@ const Page = () => {
   //more projects
   const more = [
     {
-      image: scf,
+      image: pl,
       title: "Planet Longhorn",
       link: "/work/planet-longhorn-2023",
+      tags:["WEB DESIGN", "WEB DEVELOPMENT"],
+      description:"Design and develop an informative and community-representative online presence for Planet Longhorn."
     },
     {
-      image: scf,
-      title: "Planet Longhorn",
-      link: "/work/planet-longhorn-2023",
+      image: flori,
+      title: "Flori",
+      link: "/work/flori-2022",
+      tags:["UIUX DESIGN"],
+      description:"UX case study for a floral arrangement app, enabling users to design customized arrangements for various occasions."
     },
   ];
 
@@ -253,15 +326,51 @@ const Page = () => {
         <Hero heroData={hero} />
         <div className={styles.background}></div>
         <Analyze prop={analyze} />
+        <div className={styles.designGoalsContainer}>
+          <div className={styles.designGoalsTitle}>
+            <span>IDEATE</span>
+            <h2>Design goals:</h2>
+          </div>
+          <div className={styles.designGoalsContent}>
+            <div className={styles.designGoalsContentContainer}>
+              <h3>Streamlined Access to Knowledge:</h3>
+              <ul>
+                <li><span>Intuitive navigation:</span> Design a hierarchy that prioritizes frequently used features and offers clear pathways to deeper levels of information.</li>
+                <li><span>Contextual explanations:</span> Integrate dynamic tooltips and hover-over info cards to quickly clarify terms and data definitions.</li>
+                <li><span>Drill-down capabilities:</span>  Allow users to explore the data by navigating through hierarchies and breakdowns.</li>
+              </ul>
+            </div>
+            <div className={styles.designGoalsContentRight}>
+            <div className={styles.designGoalsContentContainer}>
+              <h3>One-Stop Platform:</h3>
+              <ul>
+                <li><span>Integrated tools:</span> Allow users to perform calculations, compare data sets, and export findings within the platform for a seamless workflow.</li>
+              </ul>
+            </div>
+            <div className={styles.designGoalsContentContainer}>
+              <h3>Storytelling and Guidance:</h3>
+              <ul>
+                <li><span>Persona creation:</span> Allow users to create or use a set of pre-designed personas to explore the dataset.</li>
+                <li><span>Interest-guided insights:</span> Provide relevant SCF data specific to the chosen persona's circumstances.</li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
         <WebDesign prop={process} />
         <WebDesignText prop={lofi} />
         <WebDesign prop={usability} />
         <WebDesignText prop={iterations} />
         <WebDesign prop={mockups} />
         <Preview prop={preview} />
-        <div className={styles.background}></div>
-        <WebDesign prop={navbar} />
-        <WebDesign prop={accessibility} />
+        <WebDev prop={webDev} />
+        <WebDesignVid prop={navbar} />
+        <WebDesignVid prop={vMap} />
+        <WebDesignVid prop={ui} />
+        <WebDesignVid prop={iteration} />
+        <WebDesign prop={mysql} />
+        <WebDesign prop={api} />
+        <WebDesign prop={azure} />
         <Conclusion prop={con}/>
       </div>
       <MoreWork prop={more} />

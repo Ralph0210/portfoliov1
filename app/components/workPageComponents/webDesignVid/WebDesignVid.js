@@ -24,13 +24,10 @@ const ContentComponent = ({
           className={styles.imageContainer}
           style={{ backgroundColor: bgColor }}
         >
-          <Image
-            src={img}
-            alt="branding"
-            width={712}
-            className={styles.image}
-            style={{ objectPosition: "right", borderRadius: "5rem" }}
-          />
+          <video width={712} height={"auto"} loop muted autoPlay style={{borderRadius:"5rem"}}>
+            <source src={img} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         {mobileContainer ? (
           <>

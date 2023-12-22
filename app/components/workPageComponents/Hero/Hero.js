@@ -5,6 +5,7 @@ const lora = Lora({ subsets: ["latin"] });
 import Image from "next/image";
 import pl from "../../../../public/pl/pl.png";
 import Link from "next/link";
+import { Icon } from '@iconify/react';
 
 const Hero = ({heroData}) => {
   return (
@@ -27,6 +28,7 @@ const Hero = ({heroData}) => {
           fill
           placeholder="blur"
           priority
+          style={{objectFit: "cover"}}
         />
       </div>
       <div className={styles.overviewContainer}>
@@ -53,6 +55,14 @@ const Hero = ({heroData}) => {
             <h2 className={styles.h2}>{heroData.ongoing? "Duration" : "Completed"}</h2>
             <p>{heroData.duration}</p>
           </div>
+          <div className={styles.duration}>
+            <h2 className={styles.h2}>Design Link</h2>
+            <Link href={heroData.designLink} target="_blank" className={styles.link}>Figma <Icon icon="iconoir:open-new-window" /></Link>
+          </div>
+          {heroData.codeLink && <div className={styles.duration}>
+            <h2 className={styles.h2}>Repository</h2>
+            <Link href={heroData.codeLink} target="_blank" className={styles.link}>Github <Icon icon="iconoir:open-new-window" /></Link>
+          </div>}
         </div>
       </div>
       </div>

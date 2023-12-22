@@ -47,10 +47,10 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
       <p ref={footerStick} className={styles.selectedWork}>Selected Work</p>
       <div className={styles.workGallery}>
         <div className={styles.workGalleryTop}>
-          <LargeWorkCard
-            title="SCF Analysis Tool"
-            tags={["UI/UX Design", "Full-Stack Development"]}
-            description="I design and develop user centered digital products, ecommerce and brand communication solutions."
+        <LargeWorkCard
+            title="SCF Analysis"
+            tags={["UI/UX DESIGN", "FULL-STACK DEVELOPMENT"]}
+            description="This project simplifies the vast Survey of Consumer Finance data into an accessible and engaging web application for all users."
             imageSrc={scf}
             isHovered={hoveredCard === 0}
             onMouseEnter={() => handleMouseEnter(0)}
@@ -60,9 +60,9 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
             link="/work/scf-2023"
           />
           <SmallWorkCard
-            title="planet longhorn"
-            tags={["UI/UX Design", "Full-Stack Development"]}
-            description="I design and develop user centered digital products, ecommerce and brand communication solutions."
+            title="Planet longhorn"
+            tags={["WEB DESIGN", "WEB DEVELOPMENT"]}
+            description="Design and develop an informative and community-representative online presence for Planet Longhorn."
             imageSrc={pl}
             isHovered={hoveredCard === 1}
             onMouseEnter={() => handleMouseEnter(1)}
@@ -72,10 +72,10 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
           />
         </div>
         <div className={styles.workGalleryBottom}>
-          <SmallWorkCard
-            title="Sehath"
-            tags={["UI/UX Design", "Full-Stack Development"]}
-            description="I design and develop user centered digital products, ecommerce and brand communication solutions."
+        <SmallWorkCard
+            title="UT Sehath"
+            tags={["WEB DESIGN", "WEB DEVELOPMENT"]}
+            description="Design and develop an informative fundraising platform to showcase UT Sehath's commitment to global healthcare."
             imageSrc={sehath}
             isHovered={hoveredCard === 2}
             onMouseEnter={() => handleMouseEnter(2)}
@@ -84,9 +84,9 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
             link="/work/sehath-2023"
           />
           <LargeWorkCard
-            title="SCF Analysis Tool"
-            tags={["UI/UX Design", "Full-Stack Development"]}
-            description="I design and develop user centered digital products, ecommerce and brand communication solutions."
+            title="Greater"
+            tags={["UI/UX DESIGN",]}
+            description="Design an app that connects users with LGBTQIA+ friendly spots in Austin, Texas."
             imageSrc={greater}
             isHovered={hoveredCard === 3}
             onMouseEnter={() => handleMouseEnter(3)}
@@ -98,7 +98,7 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
         </div>
       </div>
       <Link href="/work" className={`${styles.moreWork} ${styles.button}`}>
-        <span>More work</span> <div className={styles.bounds}></div>
+        <span>More work <p>5</p></span> <div className={styles.bounds}></div>
       </Link>
       {/* <div style={{zIndex:"0"}}>
       <Footer isInView4={isInView4} />

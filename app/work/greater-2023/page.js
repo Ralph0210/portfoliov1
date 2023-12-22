@@ -26,6 +26,8 @@ import usabilityImg from "../../../public/flori/usabilityImg.png";
 import mockupsImg from "../../../public/flori/mockups.png";
 import hifiImg from "../../../public/flori/hifi.png";
 import accessibilityImg from "../../../public/flori/accessibility.png";
+import pl from "../../../public/pl/pl.png";
+import scf from "../../../public/scf/scf.png";
 
 const Page = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -91,6 +93,7 @@ const Page = () => {
     siteLink: null,
     role: ["UI/UX Designer"],
     duration: "Spring 2023",
+    designLink:"https://www.figma.com/file/8fK6e3mqRqHkXy58yce7TZ/Wellbeing-prototype?type=design&node-id=102%3A17&mode=design&t=ELnLMK2FNRa8Csv4-1"
   };
 
   const bgColor = "#08B47A";
@@ -238,14 +241,18 @@ const Page = () => {
   //more projects
   const more = [
     {
-      image: greater,
-      title: "Planet Longhorn",
-      link: "/work/planet-longhorn-2023",
+      image: scf,
+      title: "SCF Analysis",
+      link: "/work/scf-2023",
+      tags:["UI/UX DESIGN", "FULL-STACK DEVELOPMENT"],
+      description:"This project simplifies the vast Survey of Consumer Finance data into an accessible and engaging web application for all users."
     },
     {
-      image: greater,
+      image: pl,
       title: "Planet Longhorn",
       link: "/work/planet-longhorn-2023",
+      tags:["WEB DESIGN", "WEB DEVELOPMENT"],
+      description:"Design and develop an informative and community-representative online presence for Planet Longhorn."
     },
   ];
 

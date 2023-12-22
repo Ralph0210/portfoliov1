@@ -20,7 +20,8 @@ import brandingDark from "../../../public/pl/branding-dark.png";
 import wireframe from "../../../public/pl/wireframe.png";
 import wireframeDark from "../../../public/pl/wireframe-dark.png";
 import home from "../../../public/pl/home.png";
-import { motion, AnimatePresence } from "framer-motion";
+import sehath from "../../../public/sehath/sehath.png";
+import scf from "../../../public/scf/scf.png";
 
 const Page = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -97,6 +98,8 @@ const Page = () => {
     siteLink: "https://www.planet-longhorn.org/",
     role: ["Website Designer", "Website Developer"],
     duration: "Fall 2023",
+    designLink:"https://www.figma.com/file/rCtOehDYROxdxuwrE907UD/PL?type=design&node-id=0%3A1&mode=design&t=7NqjsLhYEmX4hEey-1",
+    codeLink:"https://github.com/Ralph0210/Planet-Longhorn"
   };
 
   const bgColor = "#F2D5C2";
@@ -176,8 +179,20 @@ const Page = () => {
 
   //more projects
   const more = [
-    { image: pl, title: "Planet Longhorn", link: "/work/planet-longhorn-2023" },
-    { image: pl, title: "Planet Longhorn", link: "/work/planet-longhorn-2023" },
+    {
+      image: scf,
+      title: "SCF Analysis",
+      link: "/work/scf-2023",
+      tags:["UI/UX DESIGN", "FULL-STACK DEVELOPMENT"],
+      description:"This project simplifies the vast Survey of Consumer Finance data into an accessible and engaging web application for all users."
+    },
+    {
+      image: sehath,
+      title: "UT Sehath",
+      link: "/work/sehath-2023",
+      tags:["WEB DESIGN", "WEB DEVELOPMENT"],
+      description:"Design and develop an informative fundraising platform to showcase UT Sehath's commitment to global healthcare."
+    },
   ];
 
   return (

@@ -86,9 +86,9 @@
 }
 
 .roleContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
 }
 
 .roleContainer h2{
@@ -97,5 +97,15 @@
 
 .roleContainer p{
     font-size: 1.6rem;
+}
+
+.link{
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.link:hover{
+    text-decoration: underline;
 }
 

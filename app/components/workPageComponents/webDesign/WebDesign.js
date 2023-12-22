@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./WebDesign.module.css";
 import Image from "next/image";
-import home from "../../../../public/pl/home.png";
 
 const ContentComponent = ({
   tag,
@@ -10,7 +9,7 @@ const ContentComponent = ({
   img,
   bgColor,
   mobileContainer,
-  imageText
+  noImg
 }) => {
   return (
     <div className={styles.processContainer}>
@@ -19,7 +18,8 @@ const ContentComponent = ({
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
-      <div className={styles.rightContainer}>
+
+      {noImg ? null : <div className={styles.rightContainer}>
         <div
           className={styles.imageContainer}
           style={{ backgroundColor: bgColor }}
@@ -44,7 +44,7 @@ const ContentComponent = ({
             </div>
           </>
         ) : null}
-      </div>
+      </div>}
     </div>
   );
 };
@@ -59,6 +59,7 @@ const WebDesign = ({ prop }) => {
         img={prop.image}
         bgColor={prop.bgColor}
         mobileContainer={prop.mobileContainer}
+        noImg={prop.noImg}
       />
     </div>
   );

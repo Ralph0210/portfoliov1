@@ -1,7 +1,8 @@
 .smallImageContainer {
     object-fit: cover;
-    width: calc((100vw - 18rem) / 2);
-    height: calc((100vw - 18rem) / 2 * 0.65);
+    /* width: calc((100vw - 18rem) / 2); */
+    min-height: calc((100vw - 18rem) / 2 * 0.65);
+    /* width: 100%; */
     position: relative;
   }
 
@@ -15,7 +16,7 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1.5rem;
-    color: var(--text-color-dark);
+    color: var(--text-color);
   }
   
   .tags {
@@ -25,13 +26,13 @@
   
   .title {
     font-size: 2rem;
-    /* font-weight: 700; */
+    font-weight: 500;
   }
   
   .tags li {
-    font-size: clamp(1.4rem,1.5vw, 2rem);
+    font-size: clamp(1.4rem,1.5vw, 1.6rem);
     list-style: none;
-    border: 1px solid var(--text-color-dark);
+    border: 1px solid var(--border-alpha-invert);
     border-radius: 5rem;
     text-align: center;
     display: flex;
@@ -40,10 +41,10 @@
   }
   
   .description {
-    font-size: clamp(1.4rem,1.5vw, 2rem);
+    font-size: clamp(1.4rem,1.5vw, 1.6rem);
     padding-top: 1rem;
     width: 65%;
-    color: var(--text-color-dark);
+    color: var(--text-color);
   }
   
   .workCard {
