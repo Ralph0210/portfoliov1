@@ -19,6 +19,7 @@
 
 .nameContainer h1{
     width: 60%;
+    font-size: clamp(2.8rem, 2.8vw, 3.2rem);
 }
 
 .tagsContainer{
@@ -109,3 +110,18 @@
     text-decoration: underline;
 }
 
+@media (max-width:430px){
+    .tagsContainer{
+        flex-wrap: wrap;
+    }
+    .contentContainer{
+        flex-direction: column;
+    }
+
+    .textContainer{
+        flex: 1;
+    }
+    .roleContainer{
+        margin-top: 5rem;
+    }
+}

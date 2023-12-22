@@ -31,3 +31,12 @@
     list-style: none;
     margin-bottom: 0.5rem;
 }
+
+@media (max-width: 430px){
+    .techContainer{
+        display: flex;
+        margin-top: 1rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

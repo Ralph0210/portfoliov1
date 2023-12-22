@@ -19,9 +19,11 @@ const ContentComponent = ({ tag, title, description, img, noText, noImg }) => {
         <Image
           src={img}
           alt="branding"
-          width={noText? 1200 : 712}
+          // fill
+          // width={noText? 1200 : 712}
+          width={"100%"}
           className={styles.image}
-          style={noText? {marginLeft:0}:{ objectPosition: "right" }}
+          style={noText? {marginLeft:0, objectFit:"contain"}:{ objectPosition: "right", objectFit:"contain" }}
         />
       </div>}
     </div>

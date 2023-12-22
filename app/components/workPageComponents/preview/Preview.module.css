@@ -19,8 +19,45 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    padding: 5% 10%;
 }
 
 .vid{
     overflow: hidden;
+    width: 100%;
+  height: 100%;
+}
+
+@media (max-width:1024px){
+    .previewContainer{
+        width: 100%;
+        height: 50vh;
+        background-color: var(--background-color);
+        position: relative;
+        z-index: 5;
+        padding: 5% 5%;
+    }
+}
+
+@media (max-width:780px){
+    .previewContainer{
+        width: 100%;
+        height: 40vh;
+        background-color: var(--background-color);
+        position: relative;
+        z-index: 5;
+        padding: 5% 5%;
+    }
+}
+
+@media (max-width:430px){
+    .previewContainer{
+        width: 100%;
+        height: 30vh;
+        background-color: var(--background-color);
+        position: relative;
+        z-index: 5;
+        padding: 5% 5%;
+    }
 }

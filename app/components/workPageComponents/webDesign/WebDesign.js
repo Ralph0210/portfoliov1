@@ -27,9 +27,9 @@ const ContentComponent = ({
           <Image
             src={img}
             alt="branding"
-            width={712}
+            width={"100%"}
             className={styles.image}
-            style={{ objectPosition: "right", borderRadius: "5rem" }}
+            style={{ objectPosition: "right", borderRadius: "2rem" }}
           />
         </div>
         {mobileContainer ? (

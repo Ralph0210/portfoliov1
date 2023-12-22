@@ -42,13 +42,13 @@ const LandingPreloader = ({text}) => {
     <motion.div
       key={text}
       className="preloader"
-      initial={{ top: "100vh" }}
+      initial={{ top: 0, borderRadius: 0 }}
       animate={{ top: 0, borderRadius: 0 }}
       exit={{ top: "-100vh", borderRadius: "5rem" }}
       transition={{ duration: 0.5, ease: easeInOut}}
     >
       <motion.p
-      initial={{ y: "100vh" }}
+      initial={{ y: 0 }}
       animate={{ y: 0, borderRadius: 0 }}
       exit={{ y: "-100vh", borderRadius: "5rem" }}
       transition={{ duration: 0.8, ease: easeInOut}}
