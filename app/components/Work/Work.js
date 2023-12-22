@@ -3,10 +3,10 @@ import React, { useLayoutEffect, useState } from "react";
 import styles from "./Work.module.css";
 import Image from "next/image";
 
-import scf from '../../../public/scf/scf.png'
-import pl from '../../../public/pl/pl.png'
-import greater from '../../../public/greater/greater.png'
-import sehath from '../../../public/sehath/sehath.png'
+import scf from "../../../public/scf/scf.png";
+import pl from "../../../public/pl/pl.png";
+import greater from "../../../public/greater/greater.png";
+import sehath from "../../../public/sehath/sehath.png";
 import gsap from "gsap";
 import Link from "next/link";
 import Footer from "../Footer/Footer";
@@ -39,15 +39,21 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
     });
 
     return () => ctx.revert();
-  },[])
-
+  }, []);
 
   return (
-    <div id="work" ref={changeThemeRef2} className={styles.workContainer} style={{zIndex:"2", position:"relative"}}>
-      <p ref={footerStick} className={styles.selectedWork}>Selected Work</p>
+    <div
+      id="work"
+      ref={changeThemeRef2}
+      className={styles.workContainer}
+      style={{ zIndex: "2", position: "relative" }}
+    >
+      <p ref={footerStick} className={styles.selectedWork}>
+        Selected Work
+      </p>
       <div className={styles.workGallery}>
         <div className={styles.workGalleryTop}>
-        <LargeWorkCard
+          <LargeWorkCard
             title="SCF Analysis"
             tags={["UI/UX DESIGN", "FULL-STACK DEVELOPMENT"]}
             description="This project simplifies the vast Survey of Consumer Finance data into an accessible and engaging web application for all users."
@@ -72,7 +78,7 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
           />
         </div>
         <div className={styles.workGalleryBottom}>
-        <SmallWorkCard
+          <SmallWorkCard
             title="UT Sehath"
             tags={["WEB DESIGN", "WEB DEVELOPMENT"]}
             description="Design and develop an informative fundraising platform to showcase UT Sehath's commitment to global healthcare."
@@ -85,7 +91,7 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
           />
           <LargeWorkCard
             title="Greater"
-            tags={["UI/UX DESIGN",]}
+            tags={["UI/UX DESIGN"]}
             description="Design an app that connects users with LGBTQIA+ friendly spots in Austin, Texas."
             imageSrc={greater}
             isHovered={hoveredCard === 3}
@@ -98,7 +104,10 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
         </div>
       </div>
       <Link href="/work" className={`${styles.moreWork} ${styles.button}`}>
-        <span>More work <p>5</p></span> <div className={styles.bounds}></div>
+        <span>
+          More work <p>5</p>
+        </span>{" "}
+        <div className={styles.bounds}></div>
       </Link>
       {/* <div style={{zIndex:"0"}}>
       <Footer isInView4={isInView4} />

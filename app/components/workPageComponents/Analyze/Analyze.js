@@ -17,10 +17,10 @@ const ContentComponent = ({ tag, title, description, img, noText, noImg }) => {
 
       {noImg ? null : <div className={styles.imageContainer} style={noText?{flex:1, justifyContent:"center", alignContent:"center"}:{}}>
         <Image
+        placeholder="blur"
           src={img}
           alt="branding"
-          // fill
-          // width={noText? 1200 : 712}
+          priority
           width={"100%"}
           className={styles.image}
           style={noText? {marginLeft:0, objectFit:"contain"}:{ objectPosition: "right", objectFit:"contain" }}

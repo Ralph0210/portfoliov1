@@ -25,10 +25,12 @@ const ContentComponent = ({
           style={{ backgroundColor: bgColor }}
         >
           <Image
+          placeholder="blur"
             src={img}
             alt="branding"
             width={"100%"}
             className={styles.image}
+            priority
             style={{ objectPosition: "right", borderRadius: "2rem" }}
           />
         </div>
