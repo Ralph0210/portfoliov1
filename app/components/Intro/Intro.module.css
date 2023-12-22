@@ -208,7 +208,7 @@ color: var(--text-color);
 }
 
 .abilityDescription{
-    color: var(--text-color);
+    color: var(--unimportantText-invert);
     font-size: clamp(1.6rem,1.5vw, 2rem);
 font-style: normal;
 font-weight: 400;
@@ -270,7 +270,7 @@ margin-top: auto;
 .divider{
     width: 90%;
     height: 1px;
-    background-color: var(--text-color);
+    background-color: var(--border-alpha-invert);
 }
 
 .touchScreenTip{
@@ -287,7 +287,7 @@ margin-top: auto;
         position: absolute;
         top: -5rem;
         right: 0;
-        color: var(--unimportantText-color);
+        color: var(--unimportantText-invert);
         display: flex;
         gap: 1rem;
         z-index: 5;
@@ -333,7 +333,7 @@ margin-top: auto;
     }
     .services{
         font-size: 1.4rem;
-        color: var(--unimportantText-color);
+        color: var(--unimportantText-invert);
         margin-bottom: 3px;
     }
     .abilityCardFront, .abilityCardBack{
@@ -387,7 +387,7 @@ margin-top: auto;
         position: absolute;
         bottom: 100vw;
         right: 2rem;
-        color: var(--unimportantText-color);
+        color: var(--unimportantText-invert);
         display: flex;
         gap: 1rem;
         z-index: 5;

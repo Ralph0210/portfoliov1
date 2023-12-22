@@ -49,3 +49,20 @@
   
   .workCard {
   }
+
+  @media (max-width: 430px){
+    .titleContainer {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .description {
+      width: 100%;
+    }
+
+    .smallImageContainer {
+      object-fit: cover;
+      min-height: calc(100vw);
+      position: relative;
+    }
+  }

@@ -76,6 +76,7 @@ body {
 
 .dark-mode-for-light{
   --unimportantText-color:rgba(52, 76, 54, 0.75);
+  --unimportantText-invert:rgba(249, 245, 236, 0.75);
     --background-color: #344C36;
     --text-color: #F9F5EC;
     --underline-color: #fff;
@@ -107,6 +108,7 @@ body {
   --border-alpha-invert: rgba(10, 38, 13, 0.5);
   --border-alpha-invert-light: rgba(10, 38, 13, 0.25);
   --highlight-color:rgba(235, 255, 0, 0.25);
+  --unimportantText-invert:rgba(52, 76, 54, 0.75);
 }
 
 .custom-cursor{
@@ -195,7 +197,7 @@ span{
 }
 
 .preloader p{
-  font-size: 3.6rem;
+  font-size: clamp(2rem, 2.6vw, 3.2rem);
 }
 
 .landing-preloader{

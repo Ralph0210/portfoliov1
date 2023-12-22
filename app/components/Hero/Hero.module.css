@@ -126,6 +126,10 @@
     .heroTextContainer > p {
         width: 75%;
     }
+    .d{
+        margin-left: auto;
+        margin-right: auto;
+    }
     .a{
         height: calc(75vw/4*6);
         width: 75vw;

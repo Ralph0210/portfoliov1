@@ -69,7 +69,7 @@ const abilityCard = [
   {
     title: "More About Me",
     description: "More about me and the tools I use",
-    services: ["toAbout"],
+    services: "About me",
   },
 ];
 
@@ -363,12 +363,13 @@ const Intro = ({
                     )}
 
                     <div className={styles.servicesContainer}>
-                      {item.services.map((service, index) => (
+                      {item.title === "More About Me" ? (<Link href="./about" className={styles.services} style={{textDecoration:"underline"}}>{item.services}</Link>) : item.services.map((service, index) => (
                         <div key={index} style={{ paddingBottom: "10px" }}>
                           <p className={styles.services}>{service}</p>
                           <div className={styles.divider}></div>
                         </div>
                       ))}
+                      
                     </div>
                   </div>
                 </div>

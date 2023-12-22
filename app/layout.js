@@ -41,7 +41,7 @@ const LandingPreloader = ({text}) => {
   return (
     <motion.div
       key={text}
-      className="landing-preloader"
+      className="preloader"
       initial={{ top: "100vh" }}
       animate={{ top: 0, borderRadius: 0 }}
       exit={{ top: "-100vh", borderRadius: "5rem" }}
@@ -91,7 +91,7 @@ const NavigationEvents = ({isLanding, setIsLanding}) => {
   return (
     <>
       <AnimatePresence>
-        {isLanding ? <LandingPreloader text={"loading..."}/> : isLoading && <Preloader text={pathname} />}
+        {isLanding ? <LandingPreloader text={"Loading Ralph Chang's 2023 portfolio"}/> : isLoading && <Preloader text={pathname} />}
       </AnimatePresence>
     </>
   );

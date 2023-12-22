@@ -13,7 +13,7 @@
 }
 
 .h2{
-    font-size: 2.4rem;
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
     font-weight: 500;
 }
 
@@ -29,7 +29,7 @@
 
 .tag{
     color: var(--text-color);
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
     border: 1px solid var(--text-color);
     border-radius: 5rem;
     width:fit-content;
@@ -73,12 +73,12 @@
 }
 
 .textContainer p {
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 1.4vw, 1.6rem);
     margin-bottom: 3rem;
 }
 
 .textContainer a{
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 1.4vw, 1.6rem);
     border: 1px solid var(--text-color);
     border-radius: 5rem;
     width:fit-content;
@@ -96,11 +96,11 @@
 }
 
 .roleContainer p{
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 1.4vw, 1.6rem);
 }
 
 .link{
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 1.4vw, 1.6rem);
     display: flex;
     align-items: center;
 }
