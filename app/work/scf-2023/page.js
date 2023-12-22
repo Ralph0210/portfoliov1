@@ -87,7 +87,7 @@ const Page = () => {
       "This project embarks on a mission to transform the Survey of Consumer Finance (SCF) – a valuable set of financial data collected every 3 years by the Federal Reserve – into an accessible and engaging experience for everyone.",
     overview2:"Traditionally, the SCF's vastness – encompassing an average of 250 variables and more than 20k rows of data in each year’s extracted dataset – can be daunting to navigate, even for seasoned researchers. This web application aims to bridge this gap, unlocking the power of the SCF for a wider audience.",
     liveSite: true,
-    siteLink: "./",
+    siteLink: "https://myscfanalysis.azurewebsites.net/",
     role: ["Designer", "Developer"],
     duration: "Fall 2023 - Present",
     ongoing: true,
@@ -351,7 +351,7 @@ const Page = () => {
               <h3>Storytelling and Guidance:</h3>
               <ul>
                 <li><span>Persona creation:</span> Allow users to create or use a set of pre-designed personas to explore the dataset.</li>
-                <li><span>Interest-guided insights:</span> Provide relevant SCF data specific to the chosen persona's circumstances.</li>
+                <li><span>Interest-guided insights:</span> Provide relevant SCF data specific to the chosen persona&apos;s circumstances.</li>
               </ul>
             </div>
             </div>
