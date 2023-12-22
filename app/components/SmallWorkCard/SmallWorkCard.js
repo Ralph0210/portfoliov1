@@ -27,6 +27,7 @@ const SmallWorkCard = ({
             src={imageSrc}
             alt={title}
             fill
+            priority
             style={{ objectFit: "cover", objectPosition: "left" }}
           />
         </div>

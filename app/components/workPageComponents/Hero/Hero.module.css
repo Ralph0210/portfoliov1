@@ -19,7 +19,7 @@
 
 .nameContainer h1{
     width: 60%;
-    font-size: clamp(2.8rem, 2.8vw, 3.2rem);
+    font-size: clamp(2.8rem, 4vw, 4.8rem);
 }
 
 .tagsContainer{

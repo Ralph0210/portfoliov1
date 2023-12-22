@@ -28,6 +28,7 @@ const LargeWorkCard = ({
             src={imageSrc}
             alt={title}
             fill
+            priority
             style={{ objectFit: "cover", objectPosition: position }}
           />
         </div>
