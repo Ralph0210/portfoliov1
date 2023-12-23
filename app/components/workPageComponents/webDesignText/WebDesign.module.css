@@ -27,17 +27,17 @@
 }
 
 .textContainer span{
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
     color: var(--border-alpha-invert);
 }
 
 .textContainer h2{
-    font-size: 2.4rem;
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
     font-weight: 500;
 }
 
 .textContainer p{
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 1.4vw, 1.6rem);
     padding-right: 20%;
 }
 

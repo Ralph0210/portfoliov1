@@ -149,17 +149,24 @@ const Page = () => {
 
   //conclusion
   const con = {
+    takeaways:"The project helped me to learn more about the process of a design thinking framework. Learned to do better visuals with the material design guidelines, by creating a small component library. Also learned how to empathize with the users in a better way.",
     challenges: ["to hard:"],
     solutions: ["to easy:"],
     impact:
       "Florist can design floral arrangement easily and present their design to customers to ensure their bouquets are well-received without costly and time-consuming re-dos.",
     nextStep:
       "The UI/UX design of Flori involves continuous iteration based on user feedback and testing, learning advanced features of Figma like autolayout, and incorporating more accessibility features.",
+    learnedTitle: [
+      "Accessibility is crucial:",
+      "User research is essential:",
+      "Iteration is key:",
+      "Focusing on simplifying:"
+    ],
     learned: [
-      "Accessibility is crucial. Focus on contrast, font size, and user feedback to make the app usable and enjoyable for a broad audience.",
+      "Focus on contrast, font size, and user feedback to make the app usable and enjoyable for a broad audience.",
       "User research is essential to comprehend the needs and issues of the target audience. A deep understanding of the problem through user research is required for product success.",
       "Iteration is key to creating a successful product. Don't be afraid to make changes based on user feedback, and be willing to experiment with different design ideas until you find the one that works best.",
-      "Incorporate features that make sense for my users, such as the ability to favorite flowers or categorize design needs. Make sure that these features are easy to use and add value to the user experience.",
+      "Incorporate features that make sense for my users, such as the ability to favorite flowers or categorize design needs. Make sure that these features are easy to use and add value to the user experience."
     ],
   };
 
