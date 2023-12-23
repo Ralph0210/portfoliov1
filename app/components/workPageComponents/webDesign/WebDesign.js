@@ -13,7 +13,7 @@ const ContentComponent = ({
 }) => {
   return (
     <div className={styles.processContainer}>
-      <div className={styles.textContainer}>
+      <div className={styles.textContainer} style={noImg ? {flex:0.5} : {}}>
         <span>{tag}</span>
         <h2>{title}</h2>
         <p>{description}</p>
