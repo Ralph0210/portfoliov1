@@ -149,24 +149,28 @@ const Page = () => {
 
   //conclusion
   const con = {
-    takeaways:"The project helped me to learn more about the process of a design thinking framework. Learned to do better visuals with the material design guidelines, by creating a small component library. Also learned how to empathize with the users in a better way.",
+    takeaways:"This project enhanced my ability to convert a brand's emotional essence into visual design elements. Additionally, leveraging my previous experience in online marketing and branding, I played a pivotal role in establishing UT Sehath's brand identity and creating its initial content.",
     challenges: ["to hard:"],
     solutions: ["to easy:"],
     impact:
-      "Florist can design floral arrangement easily and present their design to customers to ensure their bouquets are well-received without costly and time-consuming re-dos.",
+      "The project successfully established an online platform for UT Sehath, aiding their fundraising efforts for the 2024 mission.",
     nextStep:
-      "The UI/UX design of Flori involves continuous iteration based on user feedback and testing, learning advanced features of Figma like autolayout, and incorporating more accessibility features.",
+      "Unfortunately, UT Sehath faces a setback due to insufficient member recruitment for the 2024 mission, resulting in a pause in the organization's progress.",
     learnedTitle: [
       "Accessibility is crucial:",
       "User research is essential:",
       "Iteration is key:",
       "Focusing on simplifying:"
     ],
+    learnedTitle:[
+      "Introduction to Next.js:",
+      "Understanding Framework Limitations:",
+      "Interactive Design: "
+    ],
     learned: [
-      "Focus on contrast, font size, and user feedback to make the app usable and enjoyable for a broad audience.",
-      "User research is essential to comprehend the needs and issues of the target audience. A deep understanding of the problem through user research is required for product success.",
-      "Iteration is key to creating a successful product. Don't be afraid to make changes based on user feedback, and be willing to experiment with different design ideas until you find the one that works best.",
-      "Incorporate features that make sense for my users, such as the ability to favorite flowers or categorize design needs. Make sure that these features are easy to use and add value to the user experience."
+      "This is my first using Next.js, a powerful and versatile framework for React-based web development. This exploration was a significant step in broadening my technical expertise in modern web frameworks.",
+      "While Next.js was efficient and robust, I encountered its limitations, notably in seamless page transitions using its app router. This experience underscored the importance of finalizing my design and interaction plans before selecting a framework.",
+      "A key learning was the significant role of interactive elements in enhancing user experience. Integrating these elements increased engagement and interest, underscoring the value of dynamic, responsive interfaces that actively involve users and enrich the browsing experience.",
     ],
   };
 

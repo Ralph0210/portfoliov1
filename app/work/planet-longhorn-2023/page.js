@@ -163,24 +163,30 @@ const Page = () => {
 
   //conclusion
   const con = {
-    takeaways:"The project helped me to learn more about the process of a design thinking framework. Learned to do better visuals with the material design guidelines, by creating a small component library. Also learned how to empathize with the users in a better way.",
+    takeaways:"This project improved my proficiency with the Next.js framework and honed my skills in creative interaction and design. It also broadened my experience in translating the inclusive, kind, and passionate ethos of the Planet Longhorn team into a compelling and visually engaging online presence.",
     challenges: ["to hard:"],
     solutions: ["to easy:"],
     impact:
-      "Florist can design floral arrangement easily and present their design to customers to ensure their bouquets are well-received without costly and time-consuming re-dos.",
+      "planet longhorn is a organization for mostly international students and exchange students, having an googleable online presence helps incoming students have better chance finding this amazing organization.",
     nextStep:
-      "The UI/UX design of Flori involves continuous iteration based on user feedback and testing, learning advanced features of Figma like autolayout, and incorporating more accessibility features.",
+      "Collaborating with the Planet Longhorn team to build their events and gallery pages, which will document their events and meetings. We are also incorporating a Content Management System (CMS) to enable team officers to update the website easily.",
     learnedTitle: [
       "Accessibility is crucial:",
       "User research is essential:",
       "Iteration is key:",
       "Focusing on simplifying:"
     ],
+    learnedTitle:[
+      "Design Skills Improvement:",
+      "Interactive Website Design:",
+      "SEO Optimization with Next.js:",
+      "Adopting Bun.js:"
+    ],
     learned: [
-      "Focus on contrast, font size, and user feedback to make the app usable and enjoyable for a broad audience.",
-      "User research is essential to comprehend the needs and issues of the target audience. A deep understanding of the problem through user research is required for product success.",
+      "Learned how to leverage a combination of high-quality references and AI-generated imagery to craft a modern website design that aligns with current trends and aesthetics.",
+      "Recognized the importance of incorporating interactive elements throughout the website, which significantly boosts user engagement and provides a dynamic browsing experience.",
       "Iteration is key to creating a successful product. Don't be afraid to make changes based on user feedback, and be willing to experiment with different design ideas until you find the one that works best.",
-      "Incorporate features that make sense for my users, such as the ability to favorite flowers or categorize design needs. Make sure that these features are easy to use and add value to the user experience."
+      "This experience broadened my skills and highlighted the value of keeping up with tech advancements."
     ],
   };
 

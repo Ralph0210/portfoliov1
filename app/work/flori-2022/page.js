@@ -222,7 +222,7 @@ const Page = () => {
 
   //conclusion
   const con = {
-    takeaways:"The project helped me to learn more about the process of a design thinking framework. Learned to do better visuals with the material design guidelines, by creating a small component library. Also learned how to empathize with the users in a better way.",
+    takeaways:"The project was instrumental in deepening my understanding of the design thinking framework. I enhanced my visual design skills by adhering to Material Design guidelines and developing a compact component library. Additionally, it significantly improved my ability to empathize with users, leading to more user-centric designs.",
     challenges: ["to hard:"],
     solutions: ["to easy:"],
     impact:
