@@ -111,6 +111,15 @@
     text-decoration: underline;
 }
 
+.link_disabled{
+    color: var(--border-alpha-invert);
+    font-size: clamp(1.4rem, 1.4vw, 1.6rem);
+    border: 1px solid var(--border-alpha-invert);
+    border-radius: 5rem;
+    width:fit-content;
+    padding: 1rem 2rem;
+}
+
 @media (max-width:430px){
     .tagsContainer{
         flex-wrap: wrap;

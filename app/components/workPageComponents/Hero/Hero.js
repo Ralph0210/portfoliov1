@@ -42,7 +42,7 @@ const Hero = ({heroData}) => {
           <p>
             {heroData.overview2}
           </p>
-          {heroData.liveSite ? <Link href={heroData.siteLink} target="_blank">VIEW LIVE SITE</Link> : null}
+          {heroData.liveSite ? <Link href={heroData.siteLink} target="_blank">VIEW LIVE SITE</Link> : <p className={styles.link_disabled}>Live site unavailable right now</p>}
         </div>
         <div className={styles.roleContainer}>
           <div className={styles.role}>
