@@ -102,9 +102,9 @@ const Hero = ({ ThemeDark }) => {
           />
         </div> */}
         <div className={styles.heroTextContainer}>
-          <h1 className={` ${lora.className} ${styles.h1}`}>Hi there, I'm Ralph</h1>
+          <h1 className={` ${lora.className} ${styles.h1}`}>Hi there, I&apos;m Ralph</h1>
           {/* <p>I explore the intersection of societal challenges and technology to create purposeful, user-centric experiences that make positive difference.</p> */}
-          <p>I'm a Designer & Developer currently based in Seattle, WA. I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.</p>
+          <p>I&apos;m a Designer & Developer currently based in Seattle, WA. I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.</p>
           <Link href='/contact'>Resume<div className={styles.bounds}></div></Link>
         </div>
       </div>
