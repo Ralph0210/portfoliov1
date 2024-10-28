@@ -27,7 +27,7 @@ function FooterBottom() {
     <div className={styles.footerLeft}>
     <div>
       <span>VERSION</span>
-      <p>2023 © Edition</p>
+      <p>2024 © Edition</p>
     </div>
     <div>
       <span>RALPH&apos;S TIME</span>
