@@ -88,7 +88,7 @@ const Hero = ({ ThemeDark }) => {
           </div>
           <ul className={ThemeDark ? styles.inView : ""}>
             <li ref={myNameRef} id="myName">
-              Ralph Chang
+              {/* Ralph Chang */}
             </li>
             {/* <li>Designer & Developer</li> */}
           </ul>
@@ -102,10 +102,10 @@ const Hero = ({ ThemeDark }) => {
           />
         </div> */}
         <div className={styles.heroTextContainer}>
-          <h1 className={` ${lora.className} ${styles.h1}`}>Crafting digital solutions for positive impact</h1>
+          <h1 className={` ${lora.className} ${styles.h1}`}>Hi there, I'm Ralph</h1>
           {/* <p>I explore the intersection of societal challenges and technology to create purposeful, user-centric experiences that make positive difference.</p> */}
-          <p>Because we deserve innovations that are inclusive, empowering, and rooted in kindness.</p>
-          <Link href='/contact'>Work with me<div className={styles.bounds}></div></Link>
+          <p>I'm a Designer & Developer, and I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.</p>
+          <Link href='/contact'>Resume<div className={styles.bounds}></div></Link>
         </div>
       </div>
     </>

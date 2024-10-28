@@ -293,97 +293,97 @@ const Intro = ({
     };
   }, [isInView, isInView2]);
 
-  return (
-    <div id="intro" ref={changeThemeRef} className={styles.introContainer}>
-      <div ref={changeThemeRef3} className={styles.aboutMeContainer}>
-        <p className={`${styles.hello} ${lora.className}`}>
-          Hello there, I&apos;m Ralph.
-        </p>
-        <div ref={textRef} className="aboutMeText">
-          {aboutMeText.split(" ").map((char, index) => (
-            <span className="char" key={index}>
-              {char}
-            </span>
-          ))}
-        </div>
-        <p ref={helloRef} className={styles.place}>
-          Currently Living in Austin, TX
-        </p>
-        <p className={styles.touchScreenTip2}>
-          <Icon
-            icon="ph:arrow-up-light"
-            style={{ fontSize: "2rem", transform: "rotate(210deg)" }}
-            aria-label="Scroll down"
-          />
-          Tap the cards to see what&apos;s behind
-        </p>
+  return (null
+    // <div id="intro" ref={changeThemeRef} className={styles.introContainer}>
+    //   <div ref={changeThemeRef3} className={styles.aboutMeContainer}>
+    //     <p className={`${styles.hello} ${lora.className}`}>
+    //       Hello there, I&apos;m Ralph.
+    //     </p>
+    //     <div ref={textRef} className="aboutMeText">
+    //       {aboutMeText.split(" ").map((char, index) => (
+    //         <span className="char" key={index}>
+    //           {char}
+    //         </span>
+    //       ))}
+    //     </div>
+    //     <p ref={helloRef} className={styles.place}>
+    //       Currently Living in Austin, TX
+    //     </p>
+    //     <p className={styles.touchScreenTip2}>
+    //       <Icon
+    //         icon="ph:arrow-up-light"
+    //         style={{ fontSize: "2rem", transform: "rotate(210deg)" }}
+    //         aria-label="Scroll down"
+    //       />
+    //       Tap the cards to see what&apos;s behind
+    //     </p>
 
-        <div ref={abilityDeckRef} className={styles.abilityDeckContainer}>
-          <div className={styles.heroArrow}>
-            <Icon
-              className={ThemeDark ? styles.inView : ""}
-              icon="ph:arrow-up-light"
-              style={{ fontSize: "2.4rem", transform: "rotate(120deg)" }}
-              aria-label="Scroll down"
-            />
-          </div>
-          <p className={styles.touchScreenTip}>
-            <Icon
-              icon="ph:arrow-up-light"
-              style={{ fontSize: "2rem", transform: "rotate(210deg)" }}
-              aria-label="Scroll down"
-            />
-            Tap the cards to see what&apos;s behind
-          </p>
-          {abilityCard.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className={`${styles.abilityCard} ${styles.view} ${
-                  isFlipped[index] ? styles.cardFlip : ""
-                }`}
-                onClick={() => handleCardClick(index)}
-              >
-                <div className={styles.abilityCardInner}>
-                  <div className={styles.abilityCardFront}>
-                    <p className={styles.abilityTitle}>{item.title}</p>
-                    <p className={styles.abilityDescription}>
-                      {item.description}
-                    </p>
-                  </div>
-                  <div className={styles.abilityCardBack}>
-                    {item.title === "More About Me" ? (
-                      <p className={styles.abilityService}>
-                        Go to my about page
-                      </p>
-                    ) : (
-                      <p className={styles.abilityService}>
-                        I can help you with...
-                      </p>
-                    )}
+    //     <div ref={abilityDeckRef} className={styles.abilityDeckContainer}>
+    //       <div className={styles.heroArrow}>
+    //         <Icon
+    //           className={ThemeDark ? styles.inView : ""}
+    //           icon="ph:arrow-up-light"
+    //           style={{ fontSize: "2.4rem", transform: "rotate(120deg)" }}
+    //           aria-label="Scroll down"
+    //         />
+    //       </div>
+    //       <p className={styles.touchScreenTip}>
+    //         <Icon
+    //           icon="ph:arrow-up-light"
+    //           style={{ fontSize: "2rem", transform: "rotate(210deg)" }}
+    //           aria-label="Scroll down"
+    //         />
+    //         Tap the cards to see what&apos;s behind
+    //       </p>
+    //       {abilityCard.map((item, index) => {
+    //         return (
+    //           <div
+    //             key={index}
+    //             className={`${styles.abilityCard} ${styles.view} ${
+    //               isFlipped[index] ? styles.cardFlip : ""
+    //             }`}
+    //             onClick={() => handleCardClick(index)}
+    //           >
+    //             <div className={styles.abilityCardInner}>
+    //               <div className={styles.abilityCardFront}>
+    //                 <p className={styles.abilityTitle}>{item.title}</p>
+    //                 <p className={styles.abilityDescription}>
+    //                   {item.description}
+    //                 </p>
+    //               </div>
+    //               <div className={styles.abilityCardBack}>
+    //                 {item.title === "More About Me" ? (
+    //                   <p className={styles.abilityService}>
+    //                     Go to my about page
+    //                   </p>
+    //                 ) : (
+    //                   <p className={styles.abilityService}>
+    //                     I can help you with...
+    //                   </p>
+    //                 )}
 
-                    <div className={styles.servicesContainer}>
-                      {item.title === "More About Me" ? (<Link href="./about" className={styles.services} style={{textDecoration:"underline"}}>{item.services}</Link>) : item.services.map((service, index) => (
-                        <div key={index} style={{ paddingBottom: "10px" }}>
-                          <p className={styles.services}>{service}</p>
-                          <div className={styles.divider}></div>
-                        </div>
-                      ))}
+    //                 <div className={styles.servicesContainer}>
+    //                   {item.title === "More About Me" ? (<Link href="./about" className={styles.services} style={{textDecoration:"underline"}}>{item.services}</Link>) : item.services.map((service, index) => (
+    //                     <div key={index} style={{ paddingBottom: "10px" }}>
+    //                       <p className={styles.services}>{service}</p>
+    //                       <div className={styles.divider}></div>
+    //                     </div>
+    //                   ))}
                       
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-          {/* <Link href='/about' className={`${styles.aboutMeCard} ${styles.go}`}>
-            <p className={styles.abilityTitle}>More About Me</p>
-            <p className={styles.abilityDescription}>Check out my about page and see what tools I use.</p>
-          </Link> */}
-        </div>
-      </div>
-      {/* <Work /> */}
-    </div>
+    //                 </div>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         );
+    //       })}
+    //       {/* <Link href='/about' className={`${styles.aboutMeCard} ${styles.go}`}>
+    //         <p className={styles.abilityTitle}>More About Me</p>
+    //         <p className={styles.abilityDescription}>Check out my about page and see what tools I use.</p>
+    //       </Link> */}
+    //     </div>
+    //   </div>
+    //   {/* <Work /> */}
+    // </div>
   );
 };
 
