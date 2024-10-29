@@ -63,10 +63,35 @@
 .h1{
     max-width: 80%;
     padding-bottom: 1rem;
+    font-size: clamp(3.2rem, 4vw, 4.8rem);
+    color: #F9F5EC;
+    display: inline-block;
+    margin-right: 1.5rem;
 }
 
-.heroTextContainer > p {
+.comma{
+    font-size: clamp(3.2rem, 4vw, 4.8rem);
+    margin-right: 1.5rem;
+    color: #F9F5EC;
+    margin-left: -1.5rem;
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+.paragraph_container{
+    display: flex;
+    flex-wrap: wrap;
     width: 70%;
+}
+
+.paragraph {
+    /* width: 70%; */
+    font-size: clamp(1.4rem, 1.5vw, 2rem);
+    color: #F9F5EC;
+    display: inline-block;
+    white-space: normal; /* Ensures text wraps within the width */
+    word-wrap: break-word; /* Allows breaking long words if necessary */
+    margin-right: 0.5rem;
 }
 
 .heroTextContainer a{

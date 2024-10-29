@@ -7,11 +7,133 @@ import { Icon } from "@iconify/react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import Link from "next/link";
+import { delay, motion } from "framer-motion";
 
 import { Lora } from "next/font/google";
-const lora = Lora({ subsets: ['latin'] })
+const lora = Lora({ subsets: ["latin"] });
+
+const container = {
+  hidden: { opacity: 0.5 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.5,
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const paragraphContainer = {
+  hidden: { opacity: 0.5 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 2.5, // Adjust delay to start after `hello` animation
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+
+
+const bounce = {
+  hidden: { opacity: 1 },
+  show: {
+    opacity: 1,
+    scale: [1, 1.1, 1], // Bounces in and out
+    y: [0, -10, 0], // Bounces up and down
+    // rotate: [0, 10, 0],
+    transition: {
+      duration: 0.6,
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: "easeInOut",
+      repeatDelay: 7,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0.5 },
+  show: {
+    opacity: 1,},
+    transition: {
+      duration: 0.3, // Shorter duration for faster transition
+      ease: "easeInOut", // Linear easing for a direct feel
+    },
+};
+
+
+const bounceVariants = {
+  hidden: { opacity: 1 },
+  hiddenLower: { opacity: 0 },
+  showHello: {
+    opacity: 1,
+    // scale: [1, 1.1, 1],
+    y: [-150, 0],
+    transition: {
+      duration: 0.6,
+      type: "spring",
+      stiffness: 250,
+      damping: 10,
+      repeat: Infinity,
+      repeatType: "loop",
+      // ease: "easeInOut",
+      repeatDelay: 7,
+      delay: 0.5, // No additional delay for "Hello,"
+    },
+  },
+  showIm: {
+    opacity: 1,
+    scale: [1, 1.1, 1],
+    y: [0, -10, 0],
+    transition: {
+      duration: 0.6,
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: "easeInOut",
+      repeatDelay: 7,
+      delay: 1.5, // Additional delay for "I'm"
+    },
+  },
+  showRalph: {
+    opacity: 1,
+    scale: [1, 1.1, 1],
+    y: [0, -10, 0],
+    transition: {
+      duration: 0.6,
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: "easeInOut",
+      repeatDelay: 7,
+      delay: 1.9, // Additional delay for "I'm"
+    },
+  },
+  showEx: {
+    opacity: 1,
+    scale: [1, 1.5, 1],
+    // x: [0, 10, -10, 10, 0], // Shake left and right
+    y: [0, -20, 0], // Jump up
+    rotate: [0, -5, 5, -5, 0], // Small rotation for shake effect
+    transition: {
+      duration: 0.6, // Adjust as needed
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: "easeInOut",
+      repeatDelay: 7,
+      delay: 2, // Initial delay
+    },
+  },
+};
+
 
 const Hero = ({ ThemeDark }) => {
+  const hello = ["Hello,", "I'm", "Ralph!"];
+
+  const paragraph =
+    "I'm a Designer & Developer currently based in Seattle, WA. I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.";
+  const words = paragraph.split(" ");
+
   // const heroImages = [hero, hero1, hero2, hero3, hero4, hero5, hero6];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const myNameRef = useRef();
@@ -82,7 +204,12 @@ const Hero = ({ ThemeDark }) => {
               draggable={false}
               src={hero}
               alt="hero"
-              style={{ height: "auto", width: "100%", transform: translateY, backgroundBlendMode:"multiply"}}
+              style={{
+                height: "auto",
+                width: "100%",
+                transform: translateY,
+                backgroundBlendMode: "multiply",
+              }}
               className={styles.b}
             />
           </div>
@@ -102,10 +229,52 @@ const Hero = ({ ThemeDark }) => {
           />
         </div> */}
         <div className={styles.heroTextContainer}>
-          <h1 className={` ${lora.className} ${styles.h1}`}>Hi there, I&apos;m Ralph</h1>
+          {/* <motion.h1
+            className={`${lora.className} ${styles.h1}`}
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            {hello.map((hello, index) => (
+              <motion.span
+                key={index}
+                className={`${lora.className} ${styles.h1}`}
+                variants={bounce}
+              >
+                {hello}
+              </motion.span>
+            ))}
+          </motion.h1> */}
+
+<motion.h1 className={`${lora.className} ${styles.h1}`} initial="hidden" animate="show">
+  <motion.span initial="hiddenLower" variants={bounceVariants} animate="showHello" className={styles.h1}>Hello</motion.span>
+  <motion.span className={styles.comma}>,</motion.span>
+  <motion.span variants={bounceVariants} animate="showIm" className={styles.h1}>I'm</motion.span>
+  <motion.span variants={bounceVariants} animate="showRalph" className={styles.h1}>Ralph</motion.span>
+  <motion.span variants={bounceVariants} animate="showEx" className={styles.comma}>!</motion.span>
+</motion.h1>
+
+
           {/* <p>I explore the intersection of societal challenges and technology to create purposeful, user-centric experiences that make positive difference.</p> */}
-          <p>I&apos;m a Designer & Developer currently based in Seattle, WA. I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.</p>
-          <Link href='/contact'>Resume<div className={styles.bounds}></div></Link>
+          <motion.p
+            className={`${lora.className} ${styles.paragraph_container}`}
+            variants={paragraphContainer}
+            initial="hidden"
+            animate="show"
+          >
+            {words.map((word, index) => (
+              <motion.span
+                key={index}
+                className={`${lora.className} ${styles.paragraph}`}
+                variants={item}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </motion.p>
+          <Link href="/contact">
+            Resume<div className={styles.bounds}></div>
+          </Link>
         </div>
       </div>
     </>
