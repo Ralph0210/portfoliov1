@@ -6,7 +6,7 @@
   border-radius: 5rem;
   z-index: 2;
   background-color: var(--background-color);
-  padding: 6rem;
+  padding: 3rem 6rem;
   display: flex;
   flex-direction: column;
   gap: 10rem;

@@ -58,9 +58,9 @@ const LandingPreloader = ({text}) => {
 
 }
 
-const NavigationEvents = ({isLanding, setIsLanding}) => {
+const NavigationEvents = ({isLanding, setIsLanding, isLoading, setIsLoading}) => {
   const pathname = usePathname();
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const url = pathname;
@@ -80,7 +80,7 @@ const NavigationEvents = ({isLanding, setIsLanding}) => {
 
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 1300); // Adjust delay as needed
+      }, 1000); // Adjust delay as needed
   
       return () => clearTimeout(timer);
     }
@@ -91,7 +91,7 @@ const NavigationEvents = ({isLanding, setIsLanding}) => {
   return (
     <>
       <AnimatePresence>
-        {isLanding ? <LandingPreloader text={"Loading Ralph Chang's 2023 portfolio"}/> : isLoading && <Preloader text={pathname} />}
+        {isLanding ? <LandingPreloader text={"Loading Ralph Chang's 2024 portfolio"}/> : isLoading && <Preloader text={pathname} />}
       </AnimatePresence>
     </>
   );

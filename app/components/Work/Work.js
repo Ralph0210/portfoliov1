@@ -49,7 +49,7 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
       style={{ zIndex: "2", position: "relative" }}
     >
       <p ref={footerStick} className={styles.selectedWork}>
-        Selected Work
+        My Work
       </p>
       <div className={styles.workGallery}>
         <div className={styles.workGalleryTop}>
