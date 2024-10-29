@@ -249,7 +249,7 @@ const Hero = ({ ThemeDark }) => {
 <motion.h1 className={`${lora.className} ${styles.h1}`} initial="hidden" animate="show">
   <motion.span initial="hiddenLower" variants={bounceVariants} animate="showHello" className={styles.h1}>Hello</motion.span>
   <motion.span className={styles.comma}>,</motion.span>
-  <motion.span variants={bounceVariants} animate="showIm" className={styles.h1}>I'm</motion.span>
+  <motion.span variants={bounceVariants} animate="showIm" className={styles.h1}>I&apos;m</motion.span>
   <motion.span variants={bounceVariants} animate="showRalph" className={styles.h1}>Ralph</motion.span>
   <motion.span variants={bounceVariants} animate="showEx" className={styles.comma}>!</motion.span>
 </motion.h1>
