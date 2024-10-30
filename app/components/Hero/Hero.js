@@ -12,28 +12,6 @@ import { delay, motion } from "framer-motion";
 import { Lora } from "next/font/google";
 const lora = Lora({ subsets: ["latin"] });
 
-const container = {
-  hidden: { opacity: 0.5 },
-  show: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.5,
-      staggerChildren: 0.5,
-    },
-  },
-};
-
-const paragraphContainer = {
-  hidden: { opacity: 0.5 },
-  show: {
-    opacity: 1,
-    transition: {
-      delayChildren: 2.5, // Adjust delay to start after `hello` animation
-      staggerChildren: 0.2,
-    },
-  },
-};
-
 
 
 const bounce = {
@@ -53,34 +31,30 @@ const bounce = {
   },
 };
 
-const item = {
-  hidden: { opacity: 0.5 },
-  show: {
-    opacity: 1,},
-    transition: {
-      duration: 0.3, // Shorter duration for faster transition
-      ease: "easeInOut", // Linear easing for a direct feel
-    },
-};
-
-
 const bounceVariants = {
-  hidden: { opacity: 1 },
+  hidden: { opacity: 0.3 },
   hiddenLower: { opacity: 0 },
   showHello: {
     opacity: 1,
     // scale: [1, 1.1, 1],
-    y: [-150, 0],
+    y: [-150, -20, 0],
     transition: {
       duration: 0.6,
       type: "spring",
-      stiffness: 250,
+      stiffness: 300,
       damping: 10,
-      repeat: Infinity,
-      repeatType: "loop",
       // ease: "easeInOut",
-      repeatDelay: 7,
       delay: 0.5, // No additional delay for "Hello,"
+    },
+  },
+  showComma: {
+    opacity: 1,
+    // scale: [1, 1.1, 1],
+    y: [20,0],
+    transition: {
+      duration: 0.6,
+      ease: "easeInOut",
+      delay: 0.8, // Additional delay for "I'm"
     },
   },
   showIm: {
@@ -89,10 +63,7 @@ const bounceVariants = {
     y: [0, -10, 0],
     transition: {
       duration: 0.6,
-      repeat: Infinity,
-      repeatType: "loop",
       ease: "easeInOut",
-      repeatDelay: 7,
       delay: 1.5, // Additional delay for "I'm"
     },
   },
@@ -102,10 +73,7 @@ const bounceVariants = {
     y: [0, -10, 0],
     transition: {
       duration: 0.6,
-      repeat: Infinity,
-      repeatType: "loop",
       ease: "easeInOut",
-      repeatDelay: 7,
       delay: 1.9, // Additional delay for "I'm"
     },
   },
@@ -117,10 +85,6 @@ const bounceVariants = {
     rotate: [0, -5, 5, -5, 0], // Small rotation for shake effect
     transition: {
       duration: 0.6, // Adjust as needed
-      repeat: Infinity,
-      repeatType: "loop",
-      ease: "easeInOut",
-      repeatDelay: 7,
       delay: 2, // Initial delay
     },
   },
@@ -128,11 +92,6 @@ const bounceVariants = {
 
 
 const Hero = ({ ThemeDark }) => {
-  const hello = ["Hello,", "I'm", "Ralph!"];
-
-  const paragraph =
-    "I'm a Designer & Developer currently based in Seattle, WA. I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.";
-  const words = paragraph.split(" ");
 
   // const heroImages = [hero, hero1, hero2, hero3, hero4, hero5, hero6];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -246,34 +205,26 @@ const Hero = ({ ThemeDark }) => {
             ))}
           </motion.h1> */}
 
-<motion.h1 className={`${lora.className} ${styles.h1}`} initial="hidden" animate="show">
+<motion.h1 className={`${lora.className} ${styles.h1}`}>
   <motion.span initial="hiddenLower" variants={bounceVariants} animate="showHello" className={styles.h1}>Hello</motion.span>
-  <motion.span className={styles.comma}>,</motion.span>
-  <motion.span variants={bounceVariants} animate="showIm" className={styles.h1}>I&apos;m</motion.span>
-  <motion.span variants={bounceVariants} animate="showRalph" className={styles.h1}>Ralph</motion.span>
-  <motion.span variants={bounceVariants} animate="showEx" className={styles.comma}>!</motion.span>
+  <motion.span initial="hiddenLower" variants={bounceVariants} animate="showComma" className={styles.comma}>,</motion.span>
+  <motion.span initial="hidden" variants={bounceVariants} animate="showIm" className={styles.h1}>I&apos;m</motion.span>
+  <motion.span initial="hidden" variants={bounceVariants} animate="showRalph" className={styles.h1}>Ralph</motion.span>
+  <motion.span initial="hidden" variants={bounceVariants} animate="showEx" className={styles.comma}>!</motion.span>
 </motion.h1>
 
 
           {/* <p>I explore the intersection of societal challenges and technology to create purposeful, user-centric experiences that make positive difference.</p> */}
           <motion.p
             className={`${lora.className} ${styles.paragraph_container}`}
-            variants={paragraphContainer}
-            initial="hidden"
-            animate="show"
+            // variants={paragraphContainer}
+            // initial="hidden"
+            // animate="show"
           >
-            {words.map((word, index) => (
-              <motion.span
-                key={index}
-                className={`${lora.className} ${styles.paragraph}`}
-                variants={item}
-              >
-                {word}
-              </motion.span>
-            ))}
+            I&apos;m a Designer & Developer currently based in Seattle, WA. I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.
           </motion.p>
           <Link href="/contact">
-            Resume<div className={styles.bounds}></div>
+            Hehe<div className={styles.bounds}></div>
           </Link>
         </div>
       </div>
