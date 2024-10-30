@@ -221,7 +221,7 @@ const Hero = ({ ThemeDark }) => {
             // initial="hidden"
             // animate="show"
           >
-            I'm a Designer & Developer currently based in Seattle, WA.I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.
+            I&apos;m a Designer & Developer currently based in Seattle, WA. I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.
           </motion.p>
           <Link href="/contact">
             Hehe<div className={styles.bounds}></div>
