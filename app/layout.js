@@ -58,9 +58,9 @@ const LandingPreloader = ({text}) => {
 
 }
 
-const NavigationEvents = ({isLanding, setIsLanding, isLoading, setIsLoading}) => {
+const NavigationEvents = ({isLanding, setIsLanding}) => {
   const pathname = usePathname();
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const url = pathname;
