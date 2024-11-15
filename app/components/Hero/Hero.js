@@ -224,7 +224,7 @@ const Hero = ({ ThemeDark }) => {
             I&apos;m a Designer & Developer currently based in Seattle, WA. I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.
           </motion.p>
           <Link href="/contact">
-            Hehe<div className={styles.bounds}></div>
+            Contact me<div className={styles.bounds}></div>
           </Link>
         </div>
       </div>
