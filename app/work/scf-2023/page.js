@@ -80,7 +80,7 @@ const Page = () => {
 
   //hero
   const hero = {
-    org: "Personal Project",
+    org: "Senior Capstone Project",
     titleFirst: "Democratizing Financial knowledge.",
     titleSecond: "",
     tags: [
@@ -98,7 +98,7 @@ const Page = () => {
     liveSite: false,
     siteLink: "https://myscfanalysis.azurewebsites.net/",
     role: ["Designer", "Developer"],
-    duration: "Fall 2023 - Present",
+    duration: "May 2023 - December 2023",
     ongoing: true,
     designLink:
       "https://www.figma.com/file/ZzMlxWMmTlf6gEwwhyaKui/SCF-project?type=design&node-id=68%3A2039&mode=design&t=4Kh5yUoi8bgPF2G9-1",
