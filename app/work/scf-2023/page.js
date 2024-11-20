@@ -84,8 +84,8 @@ const Page = () => {
     titleFirst: "Democratizing Financial knowledge.",
     titleSecond: "",
     tags: [
+      "PRODUCT DESIGN",
       "UI/UX DESIGN",
-      "WEB DESIGN",
       "USER RESEARCH",
       "USABILITY STUDY",
       "FULL-STACK DEVELOPMENT",
@@ -156,9 +156,9 @@ const Page = () => {
 
   const lofi = {
     tag: "PROTOTYPE",
-    title: "Low-fidelity prototype",
+    title: "Mid-fidelity prototype",
     description:
-      "This low-fidelity prototype showcases a user flow that guides users from pinpointing their interests to tailored data exploration(the data exploration page dynamically highlights variables related to user-chosen interests), and analytic tools.",
+      "This Mid-fidelity prototype showcases a user flow that guides users from pinpointing their interests to tailored data exploration(the data exploration page dynamically highlights variables related to user-chosen interests), and analytic tools.",
     image: lowfi,
     bgColor: bgColor,
     mobileContainer: false,

@@ -72,7 +72,7 @@ const Page = () => {
         <div className={styles.workContainer}>
         <LargeWorkCard
             title="SCF Analysis"
-            tags={["UI/UX DESIGN", "FULL-STACK DEVELOPMENT"]}
+            tags={["PRODUCT DESIGN", "FULL-STACK DEVELOPMENT"]}
             description="This project simplifies the vast Survey of Consumer Finance data into an accessible and engaging web application for all users."
             imageSrc={scf}
             isHovered={hoveredCard === 0}
