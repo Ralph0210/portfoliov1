@@ -27,6 +27,7 @@ import refined from "../../../public/scf/refined.png";
 import mockupsImg from "../../../public/scf/mockups.png";
 import pl from "../../../public/pl/pl.png";
 import flori from "../../../public/flori/flori.png";
+import elevate from "../../../public/elevate/elevate.png";
 
 const Page = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -335,12 +336,12 @@ const Page = () => {
         "Design and develop an informative and community-representative online presence for Planet Longhorn.",
     },
     {
-      image: flori,
+      image: elevate,
       title: "Flori",
-      link: "/work/flori-2022",
-      tags: ["UIUX DESIGN"],
+      link: "/work/elevate-2024",
+      tags: ["UIUX DESIGN", "USER RESEARCH"],
       description:
-        "UX case study for a floral arrangement app, enabling users to design customized arrangements for various occasions.",
+        "Improving Body Image and Self-Esteem Through a Personalized Smart Fitness Mirror.",
     },
   ];
 
