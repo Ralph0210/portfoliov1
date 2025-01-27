@@ -10,7 +10,7 @@ import { AnimatePresence, motion, easeInOut } from "framer-motion";
 const rubik = Rubik({ subsets: ["latin"] });
 
 // export const metadata = {
-//   title: 'Ralph Chang 2023 portfolio',
+//   title: 'Ralph Chang 2025 portfolio',
 //   description: 'Coded by Ralph Chang',
 // }
 
@@ -91,7 +91,7 @@ const NavigationEvents = ({isLanding, setIsLanding}) => {
   return (
     <>
       <AnimatePresence>
-        {isLanding ? <LandingPreloader text={"Loading Ralph Chang's 2024 portfolio"}/> : isLoading && <Preloader text={pathname} />}
+        {isLanding ? <LandingPreloader text={"Loading Ralph Chang's 2025 portfolio"}/> : isLoading && <Preloader text={pathname} />}
       </AnimatePresence>
     </>
   );

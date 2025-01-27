@@ -35,7 +35,7 @@ const Hero = ({heroData}) => {
       <div className={styles.divider}></div>
       <div className={styles.contentContainer}>
       <div className={styles.textContainer}>
-          <h2 className={styles.h2}>Overview</h2>
+          <h2 className={styles.h2}>TL;DR</h2>
           <p>
             {heroData.overview}
           </p>
@@ -46,7 +46,7 @@ const Hero = ({heroData}) => {
         </div>
         <div className={styles.roleContainer}>
           <div className={styles.role}>
-            <h2 className={styles.h2}>Role</h2>
+            <h2 className={styles.h2}>{heroData.Role}</h2>
             {heroData.role.map((role, index) => (
               <p key={index}>{role}</p>
             ))}

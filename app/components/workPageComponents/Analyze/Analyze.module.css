@@ -9,10 +9,28 @@
 
 .processContainer{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     margin-top: 10rem;
     gap: 2rem;
 }
+
+.processContainerReverse {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 10rem;
+    gap: 2rem;
+  }
+
+  .processContainerReverse .textContainer{
+    margin-left: 3rem;
+}
+
+.processContainerReverse .textContainer p{
+    padding-right: 0;
+}
+
 
 .textContainer{
     align-self: flex-start;
@@ -39,7 +57,7 @@
 
 .textContainer p{
     font-size: clamp(1.2rem, 1.4vw, 1.6rem);
-    padding-right: 20%;
+    padding-right: 0%;
 }
 
 .imageContainer{

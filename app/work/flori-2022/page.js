@@ -91,6 +91,7 @@ const Page = () => {
       "Flori is a UX case study for Google UX Design Certificate. It’s a floral arrangement app designed to help users create beautiful and customized flower arrangements for any occasion.",
     liveSite: false,
     siteLink: null,
+    Role: "Role",
     role: ["UI/UX Designer"],
     duration: "Fall 2022",
     designLink:"https://www.figma.com/file/9kRfTrg7EioKfS2vD9Yrxk/flori?type=design&node-id=0%3A1&mode=design&t=dAZl7xoHwuJyhTz1-1"
