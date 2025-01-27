@@ -87,7 +87,7 @@
 .paragraph {
     /* width: 70%; */
     font-size: clamp(1.4rem, 1.5vw, 2rem);
-    color: #F9F5EC;
+    color: var(--text-color);
     display: inline-block;
     white-space: normal; /* Ensures text wraps within the width */
     word-wrap: break-word; /* Allows breaking long words if necessary */
