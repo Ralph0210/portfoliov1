@@ -1,12 +1,15 @@
 import React from 'react'
 import styles from './WebDev.module.css'
 
-const WebDev = ({prop}) => {
-  return (
-    <div className={styles.webdevContainer}>
-        <span>WEBSITE DEVELOPMENT</span>
+const ContentComponent = ({
+    tag,
+    text
+  }) => {
+    return (
+<div>
+        <span>{tag}</span>
         <div className={styles.techContainer}>
-            {prop.map((item, index) => (
+            {text.map((item, index) => (
                 <div key={index} className={styles.tech}>
                 <h2 className={styles.h2}>{item.name}</h2>
                 <ul>
@@ -18,7 +21,18 @@ const WebDev = ({prop}) => {
             ))}
         </div>
     </div>
-  )
-}
+    );
+  };
+
+  const WebDev = ({ prop }) => {
+    return (
+      <div className={styles.webdevContainer}>
+        <ContentComponent
+          tag={prop.tag}
+          text={prop.text}
+        />
+      </div>
+    );
+  };
 
 export default WebDev

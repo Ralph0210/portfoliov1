@@ -1,0 +1,126 @@
+.webdesignContainer{
+    height: auto;
+    background-color: var(--background-color);
+    border: 1px solid transparent;
+    z-index: 5;
+    /* padding: 5% 5%; */
+    position: relative;
+    background-color: aliceblue;
+    /* margin-top: 10rem; */
+}
+
+.processContainer{
+    display: flex;
+    justify-content: center;
+    /* margin-top: 10rem; */
+    /* flex-direction: column; */
+    gap: 10rem;
+    padding:10% 10%;
+    margin:5% 10%;
+    background-color: #FFFEFE;
+}
+
+.processContainerReverse{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    /* margin-top: 10rem; */
+    /* flex-direction: column; */
+    gap: 10rem;
+    background-color: white;
+}
+
+.processContainerReverse .textContainer{
+    margin-left: 3rem;
+}
+
+.textContainer{
+    align-self: flex-start;
+    flex: 1;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: 10rem;
+    /* top: 0; */
+    /* border: 1px solid red; */
+}
+
+.textContainer span{
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
+    color: var(--border-alpha-invert);
+}
+
+.textContainer h2{
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
+    font-weight: 500;
+    padding-right: 0%;
+}
+
+.textContainer p{
+    font-size: clamp(1.4rem, 1.4vw, 1.6rem);
+    padding-right: 20%;
+}
+
+.imageContainer{
+    padding: 5% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.image{
+    /* margin-left: auto; */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
+.mobileContainer{
+    /* border: 1px solid red; */
+    height: 100vh;
+    display: flex;
+    padding: 5% 10%;
+    justify-content: space-between;
+}
+
+.mobileFrame{
+    border: 11px solid black;
+    width: 29.475rem;
+height: 63.9rem;
+padding: 2.4rem 1.05rem;
+border-radius: 5.625rem;
+}
+
+.mobileContainer .mobileFrame:nth-child(2){
+    margin-top: 15rem;
+}
+
+@media (max-width: 1024px){
+    .processContainer{
+        flex-direction: column;
+    }
+    .textContainer{
+        align-self: flex-start;
+        flex: 0.3;
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+        top: 0rem;
+        /* top: 0; */
+        /* border: 1px solid red; */
+    }
+    .image{
+        /* margin-left: auto; */
+        width: auto;
+        height: auto;
+        max-width: 60%;
+        object-fit: contain;
+    }
+}

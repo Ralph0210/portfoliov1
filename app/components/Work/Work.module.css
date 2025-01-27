@@ -18,7 +18,11 @@
   gap: 15rem;
 }
 
-.workGalleryTop,
+.workGalleryTop{
+  display: flex;
+  gap: 6rem;
+}
+
 .workGalleryBottom {
   display: flex;
   gap: 6rem;

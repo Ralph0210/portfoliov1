@@ -4,14 +4,17 @@ import branding from "../../../../public/pl/branding.png";
 import wireframe from "../../../../public/pl/wireframe.png";
 import Image from "next/image";
 
-const ContentComponent = ({ tag, title, description, img, noText, noImg }) => {
+const ContentComponent = ({ tag, title, description, description2, img, noText, noImg, reverseOrder }) => {
   return (
-    <div className={styles.processContainer}>
+<div
+      className={reverseOrder ? styles.processContainerReverse : styles.processContainer}
+    >
       {noText ? null : (
         <div className={styles.textContainer}>
           <span>{tag}</span>
           <h2>{title}</h2>
           <p>{description}</p>
+          <p>{description2}</p>
         </div>
       )}
 
@@ -39,9 +42,11 @@ const Analyze = ({ prop }) => {
           tag={item.tag}
           title={item.title}
           description={item.description}
+          description2={item.description2}
           img={item.themeDark ? item.imageDark : item.imageLight}
           noText={item.noText}
           noImg={item.noImg}
+          reverseOrder={item.reverseOrder}
         />
       ))}
 

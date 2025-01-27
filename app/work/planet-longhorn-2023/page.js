@@ -96,6 +96,7 @@ const Page = () => {
       "The goal of the Planet Longhorn website was to create an online presence that not only serves as an informational resource for current and prospective members but also embodies the organization's vibrant community spirit. The website aims to facilitate easy access to event information, membership details, and organization news, while also highlighting the diverse and inclusive nature of Planet Longhorn.",
     liveSite: true,
     siteLink: "https://www.planet-longhorn.org/",
+    Role: "Role",
     role: ["Website Designer", "Website Developer"],
     duration: "Fall 2023",
     designLink:"https://www.figma.com/file/rCtOehDYROxdxuwrE907UD/PL?type=design&node-id=0%3A1&mode=design&t=7NqjsLhYEmX4hEey-1",
@@ -143,7 +144,9 @@ const Page = () => {
   };
 
   //web dev
-  const webDev = [
+  const webDev = {
+    tag: "WEB DEVELOPMENT",
+    text:[
     {
       name: "Front-end",
       tech: [
@@ -158,8 +161,8 @@ const Page = () => {
     {
       name: "Deployment",
       tech: ["Vercel"],
-    },
-  ];
+    }],
+  };
 
   //conclusion
   const con = {

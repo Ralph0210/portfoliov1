@@ -89,6 +89,7 @@ const Page = () => {
       "The goal of the UT Sehath website was to create an online presence that not only serves as an informational resource for current and prospective members but also a platform for fundraising. The website aims to facilitate easy access to event information, membership details, and organization news while emphasizing Sehath's mission and dedication to advancing international healthcare.",
     liveSite: true,
     siteLink: "https://sehath.vercel.app/",
+    Role: "Role",
     role: ["Website Designer", "Website Developer"],
     duration: "Fall 2023",
     designLink:"https://www.figma.com/file/DnA2qgca2PKQSYwQUsVL8S/Sehath?type=design&node-id=218%3A2484&mode=design&t=RyYb5mnNNTl5modx-1",
@@ -127,8 +128,9 @@ const Page = () => {
   };
 
   //web dev
-  const webDev = [
-    {
+  const webDev = {
+    tag: "WEBSITE DEVELOPMENT",
+    text:[{
       name: "Front-end",
       tech: [
         "HTML",
@@ -144,8 +146,8 @@ const Page = () => {
       tech: [
         "Vercel",
       ],
-    },
-  ];
+    }],
+  };
 
   //conclusion
   const con = {

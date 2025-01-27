@@ -91,6 +91,7 @@ const Page = () => {
       "Flori is a UX case study for Google UX Design Certificate. It’s a floral arrangement app designed to help users create beautiful and customized flower arrangements for any occasion.",
     liveSite: false,
     siteLink: null,
+    Role: "Role",
     role: ["UI/UX Designer"],
     duration: "Fall 2022",
     designLink:"https://www.figma.com/file/9kRfTrg7EioKfS2vD9Yrxk/flori?type=design&node-id=0%3A1&mode=design&t=dAZl7xoHwuJyhTz1-1"
@@ -199,7 +200,7 @@ const Page = () => {
       "The refined design will have a list of scrollable buttons at the bottom, categorizing the user's floral design needs. This leaves more canvas space for design and creation. Usability test results show that users don't often add flowers to a project. They need a simpler way to add flowers during the design process. To address this, I've added a feature for users to favorite flowers. On the design page, under the 'focal' and 'foliage' buttons, users can view their favorite flowers. This makes it simpler for them to add preferred flowers to their designs.",
     image: mockupsImg,
     bgColor: bgColor,
-    mobileContainer: true,
+    mobileContainer: false,
   };
 
   const hifi = {

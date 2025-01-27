@@ -8,6 +8,13 @@ import Link from "next/link";
 import { Icon } from '@iconify/react';
 
 const Hero = ({heroData}) => {
+  const handleScroll = (event) => {
+    event.preventDefault(); // Prevent default anchor link behavior
+    const target = document.getElementById(heroData.targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return (
     <div className={styles.heroContainer}>
       <div className={styles.nameContainer}>
@@ -28,25 +35,35 @@ const Hero = ({heroData}) => {
           fill
           placeholder="blur"
           priority
-          style={{objectFit: "cover"}}
+          style={{objectFit: "contain"}}
         />
       </div>
       <div className={styles.overviewContainer}>
       <div className={styles.divider}></div>
       <div className={styles.contentContainer}>
       <div className={styles.textContainer}>
-          <h2 className={styles.h2}>Overview</h2>
+          <h2 className={styles.h2}>TL;DR</h2>
           <p>
             {heroData.overview}
           </p>
           <p>
             {heroData.overview2}
           </p>
-          {heroData.liveSite ? <Link href={heroData.siteLink} target="_blank">VIEW LIVE SITE</Link> : <p className={styles.link_disabled}>Live site unavailable right now</p>}
+          {heroData.targetId ? (
+              <Link href={`#${heroData.targetId}`} className={styles.link} onClick={handleScroll}>
+                JUMP TO SOLUTION!
+              </Link>
+            ) : heroData.liveSite ? (
+              <Link href={heroData.siteLink} target="_blank" className={styles.link}>
+                VIEW LIVE SITE
+              </Link>
+            ) : (
+              <p className={styles.link_disabled}>Live site unavailable right now</p>
+            )}
         </div>
         <div className={styles.roleContainer}>
           <div className={styles.role}>
-            <h2 className={styles.h2}>Role</h2>
+            <h2 className={styles.h2}>{heroData.Role}</h2>
             {heroData.role.map((role, index) => (
               <p key={index}>{role}</p>
             ))}
