@@ -127,7 +127,7 @@ const Page = () => {
       tag: "BACKGROUND",
       title: "Body Image Solutions via Design",
       description:
-            "This project was our final deliverable for HCDE 518: User-Centered Design in our Master’s program.",
+            "This project was our final deliverable for HCDE 518: User-Centered Design in our Master’s program in Human-Centered Design and Engineering at University of Washington.",
         description2: "We focused on real-world challenges and were inspired by personal experiences and the widespread issue of negative body image in college fitness. Our goal was to create a solution to address these challenges.",
       imageLight: survey,
       imageDark: surveyDark,
@@ -147,8 +147,8 @@ const Page = () => {
     },
     {
       tag: "USER RESEARCH",
-      title: "Interview Insights:",
-      description: "",
+      title: "User Inverview:",
+      description: "After getting some directions from the survey, we conducted interviews with 10 members of our target audience. I spearheaded in creating the interview guide and conducting the interviews.",
       imageLight: interviewInsights,
         imageDark: interviewInsightsDark,
       themeDark: darkMode,
@@ -170,7 +170,7 @@ const Page = () => {
 
   const problemStatement = {
     tag: "PROCESS",
-    title: "Problem Statement",
+    title: "Arriving at Our Problem Statement",
     description:
       "How might we develop a solution for college students engaged in fitness activities that minimizes the effects of negative body image perceptions and promotes self-acceptance?",
     image: "",
@@ -193,10 +193,11 @@ const Page = () => {
     title: "Sketching and Ideation",
     description:
       "Using the persona’s as a guide, we each generated 5–6 sketches of what our “solution” would be. We filtered out our ideas by discussing the strengths, weaknesses, feasibility, and originality of each of each person’s ideas. We also sorted out our sketches using affinity diagramming to group ideas that go together.",
+    description2:"By the end of the critique session, we decided to move forward with the smart mirror idea. Not only was it the most feasible idea but it was one all three of us had sketched out and were confident designing and prototyping",
     image: sketch,
     bgColor: bgColor,
     mobileContainer: false,
-  };
+  }
 
 
   const feature = {
