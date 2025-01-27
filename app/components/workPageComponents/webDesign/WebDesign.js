@@ -6,17 +6,20 @@ const ContentComponent = ({
   tag,
   title,
   description,
+  description2,
   img,
   bgColor,
   mobileContainer,
-  noImg
+  noImg,
+  reverseOrder,
 }) => {
   return (
-    <div className={styles.processContainer}>
+    <div className={reverseOrder ? styles.processContainerReverse : styles.processContainer}>
       <div className={styles.textContainer} style={noImg ? {flex:0.5} : {}}>
         <span>{tag}</span>
         <h2>{title}</h2>
         <p>{description}</p>
+        <p>{description2}</p>
       </div>
 
       {noImg ? null : <div className={styles.rightContainer}>
@@ -31,7 +34,7 @@ const ContentComponent = ({
             width={"100%"}
             className={styles.image}
             priority
-            style={{ objectPosition: "right", borderRadius: "2rem" }}
+            style={{ objectPosition: "right", borderRadius: "2rem", minHeight: "100%" }}
           />
         </div>
         {mobileContainer ? (
@@ -58,10 +61,13 @@ const WebDesign = ({ prop }) => {
         tag={prop.tag}
         title={prop.title}
         description={prop.description}
+        description2={prop.description2}
         img={prop.image}
         bgColor={prop.bgColor}
         mobileContainer={prop.mobileContainer}
         noImg={prop.noImg}
+        reverseOrder={prop.reverseOrder}
+        gif={prop.gif}
       />
     </div>
   );

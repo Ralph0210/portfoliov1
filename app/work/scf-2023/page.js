@@ -199,7 +199,9 @@ const Page = () => {
   };
 
   //web dev
-  const webDev = [
+  const webDev = {
+    tag: "WEBSITE DEVELOPMENT",
+    text:[
     {
       name: "Front-end",
       tech: ["HTML", "module CSS", "JavaScript", "React", "Framer Motion"],
@@ -212,7 +214,7 @@ const Page = () => {
       name: "Deployment",
       tech: ["Azure"],
     },
-  ];
+  ]};
 
   const navbar = {
     tag: "INTERACTION",

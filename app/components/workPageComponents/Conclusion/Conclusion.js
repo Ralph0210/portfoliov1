@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./Conclusion.module.css";
 import { Icon } from "@iconify/react";
 
+
+
 const Conclusion = ({ prop }) => {
   const [cCounter, setCCounter] = useState(1);
   const [lCounter, setLCounter] = useState(1);

@@ -3,7 +3,7 @@
     background-color: var(--background-color);
     border: 1px solid transparent;
     z-index: 5;
-    padding: 0 5%;
+    padding: 0 10% 10rem;
     position: relative;
 }
 
@@ -13,6 +13,20 @@
     margin-top: 10rem;
     /* flex-direction: column; */
     gap: 2rem;
+    align-items: stretch;
+}
+
+.processContainerReverse{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 10rem;
+    /* flex-direction: column; */
+    gap: 2rem;
+}
+
+.processContainerReverse .textContainer{
+    margin-left: 3rem;
 }
 
 .textContainer{
@@ -24,6 +38,7 @@
     gap: 1rem;
     position: sticky;
     top: 10rem;
+    /* margin-bottom: 10rem; */
     /* top: 0; */
     /* border: 1px solid red; */
 }
@@ -36,6 +51,7 @@
 .textContainer h2{
     font-size: clamp(1.6rem, 2vw, 2.4rem);
     font-weight: 500;
+    padding-right: 20%;
 }
 
 .textContainer p{
@@ -53,12 +69,15 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    min-height: 100%;
+    justify-content: center;
 }
 
 .image{
     /* margin-left: auto; */
     width: 100%;
     height: auto;
+    min-height: 100%;
 }
 
 .mobileContainer{
@@ -83,6 +102,9 @@ border-radius: 5.625rem;
 
 @media (max-width: 1024px){
     .processContainer{
+        flex-direction: column;
+    }
+    .processContainerReverse{
         flex-direction: column;
     }
     .textContainer{

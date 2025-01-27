@@ -1,7 +1,7 @@
 .webdevContainer{
     background-color: var(--background-color);
     position: relative;
-    padding: 10% 5%;
+    padding: 10% 10%;
 }
 
 .webdevContainer span{

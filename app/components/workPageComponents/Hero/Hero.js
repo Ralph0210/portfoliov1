@@ -28,7 +28,7 @@ const Hero = ({heroData}) => {
           fill
           placeholder="blur"
           priority
-          style={{objectFit: "cover"}}
+          style={{objectFit: "contain"}}
         />
       </div>
       <div className={styles.overviewContainer}>

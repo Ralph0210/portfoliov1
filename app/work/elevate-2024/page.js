@@ -8,6 +8,7 @@ import { useInView } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import Hero from "@/app/components/workPageComponents/Hero/Hero";
 import Analyze from "@/app/components/workPageComponents/Analyze/Analyze";
+import Key from "@/app/components/workPageComponents/Key/Key";
 import Preview from "@/app/components/workPageComponents/preview/Preview";
 import WebDesign from "@/app/components/workPageComponents/webDesign/WebDesign";
 import WebDesignText from "@/app/components/workPageComponents/webDesignText/WebDesignText";
@@ -22,9 +23,18 @@ import surveyInsights from "../../../public/elevate/surveyInsights.png";
 import surveyInsightsDark from "../../../public/elevate/surveyInsightsDark.png";
 import interviewInsights from "../../../public/elevate/interviewInsights.png";
 import interviewInsightsDark from "../../../public/elevate/interviewInsightsDark.png";
-import personas from "../../../public/scf/personas.png";
+import affinity from "../../../public/elevate/affinity.webp";
+import personasImg from "../../../public/elevate/personas.png";
+import sketch from "../../../public/elevate/sketch.png";
+import storyboarding from "../../../public/elevate/storyboarding.png";
+import lofiImg from "../../../public/elevate/lofi.png";
+import usabilityImg from "../../../public/elevate/usability.png";
+import finalImg from "../../../public/elevate/final.png";
+import mirror from "../../../public/elevate/mirror_exposure.gif";
+import affirmation from "../../../public/elevate/affirmation.gif";
+import post_workout from "../../../public/elevate/post_workout.gif";
+
 import lowfi from "../../../public/scf/lowfi.png";
-import usabilityImg from "../../../public/scf/usability.png";
 import refined from "../../../public/scf/refined.png";
 import mockupsImg from "../../../public/scf/mockups.png";
 import pl from "../../../public/pl/pl.png";
@@ -107,9 +117,8 @@ const Page = () => {
       "https://www.figma.com/design/jVtLSQwR6ku7R3eo8nZ5PE/HCDE-518-Prototype?node-id=227-855&t=92TILVE68bRMrH4Q-1",
   };
 
-  const bgColor = "#85AED4";
+  const bgColor = "#90AB93";
 
-  
 
   //analyze
   const analyze = [
@@ -140,188 +149,163 @@ const Page = () => {
       title: "Interview Insights:",
       description: "",
       imageLight: interviewInsights,
-      imageDark: interviewInsightsDark,
+        imageDark: interviewInsightsDark,
       themeDark: darkMode,
       noText: false,
     },
+    {
+        tag: "PROCESS",
+        title: "Wrapping it all Together — Affinity Diagramming",
+        description: "Based on our research findings, the key themes we found to help guide our solution were positive impact of physical activity, barriers to addressing body image concerns, resources and support, and strategies for managing body image concerns.",
+        imageLight: affinity,
+          imageDark: affinity,
+        themeDark: darkMode,
+        noText: false,
+        reverseOrder: true,
+      },
   ];
 
-  //web design
-  const process = {
+  //problem statement and ideation
+
+  const problemStatement = {
     tag: "PROCESS",
-    title: "Prioritizing feature",
+    title: "Problem Statement",
     description:
-      "Driven by the wealth of information within the SCF dataset and a deep understanding of user challenges, I've prioritized the development of intuitive data exploration and analysis tools.",
+      "How might we develop a solution for college students engaged in fitness activities that minimizes the effects of negative body image perceptions and promotes self-acceptance?",
     image: "",
     bgColor: bgColor,
     mobileContainer: false,
     noImg: true,
   };
 
-  const lofi = {
-    tag: "PROTOTYPE",
-    title: "Low-fidelity prototype",
-    description:
-      "This low-fidelity prototype showcases a user flow that guides users from pinpointing their interests to tailored data exploration(the data exploration page dynamically highlights variables related to user-chosen interests), and analytic tools.",
-    image: lowfi,
+  const personas = {
+    tag: "PERSONAS",
+    title: "Meet Logan and Melissa!",
+    description: "To better empathize with our user base, we created two user personas who represent our target users.",
+    image: personasImg,
     bgColor: bgColor,
     mobileContainer: false,
-    imageText: true,
+  };
+
+  const ideate = {
+    tag: "IDEATION",
+    title: "Sketching and Ideation",
+    description:
+      "Using the persona’s as a guide, we each generated 5–6 sketches of what our “solution” would be. We filtered out our ideas by discussing the strengths, weaknesses, feasibility, and originality of each of each person’s ideas. We also sorted out our sketches using affinity diagramming to group ideas that go together.",
+    image: sketch,
+    bgColor: bgColor,
+    mobileContainer: false,
+  };
+
+
+  const feature = {
+    tag: "FEATURE",
+    text:[
+    {
+      name: "Feature Prioritization",
+      tech: ["We finalized designing 4 user flows we wanted the mirror to have.", "Those 4 flows were:"],
+    },
+    {
+      name: "",
+      tech: ["1. Mirror Exposure Therapy", "2. Mindful Recovery — Post workout Meditation", "3. Mindful Recovery — Post workout Logs", "4. Personalized Affirmations"],
+    },
+  ]};
+
+  const storyboard = {
+    tag: "PROCESS",
+    title: "Storyboard and User Flow",
+    description:
+      "After finalizing our solution, we further explored the user flows by detailing the user experience features included in each flow:",
+    image: storyboarding,
+    bgColor: bgColor,
+    mobileContainer: false,
+    reverseOrder: true,
+  };
+
+  const lofi = {
+    tag: "PROTOTYPING",
+    title: "Low Fidelity Prototypes - My Flow",
+    description:
+      "To visualize the user interface, we created low-fidelity prototypes, as there wasn’t enough time to develop a wireframe beforehand. So here are key screens from my responsible flow:",
+    image: lofiImg,
+    bgColor: bgColor,
+    mobileContainer: false,
   };
 
   const usability = {
     tag: "USABILITY",
-    title: "Usability study and findings",
-    description: "",
+    title: "Usability Testing",
+    description:
+      "To gain insights into the usability and user experience of our smart mirror, I conducted 2 rounds of usability testing for my flow with the same group of participants we conducted user interviews with.",
     image: usabilityImg,
     bgColor: bgColor,
     mobileContainer: false,
+    reverseOrder: true,
   };
 
-  const iterations = {
-    tag: "ITERATIONS",
-    title: "Refining the design",
+  const final = {
+    tag: "PRODUCT",
+    title: "Final Solution",
     description:
-      "Fueled by insights from usability testing and inspired by innovative approaches to data visualization from https://nfp73.ch/de, I redesigned the way users explore variables within the SCF dataset. Instead of traditional lists, I’ve introduced an interactive map of variables, offering a more intuitive and engaging experience. I also simplified the interface of the analysis page, allowing user to perform desired tasks easily.",
-    image: refined,
-    bgColor: bgColor,
+      "For the final solution, Elevate is an interactive smart mirror placed in private locations on campus gyms, providing personalized mindfulness practices, fitness tracking, and body-positive tools. The mirror is designed to be touch- and voice-activated, making it easy to use for everyone.",
+    image: finalImg,
+    // bgColor: bgColor,
     mobileContainer: false,
   };
 
-  const mockups = {
-    tag: "MOCKUPS",
-    title: "Product mockups",
-    description: "",
-    image: mockupsImg,
-    bgColor: bgColor,
-    mobileContainer: false,
-  };
-
-  const preview = {
-    vidId: "eYtFt34CLms",
-    bgColor: bgColor,
-  };
-
-  //web dev
-  const webDev = [
-    {
-      name: "Front-end",
-      tech: ["HTML", "module CSS", "JavaScript", "React", "Framer Motion"],
-    },
-    {
-      name: "Back-end",
-      tech: ["Node.js", "Express.js", "MySQL", "Sequelize"],
-    },
-    {
-      name: "Deployment",
-      tech: ["Azure"],
-    },
-  ];
-
-  const navbar = {
-    tag: "INTERACTION",
-    title: "Navbar",
+  const key1 = {
+    tag: "KEY EXPERIENCE",
+    title: "Mirror Exposure Therapy",
     description:
-      "The navbar features a rounded shape that highlights the current page. This shape follows the user's cursor as it moves across the navbar. When the cursor leaves the navbar, the shape returns to its position on the current page.",
-    image: "/scf/navbar.mov",
-    bgColor: bgColor,
+      "A feature can help the user be positive and mindful about their conception towards their body image.",
+    image: mirror,
+    // bgColor: bgColor,
     mobileContainer: false,
+    // reverseOrder: true,
+    gif: true,
   };
 
-  const vMap = {
-    tag: "FEATURE",
-    title: "Variable map",
+  const key2 = {
+    tag: "KEY EXPERIENCE",
+    title: "Post-workout Meditation ",
     description:
-      "The variable map, created with d3.js, is designed to represent SCF data in the form of a radial tree for visual clarity. When a user hovers over a node, the variable's descriptive details are displayed. Furthermore, clicking on a node reveals the names of its immediate child nodes. This interaction is intended to simplify the process of searching for specific variables within the data set.",
-    image: "/scf/vmap.mov",
-    bgColor: bgColor,
+      "A feature allows the user to be mindful after each workout session, making exercise more meaningful.",
+      image: post_workout,
+    // bgColor: bgColor,
     mobileContainer: false,
+    // reverseOrder: true,
+    gif: true,
   };
 
-  const ui = {
-    tag: "UI",
-    title: "Analytic tool",
+  const key3 = {
+    tag: "KEY EXPERIENCE",
+    title: "Personalized Affirmations",
     description:
-      "This user-friendly interface allows users to visualize and analyze topics of their interest. Users have the option to choose up to two distribution variables. Additionally, they can independently select how each distribution method is displayed. For instance, if the chosen distribution method is age, users can specify which age groups they want to see. They also have the capability to select the data's unit and the range of years it covers. Finally, users can export their visualizations. The entire user interface is integrated with the backend, triggering queries based on the user's selected data visualization methods.",
-    image: "/scf/ui.mov",
-    bgColor: bgColor,
+      "As for the feature I was in charge of, it allows the user to set up personalized affirmations on the mirror, helping the user become more positive and mindful every time they look at the mirror.",
+    image: affirmation,
+    // bgColor: bgColor,
     mobileContainer: false,
+    // reverseOrder: true,
   };
 
-  const iteration = {
-    tag: "ITERATION",
-    title: "GPT helper beta",
-    description:
-      "OpenAI's recently launched Assistant API has enabled me to create an interactive assistant that can answer queries about the SCF dataset, including specific questions such as “What is the average income among people who are younger than 35 years old?” Currently, this assistant is in a training phase, so its responses might occasionally be inaccurate or unpredictable.",
-    image: "/scf/helper.mov",
-    bgColor: bgColor,
-    mobileContainer: false,
-  };
-
-  const mysql = {
-    tag: "BACKEND",
-    title: "MySQL",
-    description:
-      "Since the SCF lacks an API, I need to create a custom RESTful API. This will enable users to make queries through the frontend UI. I've chosen NodeJs for its compatibility with MySQL, which will serve as the database for this project. In MySQL, the SCF data will be organized by year, mirroring its original structure.",
-    image: "",
-    bgColor: bgColor,
-    mobileContainer: false,
-    noImg: true,
-  };
-
-  const api = {
-    tag: "BACKEND",
-    title: "RESTful-API",
-    description:
-      "Express.js, known for its minimalist and adaptable design, complements Node.js effectively. For this reason, I've selected Express.js as the framework to develop my API. Furthermore, by integrating Sequelize, a powerful ORM, I can write queries for the MySQL database more efficiently and with greater ease.",
-    image: "",
-    bgColor: bgColor,
-    mobileContainer: false,
-    noImg: true,
-  };
-
-  const azure = {
-    tag: "BACKEND",
-    title: "Microsoft Azure",
-    description:
-      "I chose to deploy my web application on Azure by the fact that NodeJS is developed by Microsoft and Azure was providing free credits. The transition of my local MySQL database to Azure's MySQL flexible server was a smooth process. Additionally, deploying the web application on Azure proved to be a straightforward task.",
-    image: "",
-    bgColor: bgColor,
-    mobileContainer: false,
-    noImg: true,
-  };
 
   //conclusion
   const con = {
     challenges: [
-      "User Research Challenge: Limited awareness and use of SCF.",
-      "Usability Study Challenge: Difficulty in producing a functional prototype in Figma for feedback.",
-      "New Technologies Challenge: Learning Node.js, Express.js, Sequelize, d3.js, and Azure.",
-      "SCF Data Complexity Challenge: Hard to understand and explain all SCF data variables.",
+      "User Research Challenge: Limited time.",
     ],
     solutions: [
-      "Solution: Focus initially on common tasks like data exploration and analysis during interviews. This approach not only aligns with more familiar activities for users but also helps in investigating potential solutions.",
-      "Solution: Conducting usability tests with the evolving product, allowing for continuous improvements based on user feedback.",
-      "Embraced the learning curve with enthusiasm, achieving gradual but successful development of the website, despite initial unfamiliarity with these technologies.",
-      "Solution: Integration of an AI chatbot using OpenAI’s assistant API. This allows users to query a GPT model that is well-informed with comprehensive documentation from the Federal Reserve’s SCF, facilitating better understanding and usage of the data."
+      "Solution: We conducted surveys and interviews to gather insights and understand our target users. We also used affinity diagramming to synthesize our findings and guide our design decisions.",
     ],
     impact:
-      "The web app significantly simplifies the exploration of the extensive and complex SCF data. It achieves this by providing an intuitive interface that smartly organizes and presents information, making it more accessible to a broader audience.",
+      "Improved Self-Acceptance: The Mirror Exposure Therapy feature, combined with body-positive tools, encouraged users to practice self-kindness and shift toward a more positive body image. During the product showcase, we let 10 participants interact with the mirror exposure therapy using our physical prototype. Most of them responded positively, stating that the mirror exposure therapy made them feel better and more empowered.",
     nextStep:
-      "Adding more SCF data variables to the web app, making the GPT helper more accurate by giving it more data and specific training, and improving accessibility of the web app.",
+      "Given our ten-week timeframe for topic selection, research, ideation, and prototyping, time constraints were a major challenge, especially during the research phase. If we had more time, we would have conducted more comprehensive user research. This would include allocating additional time for each user interview and conducting more interviews throughout the development process. More extensive research would have provided deeper insights, leading to more user-centered design decisions and a better overall product experience.",
     learnedTitle: [
-      "Technical Skills Acquired:",
-      "Effective User Research Techniques:",
-      "Rapid Learning and Adaptation in Technology:",
-      "The Value of Comprehensive Documentation:",
-      "Accessibility Comes First:"
+      "Skills Acquired:",
     ],
     learned: [
-      "Gained proficiency in Framer Motion, Node.js, Express.js, Sequelize, D3.js, and Azure. This diverse technological skill set broadened my development capabilities.",
-      "Learned the importance of crafting well-thought-out research questions. This approach maximizes the value gained from interviews and leads to more insightful outcomes.",
-      "This project provided an opportunity to quickly learn and choose from a vast array of coding frameworks and libraries. I developed skills in understanding coding documentation, efficient problem-solving through online resources, and effectively utilizing coding AI for task completion.",
-      "Realized the significance of thorough documentation, both in design and coding. Proper documentation facilitates easier project resumption after breaks and enhances collaborative potential.",
-      "In developing an inclusive web app for users of all abilities, it's crucial to integrate accessibility considerations from the outset. This approach not only shapes the web app's structure but also ensures it is user-friendly and accommodating for everyone."
+      "When we decided that our product would be a smart mirror, our team’s lack of industrial design experience led us to focus solely on the interface design. As a result, we deferred discussions on other crucial aspects of industrial design that could have made the product more cohesive and complete. For instance, we did not analyze or research the ideal context for the mirror — whether it should be placed in a private room, a gym, or another environment. This decision would have significantly influenced our interface design and allowed us to create a product more precisely tailored to our users’ needs.",
     ],
   
   };
@@ -358,72 +342,19 @@ const Page = () => {
         <Hero heroData={hero} />
         <div className={styles.background}></div>
         <Analyze prop={analyze} />
-        <div className={styles.designGoalsContainer}>
-          <div className={styles.designGoalsTitle}>
-            <span>IDEATE</span>
-            <h2>Design goals:</h2>
-          </div>
-          <div className={styles.designGoalsContent}>
-            <div className={styles.designGoalsContentContainer}>
-              <h3>Streamlined Access to Knowledge:</h3>
-              <ul>
-                <li>
-                  <span>Intuitive navigation:</span> Design a hierarchy that
-                  prioritizes frequently used features and offers clear pathways
-                  to deeper levels of information.
-                </li>
-                <li>
-                  <span>Contextual explanations:</span> Integrate dynamic
-                  tooltips and hover-over info cards to quickly clarify terms
-                  and data definitions.
-                </li>
-                <li>
-                  <span>Drill-down capabilities:</span> Allow users to explore
-                  the data by navigating through hierarchies and breakdowns.
-                </li>
-              </ul>
-            </div>
-            <div className={styles.designGoalsContentRight}>
-              <div className={styles.designGoalsContentContainer}>
-                <h3>One-Stop Platform:</h3>
-                <ul>
-                  <li>
-                    <span>Integrated tools:</span> Allow users to perform
-                    calculations, compare data sets, and export findings within
-                    the platform for a seamless workflow.
-                  </li>
-                </ul>
-              </div>
-              <div className={styles.designGoalsContentContainer}>
-                <h3>Storytelling and Guidance:</h3>
-                <ul>
-                  <li>
-                    <span>Persona creation:</span> Allow users to create or use
-                    a set of pre-designed personas to explore the dataset.
-                  </li>
-                  <li>
-                    <span>Interest-guided insights:</span> Provide relevant SCF
-                    data specific to the chosen persona&apos;s circumstances.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <WebDesign prop={process} />
-        <WebDesignText prop={lofi} />
+
+        <WebDesign prop={problemStatement} />
+        <WebDesign prop={personas} />
+        <WebDesign prop={ideate} />
+        <WebDev prop={feature} />
+        <WebDesign prop={storyboard} />
+        <WebDesign prop={lofi} />
         <WebDesign prop={usability} />
-        <WebDesignText prop={iterations} />
-        <WebDesign prop={mockups} />
-        <Preview prop={preview} />
-        <WebDev prop={webDev} />
-        <WebDesignVid prop={navbar} />
-        <WebDesignVid prop={vMap} />
-        <WebDesignVid prop={ui} />
-        <WebDesignVid prop={iteration} />
-        <WebDesign prop={mysql} />
-        <WebDesign prop={api} />
-        <WebDesign prop={azure} />
+        <WebDesign prop={final} />
+        <Key prop={key1} />
+        <Key prop={key2} />
+        <Key prop={key3} />
+
         <Conclusion prop={con} />
       </div>
       <MoreWork prop={more} />
