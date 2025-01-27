@@ -20,7 +20,7 @@ import brandingDark from "../../../public/pl/branding-dark.png";
 import wireframe from "../../../public/pl/wireframe.png";
 import wireframeDark from "../../../public/pl/wireframe-dark.png";
 import home from "../../../public/pl/home.png";
-import sehath from "../../../public/sehath/sehath.png";
+import elevate from "../../../public/elevate/elevate.png";
 import scf from "../../../public/scf/scf.png";
 
 const Page = () => {
@@ -197,17 +197,17 @@ const Page = () => {
   const more = [
     {
       image: scf,
-      title: "SCF Analysis",
+      title: "Statistical Analysis Web App",
       link: "/work/scf-2023",
       tags:["UI/UX DESIGN", "FULL-STACK DEVELOPMENT"],
       description:"This project simplifies the vast Survey of Consumer Finance data into an accessible and engaging web application for all users."
     },
     {
-      image: sehath,
-      title: "UT Sehath",
-      link: "/work/sehath-2023",
-      tags:["WEB DESIGN", "WEB DEVELOPMENT"],
-      description:"Design and develop an informative fundraising platform to showcase UT Sehath's commitment to global healthcare."
+      image: elevate,
+      title: "Elevate Smart Mirror",
+      link: "/work/elevate-2024",
+      tags:["UIUX", "USER RESEARCH"],
+      description:"Improving Body Image and Self-Esteem Through a Personalized Smart Fitness Mirror."
     },
   ];
 
