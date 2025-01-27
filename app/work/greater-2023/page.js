@@ -91,6 +91,7 @@ const Page = () => {
       "The Greater app helps users explore LGBTQIA+ friendly places/restaurants and organize meetups to engage with the Austin community. Its main purpose is to provide a platform to discover and connect with LGBTQIA+ friendly establishments/events in Greater Austin. Unique features include filtering listings based on specific criteria and creating events to share with the community. The target audience is LGBTQIA+ residents and allies looking to support LGBTQIA+ friendly businesses/events, and the benefits include discovering new places and experiences and promoting inclusivity and diversity in the area.",
     liveSite: false,
     siteLink: null,
+    Role: "Role",
     role: ["UI/UX Designer"],
     duration: "Spring 2023",
     designLink:"https://www.figma.com/file/8fK6e3mqRqHkXy58yce7TZ/Wellbeing-prototype?type=design&node-id=102%3A17&mode=design&t=ELnLMK2FNRa8Csv4-1"

@@ -16,7 +16,8 @@ import scf from '../../public/scf/scf.png'
 import pl from '../../public/pl/pl.png'
 import sehath from '../../public/sehath/sehath.png'
 import greater from '../../public/greater/greater.png'
-import flori from '../../public/flori/flori.png'
+import flori from '../../public/flori/flori_homepage.png'
+import elevate from '../../public/elevate/elevate.png'
 import Link from 'next/link'
 import { Lora } from "next/font/google";
 const lora = Lora({ subsets: ["latin"] });
@@ -70,9 +71,21 @@ const Page = () => {
 
 
         <div className={styles.workContainer}>
-        <LargeWorkCard
+        <SmallWorkCard
+            title="Elevate Smart Mirror"
+            tags={["UI/UX", "USER RESEARCH"]}
+            description="Improving Body Image and Self-Esteem Through a Personalized Smart Fitness Mirror."
+            imageSrc={elevate}
+            isHovered={hoveredCard === 0}
+            onMouseEnter={() => handleMouseEnter(0)}
+            onMouseLeave={handleMouseLeave}
+            hoveredAtAll={hoveredCard}
+            position={"center"}
+            link="/work/elevate-2024"
+          />
+        <SmallWorkCard
             title="SCF Analysis"
-            tags={["UI/UX DESIGN", "FULL-STACK DEVELOPMENT"]}
+            tags={["UI/UX", "FULL-STACK DEV"]}
             description="This project simplifies the vast Survey of Consumer Finance data into an accessible and engaging web application for all users."
             imageSrc={scf}
             isHovered={hoveredCard === 0}
@@ -104,7 +117,7 @@ const Page = () => {
             hoveredAtAll={hoveredCard}
             link="/work/sehath-2023"
           />
-          <LargeWorkCard
+          <SmallWorkCard
             title="Greater"
             tags={["UI/UX DESIGN",]}
             description="Design an app that connects users with LGBTQIA+ friendly spots in Austin, Texas."
@@ -116,7 +129,7 @@ const Page = () => {
             position={"left"}
             link="/work/greater-2023"
           />
-          <LargeWorkCard
+          <SmallWorkCard
             title="Flori"
             tags={["UI/UX DESIGN"]}
             description="UX case study for a floral arrangement app, enabling users to design customized arrangements for various occasions."

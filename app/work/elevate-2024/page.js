@@ -115,6 +115,7 @@ const Page = () => {
     ongoing: true,
     designLink:
       "https://www.figma.com/design/jVtLSQwR6ku7R3eo8nZ5PE/HCDE-518-Prototype?node-id=227-855&t=92TILVE68bRMrH4Q-1",
+    targetId: "solution",
   };
 
   const bgColor = "#90AB93";
@@ -251,6 +252,7 @@ const Page = () => {
     image: finalImg,
     // bgColor: bgColor,
     mobileContainer: false,
+    targetId: "solution",
   };
 
   const key1 = {
@@ -350,7 +352,7 @@ const Page = () => {
         <WebDesign prop={storyboard} />
         <WebDesign prop={lofi} />
         <WebDesign prop={usability} />
-        <WebDesign prop={final} />
+        <WebDesign id="solution" prop={final} />
         <Key prop={key1} />
         <Key prop={key2} />
         <Key prop={key3} />

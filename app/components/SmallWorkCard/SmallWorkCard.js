@@ -28,7 +28,7 @@ const SmallWorkCard = ({
             alt={title}
             fill
             priority
-            style={{ objectFit: "cover", objectPosition: "left" }}
+            style={{ objectFit: "cover", objectPosition: "top" }}
           />
         </div>
         </Link>

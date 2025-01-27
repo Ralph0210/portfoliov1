@@ -12,6 +12,7 @@ const ContentComponent = ({
   mobileContainer,
   noImg,
   reverseOrder,
+  targetId,
 }) => {
   return (
     <div className={reverseOrder ? styles.processContainerReverse : styles.processContainer}>
@@ -56,7 +57,7 @@ const ContentComponent = ({
 
 const WebDesign = ({ prop }) => {
   return (
-    <div className={styles.webdesignContainer}>
+    <div id={prop.targetId} className={styles.webdesignContainer}>
       <ContentComponent
         tag={prop.tag}
         title={prop.title}

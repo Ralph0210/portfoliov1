@@ -15,7 +15,7 @@
     justify-content: center;
     row-gap: 5rem;
     column-gap: 5rem;
-    margin-top: 5rem;
+    margin: 5rem 0;
 }
 
 @media (max-width: 430px){

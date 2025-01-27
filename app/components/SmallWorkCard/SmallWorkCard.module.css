@@ -4,6 +4,7 @@
     min-height: calc((100vw - 18rem) / 2 * 0.65);
     /* width: 100%; */
     position: relative;
+    flex: 0.4;
   }
 
 .textContainer {
@@ -30,21 +31,22 @@
   }
   
   .tags li {
-    font-size: clamp(1.4rem,1.5vw, 1.6rem);
+    font-size: clamp(1rem,1.3vw, 1.4rem);
     list-style: none;
     border: 1px solid var(--border-alpha-invert);
     border-radius: 5rem;
     text-align: center;
     display: flex;
     align-items: center;
-    padding: 0.5rem 0.875rem;
+    padding: 0.5rem 1rem;
+    color: var(--unimportantText-invert);
   }
   
   .description {
-    font-size: clamp(1.4rem,1.5vw, 1.6rem);
+    font-size: clamp(1rem,1.3vw, 1.4rem);
     padding-top: 1rem;
-    width: 65%;
-    color: var(--text-color);
+    width: 100%;
+    color: var(--unimportantText-invert);
   }
   
   .workCard {
