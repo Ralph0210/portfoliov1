@@ -28,6 +28,20 @@ export default function Home() {
   const footerStick = useRef(null);
   const isInView4 = useInView(footerStick);
 
+    const [isDark, setIsDark] = useState(false);
+    useEffect(() => {
+      const mq = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+    
+      if (mq.matches) {
+        setIsDark(true);
+      }
+    
+      // This callback will fire if the perferred color scheme changes without a reload
+      mq.addEventListener("change", (evt) => setIsDark(evt.matches));
+    }, []);
+
   useEffect(() => {
     const lenis = new Lenis({duration: 1.5, wheelMultiplier:1.1})
 
@@ -57,12 +71,20 @@ export default function Home() {
     }
   }, [isInView, isInView2, isInView3]);
 
+  useEffect(() => {
+  if (isDark) {
+    document.documentElement.classList.add("dark-mode");
+    document.documentElement.classList.remove("light-mode");
+  } else {
+    document.documentElement.classList.add("light-mode");
+    document.documentElement.classList.remove("dark-mode");
+  }
+}, [isDark]);
 
   return (
     <main
-      // style={sideNavOpened ? { overflow: "hidden", pointerEvents: "none" } : {}}
-      className={styles.main}
-    >
+  className={`${styles.main} ${isDark ? styles.darkMode : styles.lightMode}`}
+>
 
       <Cursor sideNavOpened={sideNavOpened} />
       {/* <div className={styles.heroContainer}> */}
@@ -70,8 +92,9 @@ export default function Home() {
         ThemeDark={ThemeDark}
         sideNavOpened={sideNavOpened}
         setSideNavOpened={setSideNavOpened}
+        darkMode={isDark}
       />
-      <Hero ThemeDark={ThemeDark} />
+      <Hero ThemeDark={ThemeDark} darkMode={isDark}/>
       <Intro
         ThemeDark={ThemeDark}
         changeThemeRef={changeThemeRef}
@@ -81,7 +104,7 @@ export default function Home() {
         abilityDeckRef={abilityDeckRef}
       />
       <Work changeThemeRef2={changeThemeRef2} footerStick={footerStick} abilityDeckRef={abilityDeckRef} isInView4={isInView4}/>
-      <Footer isInView4={isInView4} />
+      <Footer isInView4={isInView4} darkMode={isDark} />
 
     </main>
   );

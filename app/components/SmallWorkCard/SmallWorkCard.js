@@ -3,32 +3,32 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const SmallWorkCard = ({
-    title,
-    tags,
-    description,
-    imageSrc,
-    isHovered,
-    onMouseEnter,
-    onMouseLeave,
-    hoveredAtAll,
-    link
+  title,
+  tags,
+  description,
+  imageSrc,
+  isHovered,
+  onHover,
+  position,
+  link,
+  cardIndex,
   }) => {
     return (
-      <div onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      // style={{ opacity: hoveredAtAll !== null ? (isHovered ? 1 : 0.4) : 1, transition: "opacity 0.3s ease-in-out", height:"min-content" }}
+      <div
       >
                       <Link href={{pathname: link}} className={styles.link}>
         <div
-          className={`${styles.smallImageContainer} ${styles.workCard}`}
+          className={styles.smallImageContainer} onMouseEnter ={()=> onHover(cardIndex)}
+          onMouseLeave={()=> onHover(null)}
         >
           <Image
+          className={styles.workImage}
             draggable={false}
             src={imageSrc}
             alt={title}
             fill
             priority
-            style={{ objectFit: "cover", objectPosition: "top" }}
+            style={{ objectFit: "cover", objectPosition: "top", borderRadius: "0.3rem" }}
           />
         </div>
         </Link>

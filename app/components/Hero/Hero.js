@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import Link from "next/link";
-import { delay, motion } from "framer-motion";
+import { color, delay, motion } from "framer-motion";
 
 import { Lora } from "next/font/google";
 const lora = Lora({ subsets: ["latin"] });
@@ -91,7 +91,7 @@ const bounceVariants = {
 };
 
 
-const Hero = ({ ThemeDark }) => {
+const Hero = ({ ThemeDark, darkMode }) => {
 
   // const heroImages = [hero, hero1, hero2, hero3, hero4, hero5, hero6];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -168,11 +168,12 @@ const Hero = ({ ThemeDark }) => {
                 width: "100%",
                 transform: translateY,
                 backgroundBlendMode: "multiply",
+                borderRadius: "0.3rem",
               }}
               className={styles.b}
             />
           </div>
-          <ul className={ThemeDark ? styles.inView : ""}>
+          <ul className={darkMode ? styles.inView : ""}>
             <li ref={myNameRef} id="myName">
               {/* Ralph Chang */}
             </li>
@@ -187,7 +188,7 @@ const Hero = ({ ThemeDark }) => {
             aria-label="Scroll down"
           />
         </div> */}
-        <div className={styles.heroTextContainer}>
+        <div className={`${styles.heroTextContainer} ${darkMode ? styles.backgroundColor="#F9F5EC" : styles.backgroundColor="#344C36"}`}>
           {/* <motion.h1
             className={`${lora.className} ${styles.h1}`}
             variants={container}
@@ -205,7 +206,7 @@ const Hero = ({ ThemeDark }) => {
             ))}
           </motion.h1> */}
 
-<motion.h1 className={`${lora.className} ${styles.h1}`}>
+<motion.h1 className={`${lora.className} ${styles.h1} `}>
   <motion.span initial="hiddenLower" variants={bounceVariants} animate="showHello" className={styles.h1}>Hello</motion.span>
   <motion.span initial="hiddenLower" variants={bounceVariants} animate="showComma" className={styles.comma}>,</motion.span>
   <motion.span initial="hidden" variants={bounceVariants} animate="showIm" className={styles.h1}>I&apos;m</motion.span>

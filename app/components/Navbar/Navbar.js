@@ -5,7 +5,7 @@ import SideNav from "../SideNav/SideNav";
 import { Icon } from "@iconify/react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
-function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened }) {
+function Navbar({ ThemeDark, sideNavOpened, setSideNavOpened, darkMode }) {
   const navbarRef = useRef(null);
   const navbarInView = useInView(navbarRef)
 
