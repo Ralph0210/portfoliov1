@@ -6,15 +6,17 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --primary-color: #EC643C;
-  --background-color: #F9F5EC;
-  /* --background-color:#ffffff; */
-  --text-color: #344C36;
-  /* --text-color: #000000; */
+  --background-color-light: #F8F8F8;
+  --background-color-medium: #F5F5F5;
+  --background-color-dark:#2B3439;
+  --text-color: #1D2326;
   --text-color-dark: #010E02;
-  --text-color-bright: #F5EFE1;
+  --text-color-dark-opacity: rgba(29, 35, 38, 0.6);
+  --text-color-for-dark-background: #F8F8F8;
+  --text-color-for-dark-backgroun-opacity: rgba(248, 248, 248, 0.6);
   --underline-color: #000;
   --background-color-invert:#344C36;
-  --unimportantText-color:rgba(249, 245, 236, 0.75);
+  --unimportantText-color:rgba(249, 245, 236, 0.6);
   --border-alpha: rgba(249, 245, 236, 0.5);
   --grid-color: rgba(249, 245, 236, 0.1);
   --border-alpha-invert: rgba(10, 38, 13, 0.5);
@@ -28,7 +30,7 @@
     --background-end-rgb: 255, 255, 255; /* Default background color (end) */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --unimportantText-color:rgba(52, 76, 54, 0.75);
     --background-color: #344C36;
@@ -37,17 +39,16 @@
     --background-color-invert:#F9F5EC;
     --text-color-bright: #344C36;
     --text-color-dark: #F9F5EC;
-    /* Update background color for dark theme */
-    --background-start-rgb: 30, 30, 30; /* Dark background color (start) */
-    --background-end-rgb: 30, 30, 30; /* Dark background color (end) */
-    --foreground-rgb: 255, 255, 255; /* Dark text color */
+    --background-start-rgb: 30, 30, 30; 
+    --background-end-rgb: 30, 30, 30; 
+    --foreground-rgb: 255, 255, 255; 
     --border-alpha: rgba(0, 0, 0, 0.2);
     --border-alpha-invert: rgba(249, 245, 236, 0.5);
     --border-alpha-invert-light: rgba(249, 245, 236, 0.25);
     --highlight-color:rgba(235, 255, 0, 0.25);
     --grid-color:rgba(10, 38, 13, 0.1);
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -66,6 +67,7 @@ body {
 
 body {
   color: var(--text-color);
+  font-family: "Rubik";
   /* background: linear-gradient(
       to bottom,
       transparent,
@@ -78,7 +80,7 @@ body {
 
 
 
-.dark-mode-for-light{
+/* .dark-mode-for-light{
   --unimportantText-color:rgba(52, 76, 54, 0.75);
   --unimportantText-invert:rgba(249, 245, 236, 0.75);
     --background-color: #344C36;
@@ -95,9 +97,9 @@ body {
     --border-alpha-invert-light: rgba(249, 245, 236, 0.25);
     --highlight-color:rgba(235, 255, 0, 0.25);
     --grid-color:rgba(10, 38, 13, 0.1);
-}
+} */
 
-.light-mode-for-dark{
+/* .light-mode-for-dark{
   --primary-color: #EC643C;
   --background-color: #F9F5EC;
   --text-color: #344C36;
@@ -112,7 +114,7 @@ body {
   --border-alpha-invert-light: rgba(10, 38, 13, 0.25);
   --highlight-color:rgba(235, 255, 0, 0.25);
   --unimportantText-invert:rgba(52, 76, 54, 0.75);
-}
+} */
 
 .custom-cursor{
   position: fixed;
@@ -176,7 +178,7 @@ span{
   .custom-cursor{
     display: none;
   }
-  
+
   .cursor-text{
     display: none;
   }
@@ -190,8 +192,8 @@ span{
   right: 0;
   /* top: 0; */
   cursor: wait;
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: var(--background-color-dark);
+  color: var(--background-color-light);
   z-index: 9999;
   border-radius: 5rem 5rem 0 0 ;
   display: flex;
@@ -211,8 +213,8 @@ span{
   right: 0;
   /* top: 0; */
   cursor: wait;
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: var(--background-color-dark);
+  color: var(--background-color-light);
   z-index: 9999;
   display: flex;
   justify-content: center;

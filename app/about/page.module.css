@@ -12,7 +12,7 @@
     display: flex;
     gap: 3rem;
     z-index: 5;
-    background-color: var(--background-color);
+    background-color: var(--background-color-light);
 }
 
 .aboutMeImageContainer{
@@ -40,7 +40,7 @@
 }
 
 .aboutMeTextContainer span{
-    color: var(--border-alpha-invert);
+    color: var(--text-color-dark-opacity);
     font-size: clamp(1rem, 1.2vw, 1.4rem);
 font-style: normal;
 font-weight: 400;
@@ -72,7 +72,7 @@ line-height: 150%
 
 .bottomContainer{
     position: relative;
-    background-color: var(--background-color);
+    background-color: var(--background-color-medium);
     height: 100%;
     z-index: 5;
     border-radius: 0 0 5rem 5rem;
@@ -128,7 +128,7 @@ line-height: 150%
 
 .levelContainer span{
     font-size: clamp(1rem, 1.2vw, 1.4rem);
-    color: var(--border-alpha-invert);
+    color: var(--text-color-dark-opacity);
     margin-bottom: 0.5rem;
 }
 
@@ -194,7 +194,7 @@ line-height: 150%
 
 .techStackContainer span{
     font-size: clamp(1rem, 1.2vw, 1.4rem);
-    color: var(--border-alpha-invert);
+    color: var(--text-color-dark-opacity);
     margin-bottom: 0.5rem;
 }
 
@@ -321,7 +321,7 @@ line-height: 150%
         display: flex;
         gap: 3rem;
         z-index: 5;
-        background-color: var(--background-color);
+        background-color: var(--background-color-medium);
         flex-direction: column;
     }
     .divider{
@@ -332,7 +332,7 @@ line-height: 150%
     }
     .bottomContainer{
         position: relative;
-        background-color: var(--background-color);
+        background-color: var(--background-color-medium);
         height: 100%;
         z-index: 5;
         border-radius: 0 0 5rem 5rem;

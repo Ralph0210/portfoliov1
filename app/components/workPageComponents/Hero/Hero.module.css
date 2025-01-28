@@ -1,6 +1,6 @@
 .heroContainer{
     padding: 15% 5%;
-    background-color: var(--background-color);
+    background-color: var(--background-color-light);
     z-index: 5;
     position: relative;
 }

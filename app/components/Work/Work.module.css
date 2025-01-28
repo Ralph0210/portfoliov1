@@ -5,11 +5,11 @@
   height: 100%;
   border-radius: 5rem;
   z-index: 2;
-  background-color: var(--background-color);
+  background-color: var(--background-color-medium);
   padding: 3rem 6rem;
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 3rem;
 }
 
 .workGallery {
@@ -29,10 +29,12 @@
 }
 
 .selectedWork {
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1.4rem,1.5vw, 2rem);
   /* font-weight: 700; */
   color: var(--text-color);
   /* padding-bottom: 10rem; */
+  display: flex;
+  align-items: center;
 }
 
 .largeImageContainer {

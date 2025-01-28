@@ -225,7 +225,7 @@ const Page = () => {
         </div>
       </div>
       <div style={{ padding: "0 3rem" }}>
-        <FooterBottom />
+        {/* <FooterBottom /> */}
       </div>
     </div>
   );

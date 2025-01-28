@@ -12,8 +12,6 @@ import { color, delay, motion } from "framer-motion";
 import { Lora } from "next/font/google";
 const lora = Lora({ subsets: ["latin"] });
 
-
-
 const bounce = {
   hidden: { opacity: 1 },
   show: {
@@ -50,7 +48,7 @@ const bounceVariants = {
   showComma: {
     opacity: 1,
     // scale: [1, 1.1, 1],
-    y: [20,0],
+    y: [20, 0],
     transition: {
       duration: 0.6,
       ease: "easeInOut",
@@ -90,9 +88,7 @@ const bounceVariants = {
   },
 };
 
-
 const Hero = ({ ThemeDark, darkMode }) => {
-
   // const heroImages = [hero, hero1, hero2, hero3, hero4, hero5, hero6];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const myNameRef = useRef();
@@ -156,7 +152,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
   return (
     <>
       <div id="hero" className={styles.c}>
-        <div className={styles.d}>
+        {/* <div className={styles.d}>
           <div className={styles.a}>
             <Image
               placeholder="blur"
@@ -175,11 +171,11 @@ const Hero = ({ ThemeDark, darkMode }) => {
           </div>
           <ul className={darkMode ? styles.inView : ""}>
             <li ref={myNameRef} id="myName">
-              {/* Ralph Chang */}
+              Ralph Chang
             </li>
-            {/* <li>Designer & Developer</li> */}
+            <li>Designer & Developer</li>
           </ul>
-        </div>
+        </div> */}
         {/* <div className={styles.heroArrow}>
           <Icon
             className={ThemeDark ? styles.inView : ""}
@@ -188,7 +184,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
             aria-label="Scroll down"
           />
         </div> */}
-        <div className={`${styles.heroTextContainer} ${darkMode ? styles.backgroundColor="#F9F5EC" : styles.backgroundColor="#344C36"}`}>
+        <div className={styles.heroTextContainer}>
           {/* <motion.h1
             className={`${lora.className} ${styles.h1}`}
             variants={container}
@@ -206,14 +202,48 @@ const Hero = ({ ThemeDark, darkMode }) => {
             ))}
           </motion.h1> */}
 
-<motion.h1 className={`${lora.className} ${styles.h1} `}>
-  <motion.span initial="hiddenLower" variants={bounceVariants} animate="showHello" className={styles.h1}>Hello</motion.span>
-  <motion.span initial="hiddenLower" variants={bounceVariants} animate="showComma" className={styles.comma}>,</motion.span>
-  <motion.span initial="hidden" variants={bounceVariants} animate="showIm" className={styles.h1}>I&apos;m</motion.span>
-  <motion.span initial="hidden" variants={bounceVariants} animate="showRalph" className={styles.h1}>Ralph</motion.span>
-  <motion.span initial="hidden" variants={bounceVariants} animate="showEx" className={styles.comma}>!</motion.span>
-</motion.h1>
-
+          <motion.h1 className={`${lora.className} ${styles.h1} `}>
+            <motion.span
+              initial="hiddenLower"
+              variants={bounceVariants}
+              animate="showHello"
+              className={styles.h1}
+            >
+              Hello
+            </motion.span>
+            <motion.span
+              initial="hiddenLower"
+              variants={bounceVariants}
+              animate="showComma"
+              className={styles.comma}
+            >
+              ,
+            </motion.span>
+            <motion.span
+              initial="hidden"
+              variants={bounceVariants}
+              animate="showIm"
+              className={styles.h1}
+            >
+              I&apos;m
+            </motion.span>
+            <motion.span
+              initial="hidden"
+              variants={bounceVariants}
+              animate="showRalph"
+              className={styles.h1}
+            >
+              Ralph
+            </motion.span>
+            <motion.span
+              initial="hidden"
+              variants={bounceVariants}
+              animate="showEx"
+              className={styles.comma}
+            >
+              !
+            </motion.span>
+          </motion.h1>
 
           {/* <p>I explore the intersection of societal challenges and technology to create purposeful, user-centric experiences that make positive difference.</p> */}
           <motion.p
@@ -222,10 +252,57 @@ const Hero = ({ ThemeDark, darkMode }) => {
             // initial="hidden"
             // animate="show"
           >
-            I&apos;m a Designer & Developer currently based in Seattle, WA. I believe we deserve innovations that are inclusive, empowering, and rooted in kindness.
+            It&apos;s nice meeting you here. I&apos;m a Designer & Developer
+            that that engineer accessible and engaging solutions through care,
+            communication, and professionalism.
           </motion.p>
+          <svg
+            className="circle"
+            width="176"
+            height="61"
+            viewBox="0 0 176 61"
+            fill="none"
+          >
+            <rect width="176" height="61" fill="url(#pattern0_625_413)" />
+            <defs>
+              <pattern
+                id="pattern0_625_413"
+                patternContentUnits="objectBoundingBox"
+                width="1"
+                height="1"
+              >
+                <use transform="scale(0.00024425 0.000704722)" />
+              </pattern>
+            </defs>
+          </svg>
+        </div>
+        <div className={styles.additionalContainer}>
+          <motion.div
+            className={`${lora.className} ${styles.additional} `}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 1.5 }}
+          >
+            <motion.p className={styles.ti}>I believe</motion.p>
+            <motion.p className={styles.des}>
+              we deserve innovations that are inclusive, empowering, and rooted
+              in kindness.
+            </motion.p>
+          </motion.div>
+          <motion.div
+            className={`${lora.className} ${styles.additional} `}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 2 }}
+          >
+            <motion.p className={styles.ti}>I am</motion.p>
+            <motion.p className={styles.des}>
+              a master&apos;s student studying Human-Centered Design and
+              Engineering @ UW
+            </motion.p>
+          </motion.div>
           <Link href="/contact">
-            Contact me<div className={styles.bounds}></div>
+            Say hi too!<div className={styles.bounds}></div>
           </Link>
         </div>
       </div>

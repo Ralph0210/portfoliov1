@@ -1,6 +1,6 @@
 .moreWorkContainer{
-    background-color: var(--text-color);
-    color: var(--background-color);
+    background-color: var(--background-color-dark);
+    color: var(--background-color-light);
     height: 90vh;
     margin-top: -10vh;
     position: sticky;
@@ -17,6 +17,14 @@
     gap: 2rem;
 }
 
+.workImage{
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .workImage:hover {
+    transform: scale(1.05);
+  }
+
 .work{
     width: 100%;
     height: 100%;
@@ -26,6 +34,7 @@
     width: 100%;
     height: 50vh;
     position: relative;
+    overflow: hidden;
 }
 
 .textcontainer{
@@ -43,10 +52,10 @@
 
 .tag{
     font-size: clamp(1.2rem, 1.4vw, 1.6rem);
-    color: var(--background-color);
-    border-radius: 2rem;
+    color: var(--text-color-for-dark-background);
+    border-radius: 0.3rem;
     padding: 0.5rem 1rem;
-    border: 1px solid var(--unimportantText-color);
+    border: 1px solid var(--text-color-for-dark-backgroun-opacity);
 }
 
 .link{
@@ -60,7 +69,7 @@
 }
 
 .description{
-    color: var(--unimportantText-color);
+    color: var(--text-color-for-dark-backgroun-opacity);
     font-size: clamp(1.4rem, 1.4vw, 1.6rem);
 }
 
@@ -72,8 +81,8 @@
     }
 
     .moreWorkContainer{
-        background-color: var(--text-color);
-        color: var(--background-color);
+        background-color: var(--background-color-dark);
+        color: var(--text-color-for-dark-background);
         height: 70vh;
         margin-top: -10vh;
         position: sticky;
@@ -94,8 +103,8 @@
     }
 
     .moreWorkContainer{
-        background-color: var(--text-color);
-        color: var(--background-color);
+        background-color: var(--background-color-dark);
+        color: var(--text-color-for-dark-background);
         height: 110vh;
         margin-top: -10vh;
         position: sticky;

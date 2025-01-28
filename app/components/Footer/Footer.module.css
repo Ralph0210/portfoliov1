@@ -2,7 +2,7 @@
     width: 100%;
     /* min-height: 80vh; */
     height: 100%;
-    background-color: var(--text-color);
+    background-color: var(--background-color-dark);
     bottom: 0;
     z-index: 0;
     margin: -10rem 0;
@@ -22,7 +22,7 @@
 
 .cta{
     font-size: clamp(3.6rem, 5vw, 9.6rem);
-    color: var(--text-color-bright);
+    color: var(--background-color-light);
     margin-right: 2rem;
     flex-wrap: nowrap;
     transition: all 0.1s linear;
@@ -36,7 +36,7 @@
 }
 
 .arrow{
-    color: var(--text-color-bright);
+    color: var(--background-color-light);
     font-size: clamp(7rem, 10vw, 16rem);
     transform: rotate(90deg);
     transition: all 0.5s ease-in-out;
@@ -64,13 +64,13 @@
 
 .sayHi{
     font-size: clamp(2.4rem, 2.5vw, 3.8rem);
-    color: var(--unimportantText-color);
+    color: var(--text-color-for-dark-backgroun-opacity);
     padding-left: 21.5rem;
     margin-top: -8.5rem;
 }
 
 .contacts{
-    color: var(--background-color);
+    color: var(--background-color-dark);
     display: flex;
     gap: 4rem;
     padding-left: 12rem;
@@ -78,9 +78,9 @@
 }
 
 .contacts button{
-    background-color: var(--text-color);
-    border: 2px solid var(--border-alpha);
-    color: var(--background-color);
+    background-color: var(--background-color-dark);
+    border: 2px solid var(--text-color-for-dark-backgroun-opacity);
+    color: var(--background-color-light);
     padding: 3rem 5.25rem;
     border-radius: 5rem;
     /* font-size: 2rem; */
@@ -93,7 +93,7 @@
 }
 
 .divider{
-    background-color: var(--border-alpha);
+    background-color: var(--text-color-for-dark-backgroun-opacity);
     width: 100%;
     height: 2px;
     margin: 5rem auto
@@ -108,20 +108,20 @@
 }
 
 .footerBottom span{
-    color: var(--border-alpha);
+    color: var(--text-color-for-dark-backgroun-opacity);
     font-size: clamp(1rem,1.2vw, 1.2rem);
     padding: 0.7rem 1.5rem;
 }
 
 .footerBottom p{
-    color: var(--text-color-bright);
+    color: var(--background-color-light);
     font-size: clamp(1.4rem,1.5vw, 2rem);
     position: relative;
     padding: 0.7rem 1.5rem;
 }
 
 .footerBottom a{
-    color: var(--text-color-bright);
+    color: var(--background-color-light);
     font-size: clamp(1.4rem,1.5vw, 2rem);
     position: relative;
     padding: 0.7rem 1.5rem;
@@ -199,12 +199,12 @@
         padding-left: 16rem;
     }
     .contacts button{
-        border: 1px solid var(--border-alpha);
+        border: 1px solid var(--text-color-for-dark-backgroun-opacity);
         padding: 2rem 3.5rem;
     }
 
     .divider{
-        background-color: var(--border-alpha);
+        background-color: var(--text-color-for-dark-backgroun-opacity);
         width: 100%;
         height: 1px;
         margin: 0rem auto

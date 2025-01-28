@@ -39,11 +39,11 @@
 }
 
 .designGoalsTitle span{
-    color: var(--unimportantText-color);
+    color: var(--text-color-for-dark-backgroun-opacity);
 }
 
 .designGoalsTitle h2{
-    color: var(--background-color);
+    color: var(--text-color-for-dark-background);
     font-size: clamp(1.6rem, 2vw, 2.4rem);
     font-weight: 500;
 }
@@ -55,14 +55,14 @@
 }
 
 .designGoalsContentContainer{
-    border: 2px solid var(--unimportantText-color);
+    border: 2px solid var(--text-color-for-dark-backgroun-opacity);
     border-radius: 2rem;
     flex: 1;
     padding: 2rem 3rem;
 }
 
 .designGoalsContentContainer h3{
-    color: var(--background-color);
+    color: var(--text-color-for-dark-background);
     font-size: clamp(1.6rem, 2vw, 2.4rem);
     font-weight: 500;
     margin-bottom: 1rem;
@@ -75,13 +75,13 @@
 }
 
 .designGoalsContentContainer li span{
-    color: var(--background-color);
+    color: var(--text-color-for-dark-background);
     font-size: clamp(1.4rem, 1.4vw, 1.6rem);
     font-weight: 500;
 }
 
 .designGoalsContentContainer li{
-    color: var(--background-color);
+    color: var(--text-color-for-dark-background);
     font-size: clamp(1.4rem, 1.4vw, 1.6rem);
     font-weight: 400;
 }

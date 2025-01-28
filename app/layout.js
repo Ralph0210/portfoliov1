@@ -1,5 +1,5 @@
 "use client";
-import { Inter, Rubik, Lora } from "next/font/google";
+import { Rubik, Lora } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
@@ -7,7 +7,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { Suspense } from "react";
 import { AnimatePresence, motion, easeInOut } from "framer-motion";
 
-const rubik = Rubik({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"], display: "swap" });
 
 // export const metadata = {
 //   title: 'Ralph Chang 2025 portfolio',

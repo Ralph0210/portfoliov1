@@ -4,6 +4,7 @@
   padding: 0 15% 10% 15%;
   /* border: 1px solid red; */
   display: flex;
+  background-color: var(--background-color-light);
 }
 
 .formContainer {
@@ -36,7 +37,7 @@
 .divider {
   height: 1px;
   width: 100%;
-  background-color: var(--border-alpha-invert);
+  background-color: var(--text-color-dark-opacity);
   border-radius: 5rem;
 }
 
@@ -54,7 +55,7 @@
   font-size: clamp(1.4rem, 1.5vw, 2rem);
   border: none;
   outline: none;
-  background-color: var(--background-color);
+  background-color: var(--background-color-medium);
   color: var(--text-color);
   width: 100%;
 }
@@ -65,7 +66,7 @@
 }
 
 .formDiv > div > input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px var(--background-color) inset !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--background-color-light) inset !important;
   -webkit-text-fill-color: var(--text-color);
 }
 
@@ -74,7 +75,7 @@
 }
 
 .form input::placeholder {
-  color: var(--border-alpha-invert);
+  color: var(--text-color-dark-opacity);
 }
 
 .form > div {
@@ -93,7 +94,7 @@
   width: fit-content;
   height: auto;
   border-radius: 5rem;
-  color: #f9f5ec;
+  color: var(--background-color-light);
   background-color: var(--primary-color);
   border: none;
   position: relative;
@@ -122,7 +123,7 @@
 
 .detailsContainer span {
   font-size: clamp(1rem, 1.2vw, 1.4rem);
-  color: var(--border-alpha-invert);
+  color: var(---text-color-dark-opacity);
 }
 
 .detailsContainer a {
@@ -134,7 +135,7 @@
 .detailsContainer button {
   font-size: clamp(1.4rem, 1.5vw, 2rem);
   border: none;
-  background-color: var(--background-color);
+  background-color: var(--background-color-light);
   color: var(--text-color);
   text-decoration: underline;
 }

@@ -1,12 +1,12 @@
 .webdevContainer{
-    background-color: var(--background-color);
+    background-color: var(--background-color-light);
     position: relative;
     padding: 10% 10%;
 }
 
 .webdevContainer span{
     font-size: clamp(1rem, 1.2vw, 1.4rem);
-    color: var(--border-alpha-invert);
+    color: var(--text-color-dark-opacity);
 }
 
 .techContainer{

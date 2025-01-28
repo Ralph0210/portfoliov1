@@ -98,6 +98,7 @@ const Page = () => {
       "Traditionally, the SCF's vastness – encompassing an average of 250 variables and more than 20k rows of data in each year’s extracted dataset – can be daunting to navigate, even for seasoned researchers. This web application aims to bridge this gap, unlocking the power of the SCF for a wider audience.",
     liveSite: false,
     siteLink: "https://myscfanalysis.azurewebsites.net/",
+    Role: "Role",
     role: ["Designer", "Developer"],
     duration: "May 2023 - Dec 2023",
     ongoing: true,

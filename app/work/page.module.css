@@ -1,8 +1,8 @@
 .workPageContainer{
     height: auto;
     width: 100%;
-    border-radius: 5rem;
-    background-color: var(--background-color);
+    border-radius:0 0 5rem 5rem;
+    background-color: var(--background-color-light);
     z-index: 5;
     position: relative;
     padding: 5% 10%;
