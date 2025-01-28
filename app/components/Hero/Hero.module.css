@@ -28,10 +28,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 0rem;
     z-index: 2;
     background-blend-mode: multiply;
-    padding: 5rem 15rem 0;
+    padding: 5rem 15rem 5rem;
 }
 
 .d li {
