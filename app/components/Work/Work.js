@@ -1,5 +1,5 @@
 "use client";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState, useEffect } from "react";
 import styles from "./Work.module.css";
 import Image from "next/image";
 
@@ -16,15 +16,29 @@ import Footer from "../Footer/Footer";
 import LargeWorkCard from "../LargeWorkCard/LargeWorkCard";
 import SmallWorkCard from "../SmallWorkCard/SmallWorkCard";
 
-const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4 }) => {
+const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4}) => {
+
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+  
+    if (mq.matches) {
+      setIsDark(true);
+    }
+  
+    // This callback will fire if the perferred color scheme changes without a reload
+    mq.addEventListener("change", (evt) => setIsDark(evt.matches));
+  }, []);
 
   const backgroundColors = {
-    1: "#E9F0F7", // Color for cardIndex 1
-    2: "#EDF9F2", // Color for cardIndex 2
-    3: "#FCEAEA", // Color for cardIndex 3
-    4: "#FAEFE8", // Color for cardIndex 4
-    default: "#F5F5F5", // Default background color
+    1: isDark? "#344C36" :  "#E9F0F7", // Color for cardIndex 1
+    2: isDark? "#344C36" :  "#EDF9F2", // Color for cardIndex 2
+    3: isDark? "#344C36" :  "#FCEAEA", // Color for cardIndex 3
+    4: isDark? "#344C36" :  "#FAEFE8", // Color for cardIndex 4
+    default: isDark? "#344C36" : "#F9F5EC", // Default background color
   };
 
   // Callback to handle hover state from LargeWorkCard
