@@ -168,6 +168,7 @@ const Hero = ({ ThemeDark }) => {
                 width: "100%",
                 transform: translateY,
                 backgroundBlendMode: "multiply",
+                borderRadius: "0.3rem",
               }}
               className={styles.b}
             />

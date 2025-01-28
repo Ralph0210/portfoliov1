@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import styles from './Cursor.module.css'
 import stylesIntro from "../components/Intro/Intro.module.css";
 import styles2 from "../components/Work/Work.module.css";
+import stylesLargeWorkCard from "../components/LargeWorkCard/LargeWorkCard.module.css";
+import stylesSmallWorkCard from "../components/SmallWorkCard/SmallWorkCard.module.css";
 import stylesNav from "../components/Navbar/Navbar.module.css";
 import stylesHero from '../components/Hero/Hero.module.css'
 import stylesFooter from "../components/Footer/Footer.module.css";
@@ -11,13 +13,66 @@ import stylesFooterBottom from '../components/FooterBottom/FooterBottom.module.c
 import stylesContact from '../contact/page.module.css'
 import { Icon } from "@iconify/react";
 
+const AnimatedSVG = () => {
+  return (<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    width="60" // Adjust cursor size
+    height="60"
+    overflow="visible"
+  >
+    {/* Arrow at the center */}
+    <path
+      fill="currentColor"
+      d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19z"
+      transform="translate(38, 38)"
+    />
+    {/* Circular orbiting text */}
+    <defs>
+    <path
+      id="textCirclePath"
+      d="M 50 20 a 30 30 0 1 0 0.00001 0 z"
+    />
+  </defs>
+    <text
+      fill="white"
+      fontSize="5"
+      fontFamily="Helvetica Neue"
+      fontWeight="bold"
+      letterSpacing="3"
+    >
+      <textPath
+        xlinkHref="#textCirclePath"
+        startOffset="100%"
+        method="align"
+      >
+        <animate
+                attributeName="startOffset"
+                begin="0.001s"
+                dur="1s"
+                from="100%"
+                to="0%"
+                repeatCount="1"
+                fill="freeze"
+                keyTimes="0;1"
+            keySplines="0.42, 0, 0.65, 1" // Smooth easing (cubic-bezier curve)
+            calcMode="spline"
+              />
+         VIEW PROJECT * VIEW PROJECT * VIEW PROJECT * 
+      </textPath>
+    </text>
+  </svg>
+
+  )
+}
+
 const Cursor = ({ sideNavOpened }) => {
-  
   const [isHoveredButton, setIsHoveredButton] = useState(false);
   const [isHoveredAboutMeCard, setIsHoveredAboutMeCard] = useState(false);
   const [isHoveredNavButton, setIsHoveredNavButton] = useState(false);
   const [isHoveredCard, setIsHoveredCard] = useState(false);
-  const [isHoveredWork, setIsHoveredWork] = useState(false);
+  const [isHoveredWorkL, setIsHoveredWorkL] = useState(false);
+  const [isHoveredWorkS, setIsHoveredWorkS] = useState(false);
   const [isHoveredArrow, setIsHoveredArrow] = useState(false);
   const [isHoveredContactsCard, setIsHoveredContactsCard] = useState(false);
   const [isCopied, setIsCopied] = useState(false)
@@ -28,12 +83,14 @@ const Cursor = ({ sideNavOpened }) => {
   const [cursortext, setCursorText] = useState();
   let scale = 1;
 
+
   useLayoutEffect(() => {
     const cursor = document.querySelector(".custom-cursor");
     const cards = document.querySelectorAll(`.${stylesIntro.abilityCard}`);
     const aboutMeCard = document.querySelector(`.${stylesIntro.aboutMeCard}`);
     const cta = document.querySelector(`.${stylesHero.bounds}`);
-    const works = document.querySelectorAll(`.${styles2.workCard}`);
+    const worksL = document.querySelectorAll(`.${stylesLargeWorkCard.workImage}`);
+    const worksS = document.querySelectorAll(`.${stylesSmallWorkCard.workImage}`);
     const buttons = document.querySelectorAll(`.${styles2.bounds}`);
     const navButtons = document.querySelectorAll(`.${stylesNav.bounds}`);
     const footerButtons = document.querySelectorAll(`.${stylesFooter.bounds}`);
@@ -99,8 +156,9 @@ const Cursor = ({ sideNavOpened }) => {
             icon="ph:arrow-up-light"
             aria-label="Scroll down"
           />);
-      } else if (isHoveredWork) {
-        scale = 4;
+      } 
+      else if (isHoveredWorkL) {
+        scale = 3;
         gsap.to(cursor, {
           scale: scale,
           x: clientX - cursorSize / 2,
@@ -108,7 +166,20 @@ const Cursor = ({ sideNavOpened }) => {
         //   mixBlendMode:"exclusion",
         });
         cursorText.style.display = "block";
-        setCursorText("view case");
+        setCursorText( <AnimatedSVG />
+      );
+      }  
+      else if (isHoveredWorkS) {
+        console.log("work");
+        scale = 3.2;
+        gsap.to(cursor, {
+          scale: scale,
+          x: clientX - cursorSize / 2,
+          y: clientY - cursorSize / 2,
+        //   mixBlendMode:"exclusion",
+        });
+        cursorText.style.display = "block";
+        setCursorText(<AnimatedSVG />);
       } else if (isHoveredContactsCard && !isCopied) {
         scale = 4;
         gsap.to(cursor, {
@@ -144,12 +215,20 @@ const Cursor = ({ sideNavOpened }) => {
       }
     };
 
-    const onMouseEnterWorks = (e) => {
-      setIsHoveredWork(true);
+    const onMouseEnterWorksL = (e) => {
+      setIsHoveredWorkL(true);
     };
 
-    const onMouseLeaveWorks = (e) => {
-      setIsHoveredWork(false);
+    const onMouseLeaveWorksL = (e) => {
+      setIsHoveredWorkL(false);
+    };
+
+    const onMouseEnterWorksS = (e) => {
+      setIsHoveredWorkS(true);
+    };
+
+    const onMouseLeaveWorksS = (e) => {
+      setIsHoveredWorkS(false);
     };
 
     const onMouseEnterCard = (e) => {
@@ -253,9 +332,14 @@ const Cursor = ({ sideNavOpened }) => {
       link.addEventListener("mouseleave", onMouseLeaveCard);
     });
 
-    works.forEach((work) => {
-      work.addEventListener("mouseenter", onMouseEnterWorks);
-      work.addEventListener("mouseleave", onMouseLeaveWorks);
+    worksL.forEach((work) => {
+      work.addEventListener("mouseenter", onMouseEnterWorksL);
+      work.addEventListener("mouseleave", onMouseLeaveWorksL);
+    });
+
+    worksS.forEach((work) => {
+      work.addEventListener("mouseenter", onMouseEnterWorksS);
+      work.addEventListener("mouseleave", onMouseLeaveWorksS);
     });
 
     buttons.forEach((button) => {
@@ -307,9 +391,13 @@ const Cursor = ({ sideNavOpened }) => {
     return () => {
         // router.events.off('routeChangeStart', handleRouteChange);
       document.removeEventListener("click", onClick);
-      works.forEach((work) => {
-        work.removeEventListener("mouseenter", onMouseEnterWorks);
-        work.removeEventListener("mouseleave", onMouseLeaveWorks);
+      worksL.forEach((work) => {
+        work.removeEventListener("mouseenter", onMouseEnterWorksL);
+        work.removeEventListener("mouseleave", onMouseLeaveWorksL);
+      });
+      worksS.forEach((work) => {
+        work.removeEventListener("mouseenter", onMouseEnterWorksS);
+        work.removeEventListener("mouseleave", onMouseLeaveWorksS);
       });
       document.removeEventListener("mousemove", onMouseMove);
       cards.forEach((link) => {
@@ -356,7 +444,7 @@ const Cursor = ({ sideNavOpened }) => {
         cta.removeEventListener("mouseenter", onMouseEntercta);
         cta.removeEventListener("mouseleave", onMouseLeavecta);
     }
-  }, [sideNavOpened, isHoveredButton,isHoveredAboutMeCard, isHoveredNavButton, isHoveredCard, isHoveredWork, isHoveredArrow, isHoveredContactsCard, isCopied, isHoveredcta, isHoveredSideNavButton, isHoveredFooterButton, isHoveredContact]);
+  }, [sideNavOpened, isHoveredButton,isHoveredAboutMeCard, isHoveredNavButton, isHoveredCard, isHoveredWorkL, isHoveredWorkS, isHoveredArrow, isHoveredContactsCard, isCopied, isHoveredcta, isHoveredSideNavButton, isHoveredFooterButton, isHoveredContact]);
 
   return (
     <div id="custom-cursor" className="custom-cursor">

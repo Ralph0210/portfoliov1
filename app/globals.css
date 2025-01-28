@@ -6,9 +6,9 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --primary-color: #EC643C;
-  --background-color: #F9F5EC;
+  --background-color: #344C36;
   /* --background-color:#ffffff; */
-  --text-color: #344C36;
+  --text-color: #F9F5EC;
   /* --text-color: #000000; */
   --text-color-dark: #010E02;
   --text-color-bright: #F5EFE1;
@@ -76,6 +76,8 @@ body {
   transition: all 0.5s ease-in;
 }
 
+
+
 .dark-mode-for-light{
   --unimportantText-color:rgba(52, 76, 54, 0.75);
   --unimportantText-invert:rgba(249, 245, 236, 0.75);
@@ -85,10 +87,9 @@ body {
     --background-color-invert:#F9F5EC;
     --text-color-bright: #344C36;
     --text-color-dark: #F9F5EC;
-    /* Update background color for dark theme */
-    --background-start-rgb: 30, 30, 30; /* Dark background color (start) */
-    --background-end-rgb: 30, 30, 30; /* Dark background color (end) */
-    --foreground-rgb: 255, 255, 255; /* Dark text color */
+    --background-start-rgb: 30, 30, 30;
+    --background-end-rgb: 30, 30, 30;
+    --foreground-rgb: 255, 255, 255; 
     --border-alpha: rgba(0, 0, 0, 0.2);
     --border-alpha-invert: rgba(249, 245, 236, 0.5);
     --border-alpha-invert-light: rgba(249, 245, 236, 0.25);
@@ -129,6 +130,7 @@ body {
   align-items: center;
   /* background-color: var(--text-color-bright); */
   background-color: white;
+  overflow: visible;
 }
 
 .cursor-text{

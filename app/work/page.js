@@ -60,7 +60,9 @@ const Page = () => {
   }, [sideNavOpened]);
 
   return (
-    <div style={{overflow: "clip"}}>
+    <div
+    style={{overflow: "clip"}}
+    >
       <Cursor />
       <Navbar
         sideNavOpened={sideNavOpened}

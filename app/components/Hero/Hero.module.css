@@ -101,7 +101,7 @@
     position: relative;
     width: fit-content;
     border-radius: 5rem;
-    color: #F9F5EC;
+    color: var(--background-color);
     background-color: var(--primary-color);
 }
 
