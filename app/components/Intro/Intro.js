@@ -250,48 +250,48 @@ const Intro = ({
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
+  // useEffect(() => {
+  //   const prefersDarkMode = window.matchMedia(
+  //     "(prefers-color-scheme: dark)"
+  //   ).matches;
 
-    // Select the HTML element
-    const bodyElement = document.querySelector("body");
-    const footer = document.getElementById("footer");
-    const work = document.getElementById("work");
-    // Set the color scheme based on user preference
-    if (prefersDarkMode) {
-      if (isInView || isInView2) {
-        bodyElement.classList.add("light-mode-for-dark");
-        footer.classList.add("dark-mode-for-light");
-        work.classList.add("dark-mode-for-light");
-      } else {
-        bodyElement.classList.remove("light-mode-for-dark");
-        footer.classList.remove("dark-mode-for-light");
-        work.classList.remove("dark-mode-for-light");
-      }
-    } else {
-      if (isInView || isInView2) {
-        bodyElement.classList.add("dark-mode-for-light");
-        footer.classList.add("light-mode-for-dark");
-        work.classList.add("light-mode-for-dark");
-      } else {
-        bodyElement.classList.remove("dark-mode-for-light");
-        footer.classList.remove("light-mode-for-dark");
-        work.classList.remove("light-mode-for-dark");
-      }
-    }
+  //   // Select the HTML element
+  //   const bodyElement = document.querySelector("body");
+  //   const footer = document.getElementById("footer");
+  //   const work = document.getElementById("work");
+  //   // Set the color scheme based on user preference
+  //   if (prefersDarkMode) {
+  //     if (isInView || isInView2) {
+  //       bodyElement.classList.add("light-mode-for-dark");
+  //       footer.classList.add("dark-mode-for-light");
+  //       work.classList.add("dark-mode-for-light");
+  //     } else {
+  //       bodyElement.classList.remove("light-mode-for-dark");
+  //       footer.classList.remove("dark-mode-for-light");
+  //       work.classList.remove("dark-mode-for-light");
+  //     }
+  //   } else {
+  //     if (isInView || isInView2) {
+  //       bodyElement.classList.add("dark-mode-for-light");
+  //       footer.classList.add("light-mode-for-dark");
+  //       work.classList.add("light-mode-for-dark");
+  //     } else {
+  //       bodyElement.classList.remove("dark-mode-for-light");
+  //       footer.classList.remove("light-mode-for-dark");
+  //       work.classList.remove("light-mode-for-dark");
+  //     }
+  //   }
 
-    return () => {
-      const bodyElement = document.querySelector("body");
-      bodyElement.classList.remove("dark-mode-for-light");
-      bodyElement.classList.remove("light-mode-for-dark");
-      footer.classList.remove("light-mode-for-dark");
-      footer.classList.remove("dark-mode-for-light");
-      work.classList.remove("light-mode-for-dark");
-      work.classList.remove("dark-mode-for-light");
-    };
-  }, [isInView, isInView2]);
+  //   return () => {
+  //     const bodyElement = document.querySelector("body");
+  //     bodyElement.classList.remove("dark-mode-for-light");
+  //     bodyElement.classList.remove("light-mode-for-dark");
+  //     footer.classList.remove("light-mode-for-dark");
+  //     footer.classList.remove("dark-mode-for-light");
+  //     work.classList.remove("light-mode-for-dark");
+  //     work.classList.remove("dark-mode-for-light");
+  //   };
+  // }, [isInView, isInView2]);
 
   return (null
     // <div id="intro" ref={changeThemeRef} className={styles.introContainer}>

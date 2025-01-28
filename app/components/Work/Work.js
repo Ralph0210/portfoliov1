@@ -34,11 +34,11 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4}) => {
   }, []);
 
   const backgroundColors = {
-    1: isDark? "#344C36" :  "#E9F0F7", // Color for cardIndex 1
-    2: isDark? "#344C36" :  "#EDF9F2", // Color for cardIndex 2
-    3: isDark? "#344C36" :  "#FCEAEA", // Color for cardIndex 3
-    4: isDark? "#344C36" :  "#FAEFE8", // Color for cardIndex 4
-    default: isDark? "#344C36" : "#F9F5EC", // Default background color
+    1: "#E9F0F7", // Color for cardIndex 1
+    2: "#EDF9F2", // Color for cardIndex 2
+    3: "#FCEAEA", // Color for cardIndex 3
+    4: "#FAEFE8", // Color for cardIndex 4
+    default: "#EFEFEF",
   };
 
   // Callback to handle hover state from LargeWorkCard
@@ -72,7 +72,7 @@ const Work = ({ changeThemeRef2, footerStick, abilityDeckRef, isInView4}) => {
       style={{ zIndex: "2", position: "relative", backgroundColor: currentBackgroundColor, transition: "background-color 0.3s ease" }}
     >
       <p ref={footerStick} className={styles.selectedWork}>
-        My Work
+        My Work&nbsp; <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 24 24"><path fill="currentColor" d="m20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8z"></path></svg>
       </p>
       <div className={styles.workGallery}>
         <div className={styles.workGalleryTop}>

@@ -16,7 +16,7 @@ const MoreWork = ({ prop }) => {
           <div key={index} className={styles.work}>
             <Link href={item.link}>
               <div className={styles.imageContainer}>
-                <Image src={item.image} fill style={{ objectFit: "cover" }} />
+                <Image className={styles.workImage} src={item.image} fill style={{ objectFit: "cover", borderRadius: "0.3rem" }} />
               </div>
             </Link>
             <div className={styles.textcontainer}>

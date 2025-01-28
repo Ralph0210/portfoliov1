@@ -1,6 +1,6 @@
 .conContainer{
     position: relative;
-    background-color: var(--background-color);
+    background-color: var(--background-color-light);
     padding: 10% 15%;
     display: flex;
     gap: 3rem;
@@ -18,7 +18,7 @@
 
 .rightContainer{
     flex: 0.3;
-    border: 2px solid var(--border-alpha-invert);
+    border: 2px solid var(--text-color-dark-opacity);
     border-radius: 5rem;
     padding: 3rem 3rem;
     display: flex;
@@ -29,7 +29,7 @@
 
 .left{
     flex: 1;
-    border: 2px solid var(--border-alpha-invert);
+    border: 2px solid var(--text-color-dark-opacity);
     border-radius: 5rem;
     padding: 3rem 3rem;
     display: flex;
@@ -46,7 +46,7 @@
 
 .bottom{
     flex: 1;
-    border: 2px solid var(--border-alpha-invert);
+    border: 2px solid var(--text-color-dark-opacity);
     border-radius: 5rem;
     padding: 3rem 3rem;
     display: flex;
@@ -87,7 +87,7 @@
 }
 
 .icon{
-    border: 2px solid var(--border-alpha-invert);
+    border: 2px solid var(--text-color-dark-opacity);
     border-radius: 50%;
     padding: 5% 5%;
     cursor: pointer;
@@ -103,7 +103,7 @@
 @media (max-width:1024px){
     .conContainer{
         position: relative;
-        background-color: var(--background-color);
+        background-color: var(--background-color-light);
         padding: 5% 5%;
         display: flex;
         gap: 3rem;
@@ -115,7 +115,7 @@
 @media (max-width:768px){
     .conContainer{
         position: relative;
-        background-color: var(--background-color);
+        background-color: var(--background-color-light);
         padding: 5% 5%;
         display: flex;
         gap: 3rem;

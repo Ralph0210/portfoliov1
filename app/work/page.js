@@ -37,6 +37,10 @@ const Page = () => {
     setHoveredCard(null);
   };
 
+  const handleCardHover = (cardIndex) => {
+    setHoveredCard(cardIndex); // Update parent state
+  };
+
 
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.5, wheelMultiplier: 1.1 });
@@ -78,6 +82,7 @@ const Page = () => {
             tags={["UI/UX", "USER RESEARCH"]}
             description="Improving Body Image and Self-Esteem Through a Personalized Smart Fitness Mirror."
             imageSrc={elevate}
+            onHover = {() => handleCardHover(null)}
             isHovered={hoveredCard === 0}
             onMouseEnter={() => handleMouseEnter(0)}
             onMouseLeave={handleMouseLeave}
@@ -96,6 +101,7 @@ const Page = () => {
             hoveredAtAll={hoveredCard}
             position={"center"}
             link="/work/scf-2023"
+            onHover = {(index) => handleCardHover(null)}
           />
           <SmallWorkCard
             title="Planet longhorn"
@@ -107,6 +113,7 @@ const Page = () => {
             onMouseLeave={handleMouseLeave}
             hoveredAtAll={hoveredCard}
             link="/work/planet-longhorn-2023"
+            onHover = {(index) => handleCardHover(null)}
           />
           <SmallWorkCard
             title="UT Sehath"
@@ -118,6 +125,7 @@ const Page = () => {
             onMouseLeave={handleMouseLeave}
             hoveredAtAll={hoveredCard}
             link="/work/sehath-2023"
+            onHover = {(index) => handleCardHover(null)}
           />
           <SmallWorkCard
             title="Greater"
@@ -130,6 +138,7 @@ const Page = () => {
             hoveredAtAll={hoveredCard}
             position={"left"}
             link="/work/greater-2023"
+            onHover = {(index) => handleCardHover(null)}
           />
           <SmallWorkCard
             title="Flori"
@@ -142,6 +151,7 @@ const Page = () => {
             hoveredAtAll={hoveredCard}
             position={"right"}
             link="/work/flori-2022"
+            onHover = {(index) => handleCardHover(null)}
           />
         </div>
 

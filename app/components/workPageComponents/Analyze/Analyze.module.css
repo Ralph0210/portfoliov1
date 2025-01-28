@@ -35,7 +35,7 @@
 .textContainer{
     align-self: flex-start;
     flex: 0.3;
-    color: var(--background-color);
+    color: var(--text-color-for-dark-background);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -47,7 +47,7 @@
 
 .textContainer span{
     font-size: clamp(1rem, 1.2vw, 1.4rem);
-    color: var(--unimportantText-color);
+    color: var(--text-color-for-dark-backgroun-opacity);
 }
 
 .textContainer h2{

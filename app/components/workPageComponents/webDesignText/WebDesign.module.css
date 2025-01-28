@@ -1,6 +1,6 @@
 .webdesignContainer{
     height: auto;
-    background-color: var(--background-color);
+    background-color: var(--text-color-for-dark-background);
     border: 1px solid transparent;
     z-index: 5;
     padding: 0 10%;
@@ -28,7 +28,7 @@
 
 .textContainer span{
     font-size: clamp(1rem, 1.2vw, 1.4rem);
-    color: var(--border-alpha-invert);
+    color: var(--text-color-dark-opacity);
 }
 
 .textContainer h2{
