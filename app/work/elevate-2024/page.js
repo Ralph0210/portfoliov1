@@ -18,11 +18,8 @@ import Conclusion from "@/app/components/workPageComponents/Conclusion/Conclusio
 import MoreWork from "@/app/components/workPageComponents/moreWork/MoreWork";
 import elevate from "../../../public/elevate/elevate.png";
 import survey from "../../../public/elevate/survey.png";
-import surveyDark from "../../../public/elevate/surveyDark.png";
 import surveyInsights from "../../../public/elevate/surveyInsights.png";
-import surveyInsightsDark from "../../../public/elevate/surveyInsightsDark.png";
 import interviewInsights from "../../../public/elevate/interviewInsights.png";
-import interviewInsightsDark from "../../../public/elevate/interviewInsightsDark.png";
 import affinity from "../../../public/elevate/affinity.webp";
 import personasImg from "../../../public/elevate/personas.png";
 import sketch from "../../../public/elevate/sketch.png";
@@ -130,7 +127,7 @@ const Page = () => {
             "This project was our final deliverable for HCDE 518: User-Centered Design in our Master’s program in Human-Centered Design and Engineering at University of Washington.",
         description2: "We focused on real-world challenges and were inspired by personal experiences and the widespread issue of negative body image in college fitness. Our goal was to create a solution to address these challenges.",
       imageLight: survey,
-      imageDark: surveyDark,
+      imageDark: survey,
       themeDark: darkMode,
       noText: false,
     },
@@ -140,7 +137,7 @@ const Page = () => {
       description:
         "To dive deeper into our problem space, we conducted surveys, receiving over 30 valid responses, and interviewed 10 members of our target audience.",
       imageLight: surveyInsights,
-      imageDark: surveyInsightsDark,
+      imageDark: surveyInsights,
       themeDark: darkMode,
       noText: false,
       reverseOrder: true,
@@ -150,7 +147,7 @@ const Page = () => {
       title: "User Inverview:",
       description: "After getting some directions from the survey, we conducted interviews with 10 members of our target audience. I spearheaded in creating the interview guide and conducting the interviews.",
       imageLight: interviewInsights,
-        imageDark: interviewInsightsDark,
+        imageDark: interviewInsights,
       themeDark: darkMode,
       noText: false,
     },

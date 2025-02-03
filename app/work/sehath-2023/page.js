@@ -16,9 +16,7 @@ import Conclusion from "@/app/components/workPageComponents/Conclusion/Conclusio
 import MoreWork from "@/app/components/workPageComponents/moreWork/MoreWork";
 import heroImg from "../../../public/sehath/sehath.png";
 import branding from "../../../public/sehath/branding.png";
-import brandingDark from "../../../public/sehath/branding-dark.png";
 import wireframe from "../../../public/pl/wireframe.png";
-import wireframeDark from "../../../public/pl/wireframe-dark.png";
 import home from "../../../public/sehath/home.png";
 import pl from "../../../public/pl/pl.png";
 import greater from "../../../public/greater/greater.png";
@@ -106,7 +104,7 @@ const Page = () => {
       description:
         "Sehath, which means 'health' in Hindi, is a pre-med organization at the University of Texas at Austin, focused on global health equity. The branding aims to reflect UT's vibrancy blended with Sehath's commitment to international health outreach initiatives.",
       imageLight: branding,
-      imageDark: brandingDark,
+      imageDark: branding,
       themeDark: darkMode,
     },
   ];
@@ -181,7 +179,7 @@ const Page = () => {
     {
       image: pl,
       title: "Planet Longhron",
-      link: "/work/planet-longhron-2023",
+      link: "/work/planet-longhorn-2023",
       tags:["WEB DESIGN", "WEB DEVELOPMENT"],
       description:"Design and develop an informative and community-representative online presence for Planet Longhorn."
     },
