@@ -1,5 +1,7 @@
 "use client";
 import { Rubik, Lora } from "next/font/google";
+import { Inter } from 'next/font/google';
+
 import "./globals.css";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
@@ -7,7 +9,14 @@ import { useRouter, usePathname } from "next/navigation";
 import { Suspense } from "react";
 import { AnimatePresence, motion, easeInOut } from "framer-motion";
 
-const rubik = Rubik({ subsets: ["latin"], display: "swap" });
+// const rubik = Rubik({ subsets: ["latin"], display: "swap" });
+
+const sfPro = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  // If you have different weights or styles, you can specify them here
+  weight: ['400', '500', '700'],
+});
 
 // export const metadata = {
 //   title: 'Ralph Chang 2025 portfolio',
@@ -130,7 +139,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={rubik.className} key={pathname}>
+      <body className={sfPro.className} key={pathname}>
         <AnimatePresence>
           <NavigationEvents isLanding={isLanding} setIsLanding={setIsLanding}/>
         </AnimatePresence>
