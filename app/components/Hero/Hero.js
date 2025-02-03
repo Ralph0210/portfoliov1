@@ -10,7 +10,6 @@ import Link from "next/link";
 import { color, delay, motion } from "framer-motion";
 
 import { Lora } from "next/font/google";
-import { transition } from "d3";
 const lora = Lora({ subsets: ["latin"] });
 
 const paragraphVariants = {
