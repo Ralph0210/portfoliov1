@@ -12,6 +12,37 @@ import { color, delay, motion } from "framer-motion";
 import { Lora } from "next/font/google";
 const lora = Lora({ subsets: ["latin"] });
 
+const paragraphVariants = {
+  hidden: { opacity: 0.3 },
+  visible: { opacity: 1, transition: { duration: 1.5, delay: 2 } },
+};
+
+const svgVariants = {
+  // hidden: { rotate: 0 },
+  // visible: {
+  //   rotate: 0,
+  //   transition: { duration: 1.5 },
+  // },
+};
+
+const pathVariants = {
+  hidden: { opacity: 1, pathLength: 0 },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    transition: { duration: 1, ease: "easeInOut", delay: 2.5 },
+  },
+};
+
+const pathVariantsScribble = {
+  hidden: { opacity: 1, pathLength: 0 },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    transition: { duration: 1, ease: "easeInOut", delay: 3.5 },
+  },
+}
+
 const bounce = {
   hidden: { opacity: 1 },
   show: {
@@ -37,9 +68,9 @@ const bounceVariants = {
     // scale: [1, 1.1, 1],
     y: [-150, -20, 0],
     transition: {
-      duration: 0.6,
+      duration: 1,
       type: "spring",
-      stiffness: 300,
+      stiffness: 200,
       damping: 10,
       // ease: "easeInOut",
       delay: 0.5, // No additional delay for "Hello,"
@@ -92,6 +123,11 @@ const Hero = ({ ThemeDark, darkMode }) => {
   // const heroImages = [hero, hero1, hero2, hero3, hero4, hero5, hero6];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const myNameRef = useRef();
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    setHasAnimated(true);
+  }, [])
 
   useEffect(() => {
     const myNameText = SplitType.create("#myName");
@@ -231,7 +267,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
               initial="hidden"
               variants={bounceVariants}
               animate="showRalph"
-              className={styles.h1}
+              className={styles.ralph}
             >
               Ralph
             </motion.span>
@@ -239,7 +275,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
               initial="hidden"
               variants={bounceVariants}
               animate="showEx"
-              className={styles.comma}
+              className={styles.exclamation}
             >
               !
             </motion.span>
@@ -248,40 +284,131 @@ const Hero = ({ ThemeDark, darkMode }) => {
           {/* <p>I explore the intersection of societal challenges and technology to create purposeful, user-centric experiences that make positive difference.</p> */}
           <motion.p
             className={`${lora.className} ${styles.paragraph_container}`}
-            // variants={paragraphContainer}
-            // initial="hidden"
-            // animate="show"
+            variants={paragraphVariants}
+            initial="hidden"
+            animate="visible"
           >
-            It&apos;s nice meeting you here. I&apos;m a Designer & Developer
-            that that engineer accessible and engaging solutions through care,
-            communication, and professionalism.
-          </motion.p>
-          <svg
-            className="circle"
-            width="176"
-            height="61"
-            viewBox="0 0 176 61"
-            fill="none"
-          >
-            <rect width="176" height="61" fill="url(#pattern0_625_413)" />
-            <defs>
-              <pattern
-                id="pattern0_625_413"
-                patternContentUnits="objectBoundingBox"
-                width="1"
-                height="1"
+            It&apos;s nice meeting you here. I&apos;m a{" "}
+            <span
+              style={{
+                color: "#1D2326",
+                fontSize: "clamp(1.4rem, 1.5vw, 2rem)",
+                fontWeight: "550",
+              }}
+            >
+              Designer & Developer{" "}
+            </span>
+            that that engineer accessible and engaging solutions through{" "}
+            <span style={{ position: "relative", display: "inline-block" }}>
+              <span
+                style={{
+                  color: "#1D2326",
+                  fontSize: "clamp(1.4rem, 1.5vw, 2rem)",
+                }}
               >
-                <use transform="scale(0.00024425 0.000704722)" />
-              </pattern>
-            </defs>
-          </svg>
+                care,&nbsp;
+              </span>
+
+              <motion.svg
+                className="circle-svg"
+                width="100%"
+                height="auto"
+                viewBox="0 0 235 82"
+                preserveAspectRatio={"none"}
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                variants={svgVariants}
+                initial="hidden"
+                animate="visible"
+                style={{
+                  position: "absolute",
+                  zIndex: -1,
+                  left: "-4px",
+                  bottom: "-0.5px",
+                }}
+              >
+                <g clipPath="url(#clip0_639_400)">
+                  <motion.path
+                    d="M118.667 0.933297C106.534 1.59996 76.0006 5.3333 64.6673 7.59996C40.4006 12.2666 13.334 23.7333 5.4673 32.8C-1.19937 40.2666 -1.7327 52.6666 4.40063 58.4C12.4006 65.8666 36.934 73.2 65.6006 76.6666C86.0006 79.0666 139.601 81.3333 158.401 80.5333C207.867 78.4 236.401 64 234.401 42.5333C233.201 30.4 226.001 23.4666 205.734 14.8C188.401 7.3333 168.801 2.79996 147.867 1.3333C138.001 0.666631 129.067 0.133297 128.001 0.266631C126.934 0.399964 122.667 0.666631 118.667 0.933297Z"
+                    fill="none"
+                    stroke="#EC643C"
+                    variants={pathVariants}
+                    initial="hidden"
+                    animate="visible"
+                    strokeWidth={5}
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_639_400">
+                    <rect width="234.667" height="81.3333" fill="white" />
+                  </clipPath>
+                </defs>
+              </motion.svg>
+            </span>
+            <span style={{ position: "relative", display: "inline-block" }}>
+              <span
+                style={{
+                  color: "#1D2326",
+                  fontSize: "clamp(1.4rem, 1.5vw, 2rem)",
+                }}
+              >
+                communication,&nbsp;
+              </span>
+
+              <motion.svg
+              className="scribble-svg"
+                width="100%"
+                height="auto"
+                viewBox="0 0 243 27"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                variants={pathVariantsScribble}
+                initial="hidden"
+                animate="visible"
+                style={{
+                  position: "absolute",
+                  zIndex: -1,
+                  left: "10px",
+                  bottom: "-10px",
+                }}
+              >
+                <g clip-path="url(#clip0_639_412)">
+                  <motion.path
+                    d="M-1.73331 17.3333 2.93335 17.2 28.1334 14.8C43.0667 13.3333 69.4667 11.4666 86.6667 10.6666C127.867 8.9333 195.067 8.9333 194 10.6666C193.467 11.4666 182.667 12 165.867 12C121.733 12 73.6 15.6 36.2667 21.6C26.6667 23.0666 18.6667 24.8 18.6667 25.3333C18.6667 25.7333 27.4667 26.1333 38.4 26C49.2 25.8666 90 25.7333 129.067 25.6C181.867 25.3333 200 24.9333 200 23.7333"
+                    fill="none"
+                    stroke="#EC643C"
+                    strokeWidth="2"
+                    variants={pathVariantsScribble}
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_639_412">
+                    <rect width="242.667" height="26.6667" fill="white" />
+                  </clipPath>
+                </defs>
+              </motion.svg>
+            </span>
+            and{" "}
+            <motion.span
+              style={{
+                // color: "#EC643C",
+                fontSize: "clamp(1.4rem, 1.5vw, 2rem)",
+              }}
+              initial={{ color: "#1D2326", fontWeight: 400 }}
+              animate={{ color: "#EC643C", fontWeight: 550 }}
+              transition={{ type: "spring", duration: 1, delay: 4.5 }}
+            >
+              professionalism.
+            </motion.span>
+          </motion.p>
         </div>
+
         <div className={styles.additionalContainer}>
           <motion.div
             className={`${lora.className} ${styles.additional} `}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ type: "spring", duration: 1.5 }}
+            transition={{ type: "spring", duration: 2, delay: 3 }}
           >
             <motion.p className={styles.ti}>I believe</motion.p>
             <motion.p className={styles.des}>
@@ -293,7 +420,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
             className={`${lora.className} ${styles.additional} `}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ type: "spring", duration: 2 }}
+            transition={{ type: "spring", duration: 2, delay: 3.5 }}
           >
             <motion.p className={styles.ti}>I am</motion.p>
             <motion.p className={styles.des}>
@@ -301,9 +428,16 @@ const Hero = ({ ThemeDark, darkMode }) => {
               Engineering @ UW
             </motion.p>
           </motion.div>
-          <Link href="/contact">
-            Say hi too!<div className={styles.bounds}></div>
-          </Link>
+          <motion.div
+          className={`${styles.additional}`}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", duration: 1, delay: 4 }}
+          >
+            <Link href="/contact">
+              Say hi too!<div className={styles.bounds}></div>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </>
