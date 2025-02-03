@@ -17,9 +17,7 @@ import Conclusion from "@/app/components/workPageComponents/Conclusion/Conclusio
 import MoreWork from "@/app/components/workPageComponents/moreWork/MoreWork";
 import scf from "../../../public/scf/scf.png";
 import problem from "../../../public/scf/problem.png";
-import problemDark from "../../../public/scf/problem-dark.png";
 import painPoints from "../../../public/scf/painPoints.png";
-import painPointsDark from "../../../public/scf/painPoints-dark.png";
 import personas from "../../../public/scf/personas.png";
 import lowfi from "../../../public/scf/lowfi.png";
 import usabilityImg from "../../../public/scf/usability.png";
@@ -118,7 +116,7 @@ const Page = () => {
         "Currently, two SCF data exploration platforms exist: the Statistical Data Application (SDA) and the interactive chartbook. SDA boasts advanced analysis tools like correlation and regression, yet untrained users find it daunting. Conversely, the chartbook offers simple data visualization but lacks depth for rigorous exploration. Downloading the raw data for personal analysis is an option, but deciphering the variables requires constant codebook reference.",
       // "As the biggest international/exchange student organization on the campus of the University of Texas at Austin, Planet Longhorn’s brand needed to resonate with a diverse student body, reflecting a vibrant, inclusive, and dynamic community.",
       imageLight: problem,
-      imageDark: problemDark,
+      imageDark: problem,
       themeDark: darkMode,
       noText: false,
     },
@@ -128,7 +126,7 @@ const Page = () => {
       description:
         "To understand the needs of users unfamiliar with SCF, I presented the interviewees with a scenario where they needed to find the average household income by education level using SCF data, simulating basic data exploration. Additionally, I conducted secondary research through competitor analysis and industry articles to gain a broader understanding of user expectations and existing challenges.",
       imageLight: painPoints,
-      imageDark: painPointsDark,
+      imageDark: painPoints,
       themeDark: darkMode,
       noText: false,
     },

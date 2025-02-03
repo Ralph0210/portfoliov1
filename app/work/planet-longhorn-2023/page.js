@@ -16,9 +16,7 @@ import Conclusion from "@/app/components/workPageComponents/Conclusion/Conclusio
 import MoreWork from "@/app/components/workPageComponents/moreWork/MoreWork";
 import pl from "../../../public/pl/pl.png";
 import branding from "../../../public/pl/branding.png";
-import brandingDark from "../../../public/pl/branding-dark.png";
 import wireframe from "../../../public/pl/wireframe.png";
-import wireframeDark from "../../../public/pl/wireframe-dark.png";
 import home from "../../../public/pl/home.png";
 import elevate from "../../../public/elevate/elevate.png";
 import scf from "../../../public/scf/scf.png";
@@ -113,7 +111,7 @@ const Page = () => {
       description:
         "As the biggest international/exchange student organization on the campus of the University of Texas at Austin, Planet Longhorn’s brand needed to resonate with a diverse student body, reflecting a vibrant, inclusive, and dynamic community.",
       imageLight: branding,
-      imageDark: brandingDark,
+      imageDark: branding,
       themeDark: darkMode,
     },
     {
@@ -122,7 +120,7 @@ const Page = () => {
       description:
         "When developing the wireframes for Planet Longhorn's website, the goal was to emulate the immersive, visually-rich experience of a magazine. This approach aimed to showcase the community's spirit and inclusivity through photography, thus creating a dynamic and engaging user experience.",
       imageLight: wireframe,
-      imageDark: wireframeDark,
+      imageDark: wireframe,
       themeDark: darkMode,
     },
   ];
@@ -199,7 +197,7 @@ const Page = () => {
       image: scf,
       title: "Statistical Analysis Web App",
       link: "/work/scf-2023",
-      tags:["UI/UX DESIGN", "FULL-STACK DEVELOPMENT"],
+      tags:["PRODUCT ENGINEERING"],
       description:"This project simplifies the vast Survey of Consumer Finance data into an accessible and engaging web application for all users."
     },
     {
