@@ -36,7 +36,7 @@ const LevelIconContainer = ({ level }) => {
 };
 
 const Page = () => {
-  const resumeURL = "../../public/resume-Ralph.pdf";
+  const resumeURL = "../../public/Resume.pdf";
   const isInViewRef = useRef(null);
   const isInView4 = useInView(isInViewRef);
   const [sideNavOpened, setSideNavOpened] = useState(false);
@@ -319,14 +319,55 @@ const Page = () => {
             successful social entrepreneurship through digital solutions.
           </h2>
           <p>
-            With my background in sociology and computer science, I bring
-            critical social analysis with strong technical skills to every
+            With my background in Human-Centered Design and Engineering, I bring
+            critical user design skills with strong software engineering skills to every
             project. I thrive on collaborating with talented and inspiring teams and always look for new opportunities to learn.
           </p>
           <p>
-            When I am not channeling my inner responisble adult (whose work ethic by the way, is like grandpa&apos;s denture, reliable), you can find me cycling up the endless hill, jamming jazzy
-            R&B songs with friends, or watching Friends for the 7749th time.
+            When I am not channeling my inner responisble adult, you can find me cycling up the endless hill, jamming jazzy
+            R&B songs with friends, or cooking a sorts of foods.
           </p>
+          <div className={styles.resumeHeader}>
+            <a
+              href='/Resume.pdf'
+              download="Ralph_Chang_Resume_2025"
+              className={` ${lora.className} ${styles.h3}`}
+            >
+              My Résumé <Icon icon="material-symbols:download" />
+            </a>
+            {/* <div className={styles.resumeContainer}>
+              <div className={styles.selectorContainer}>
+                <span
+                  onClick={() => setPosition(true)}
+                  style={
+                    position
+                      ? {
+                          backgroundColor: "#EC643C",
+                          color: "white",
+                          border: "none",
+                        }
+                      : {}
+                  }
+                >
+                  Developer
+                </span>
+                <span
+                  onClick={() => setPosition(false)}
+                  style={
+                    position
+                      ? {}
+                      : {
+                          backgroundColor: "#EC643C",
+                          color: "white",
+                          border: "none",
+                        }
+                  }
+                >
+                  Designer
+                </span>
+              </div>
+            </div> */}
+          </div>
         </div>
       </div>
       <div className={styles.bottomContainer}>
@@ -477,8 +518,8 @@ const Page = () => {
           <div className={styles.divider}></div>
           <div className={styles.resumeHeader}>
             <a
-              href='/resume-Ralph.pdf'
-              download="Ralph_Chang_Resume_2023"
+              href='/Resume.pdf'
+              download="Ralph_Chang_Resume_2025"
               className={` ${lora.className} ${styles.h3}`}
             >
               My Résumé <Icon icon="material-symbols:download" />
