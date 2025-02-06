@@ -329,7 +329,7 @@ const Page = () => {
           </p>
           <div className={styles.resumeHeader}>
             <a
-              href='/Resume.pdf'
+              href='/Resume_word.pdf'
               download="Ralph_Chang_Resume_2025"
               className={` ${lora.className} ${styles.h3}`}
             >
@@ -518,7 +518,7 @@ const Page = () => {
           <div className={styles.divider}></div>
           <div className={styles.resumeHeader}>
             <a
-              href='/Resume.pdf'
+              href='/Resume_word.pdf'
               download="Ralph_Chang_Resume_2025"
               className={` ${lora.className} ${styles.h3}`}
             >
