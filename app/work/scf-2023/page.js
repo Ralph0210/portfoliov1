@@ -98,7 +98,7 @@ const Page = () => {
     siteLink: "https://myscfanalysis.azurewebsites.net/",
     Role: "Role",
     role: ["Designer", "Developer"],
-    duration: "May 2023 - Dec 2023",
+    duration: "June 2023 - Sept. 2023",
     ongoing: true,
     designLink:
       "https://www.figma.com/file/ZzMlxWMmTlf6gEwwhyaKui/SCF-project?type=design&node-id=68%3A2039&mode=design&t=4Kh5yUoi8bgPF2G9-1",
