@@ -298,7 +298,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
             >
               Designer & Developer{" "}
             </span>
-            that that engineer accessible and engaging solutions through{" "}
+            who engineers accessible and engaging solutions through{" "}
             <span style={{ position: "relative", display: "inline-block" }}>
               <span
                 style={{
@@ -398,7 +398,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
               animate={{ color: "#EC643C", fontWeight: 550 }}
               transition={{ type: "spring", duration: 1, delay: 4.5 }}
             >
-              professionalism.
+              desgin.
             </motion.span>
           </motion.p>
         </div>
