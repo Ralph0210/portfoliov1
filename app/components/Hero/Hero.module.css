@@ -148,8 +148,8 @@
 
   .additionalContainer{
     display: flex;
-    align-self: end;
-    align-items: flex-end;
+    align-self: start;
+    align-items: flex-start;
     gap: 2rem;
   }
 
