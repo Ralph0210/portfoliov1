@@ -298,7 +298,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
             >
               Designer & Developer{" "}
             </span>
-            who engineers accessible and engaging solutions through{" "}
+            who engineers accessible <br /> and engaging solutions through{" "}
             <span style={{ position: "relative", display: "inline-block" }}>
               <span
                 style={{
@@ -372,7 +372,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
                   bottom: "-10px",
                 }}
               >
-                <g clip-path="url(#clip0_639_412)">
+                <g clipPath="url(#clip0_639_412)">
                   <motion.path
                     d="M-1.73331 17.3333 2.93335 17.2 28.1334 14.8C43.0667 13.3333 69.4667 11.4666 86.6667 10.6666C127.867 8.9333 195.067 8.9333 194 10.6666C193.467 11.4666 182.667 12 165.867 12C121.733 12 73.6 15.6 36.2667 21.6C26.6667 23.0666 18.6667 24.8 18.6667 25.3333C18.6667 25.7333 27.4667 26.1333 38.4 26C49.2 25.8666 90 25.7333 129.067 25.6C181.867 25.3333 200 24.9333 200 23.7333"
                     fill="none"
