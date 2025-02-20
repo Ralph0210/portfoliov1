@@ -1,21 +1,21 @@
-"use client";
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
-import Image from "next/image";
-import hero from "../../../public/heroImages/hero.webp";
-import styles from "./Hero.module.css";
-import { Icon } from "@iconify/react";
-import SplitType from "split-type";
-import gsap from "gsap";
-import Link from "next/link";
-import { color, delay, motion } from "framer-motion";
+"use client"
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react"
+import Image from "next/image"
+import hero from "../../../public/heroImages/hero.webp"
+import styles from "./Hero.module.css"
+import { Icon } from "@iconify/react"
+import SplitType from "split-type"
+import gsap from "gsap"
+import Link from "next/link"
+import { color, delay, motion } from "framer-motion"
 
-import { Lora } from "next/font/google";
-const lora = Lora({ subsets: ["latin"] });
+import { Lora } from "next/font/google"
+const lora = Lora({ subsets: ["latin"] })
 
 const paragraphVariants = {
   hidden: { opacity: 0.3 },
   visible: { opacity: 1, transition: { duration: 1.5, delay: 2 } },
-};
+}
 
 const svgVariants = {
   // hidden: { rotate: 0 },
@@ -23,7 +23,7 @@ const svgVariants = {
   //   rotate: 0,
   //   transition: { duration: 1.5 },
   // },
-};
+}
 
 const pathVariants = {
   hidden: { opacity: 1, pathLength: 0 },
@@ -32,7 +32,7 @@ const pathVariants = {
     pathLength: 1,
     transition: { duration: 1, ease: "easeInOut", delay: 2.5 },
   },
-};
+}
 
 const pathVariantsScribble = {
   hidden: { opacity: 1, pathLength: 0 },
@@ -58,7 +58,7 @@ const bounce = {
       repeatDelay: 7,
     },
   },
-};
+}
 
 const bounceVariants = {
   hidden: { opacity: 0.3 },
@@ -117,28 +117,28 @@ const bounceVariants = {
       delay: 2, // Initial delay
     },
   },
-};
+}
 
 const Hero = ({ ThemeDark, darkMode }) => {
   // const heroImages = [hero, hero1, hero2, hero3, hero4, hero5, hero6];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const myNameRef = useRef();
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const myNameRef = useRef()
+  const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
-    setHasAnimated(true);
+    setHasAnimated(true)
   }, [])
 
   useEffect(() => {
-    const myNameText = SplitType.create("#myName");
-  }, []);
+    const myNameText = SplitType.create("#myName")
+  }, [])
 
   useLayoutEffect(() => {
-    const myNameElement = myNameRef.current;
+    const myNameElement = myNameRef.current
 
     // Check if the myNameElement exists before proceeding
     if (myNameElement) {
-      const lineElements = myNameElement.querySelectorAll(".char");
+      const lineElements = myNameElement.querySelectorAll(".char")
       // console.log("Selected elements:", lineElements);
       // console.log("Number of elements:", lineElements.length);
 
@@ -149,12 +149,12 @@ const Hero = ({ ThemeDark, darkMode }) => {
           stagger: 0.05,
           delay: 0.2,
           duration: 0.1,
-        });
-      }, myNameRef.current);
+        })
+      }, myNameRef.current)
 
-      return () => ctx.revert();
+      return () => ctx.revert()
     }
-  }, []);
+  }, [])
 
   // useEffect(() => {
   //   const intervalId = setInterval(() => {
@@ -165,25 +165,25 @@ const Hero = ({ ThemeDark, darkMode }) => {
   // }, [currentImageIndex]);
 
   // State to track the scroll position
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   // Effect to update the scroll position on scroll
   useEffect(() => {
     const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
+      setScrollPosition(window.scrollY)
+    }
 
     // Attach the scroll event listener
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
 
     // Clean up the event listener on component unmount
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   // Calculate the translateY based on the scroll position
-  const translateY = `translateY(${scrollPosition / 4}px)`;
+  const translateY = `translateY(${scrollPosition / 4}px)`
 
   return (
     <>
@@ -356,7 +356,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
               </span>
 
               <motion.svg
-              className="scribble-svg"
+                className="scribble-svg"
                 width="100%"
                 height="auto"
                 viewBox="0 0 243 27"
@@ -398,7 +398,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
               animate={{ color: "#EC643C", fontWeight: 550 }}
               transition={{ type: "spring", duration: 1, delay: 4.5 }}
             >
-              desgin.
+              design.
             </motion.span>
           </motion.p>
         </div>
@@ -429,7 +429,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
             </motion.p>
           </motion.div>
           <motion.div
-          className={`${styles.additional}`}
+            className={`${styles.additional}`}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ type: "spring", duration: 1, delay: 4 }}
@@ -441,7 +441,7 @@ const Hero = ({ ThemeDark, darkMode }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
